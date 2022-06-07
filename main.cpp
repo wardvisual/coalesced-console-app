@@ -5,8 +5,11 @@
 using namespace std;
 
 int main() {
-    
-    render_application();
 
-    return 0;
+  render_application();
+
+  for (int i = 0; i <= 3; i++) {
+  }
+
+  return 0;
 }
