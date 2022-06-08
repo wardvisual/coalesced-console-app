@@ -1,6 +1,5 @@
-using namespace std;
+#pragma once
 
-/**
- * @param
- */
-void render_application() { cout << "hello"; }
+void render_application();
+
+void print();
