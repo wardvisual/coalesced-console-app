@@ -1,4 +1,3 @@
-#include "app.h"
 #include <iostream>
 
 using namespace std;
