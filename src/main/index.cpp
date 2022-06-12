@@ -9,7 +9,7 @@ using namespace std;
  */
 struct {
   bool is_ready() { return true; }
-  void render() { cout << "Render"; }
+  void render() {  }
 } app;
 
 /**
@@ -22,4 +22,12 @@ void render_application() {
   if (app.is_ready()) {
     app.render();
   }
+}
+
+
+int main() {
+  
+  render_application();
+  
+  return 0;
 }
