@@ -1,11 +1,8 @@
+#include <fstream>
 #include <iostream>
 #include <vector>
-#include <fstream>
 
+#include "source/app.h"
 using namespace std;
 
-int main () {
-  
-   
-   return 0;
-}
+int main() { render_application(); }
