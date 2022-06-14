@@ -9,12 +9,12 @@
 #define WHITE 15
 
 /**
- * @name change_color
- * @brief this void function is for changing the text color
+ * @name apply_color
+ * @brief this void function is for applying color to the text.
  * @param color {int}
  */
 
-void change_color(int color) {
+void apply_color(int color) {
   HANDLE hConsole;
 
   hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

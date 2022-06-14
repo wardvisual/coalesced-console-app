@@ -5,6 +5,7 @@ include(CTest)
 enable_testing()
 
 add_executable(main main.cpp)
+add_executable(activity3 activity3.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
