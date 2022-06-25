@@ -1,4 +1,5 @@
-#include "./src/renderApplication.cpp"
+#include <iostream>
+#include <kali.h>
 
 using namespace std;
 
@@ -14,13 +15,25 @@ string generateSymbol(string symbol, int count) {
 
 void showWelcomeMessage() { cout << "hey"; }
 
+void centerContent(short x, short y) {
+  COORD coordinates;
+
+  coordinates.X = x;
+  coordinates.Y = y;
+
+  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
+}
+
 int main() {
 
-  cout << "\n\n" << generateSymbol("_", 50) << "\n\n";
+  cout << "\n\n" << generateSymbol("_", 50) << "\n";
+  cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
-  showWelcomeMessage();
+  centerContent(50, 50);
+  cout << "hey";
 
-  cout << "\n\n" << generateSymbol("_", 50) << "\n\n";
+  cout << "\n\n" << generateSymbol("_", 50) << "\n";
+  cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
   return 0;
 }
