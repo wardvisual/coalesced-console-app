@@ -1,5 +1,10 @@
-#include <iostream>
+#include "./src/renderApplication.cpp"
 
 using namespace std;
 
-int main() { return 0; }
+int main() {
+
+  renderApplication();
+
+  return 0;
+}
