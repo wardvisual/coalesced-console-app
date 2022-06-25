@@ -1,5 +1,5 @@
 #include <iostream>
-#include <kali.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -29,8 +29,7 @@ int main() {
   cout << "\n\n" << generateSymbol("_", 50) << "\n";
   cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
-  centerContent(50, 50);
-  cout << "hey";
+  cout << "Welcome to the Group Six Console Based Application";
 
   cout << "\n\n" << generateSymbol("_", 50) << "\n";
   cout << "\n" << generateSymbol("_", 50) << "\n\n";
