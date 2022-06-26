@@ -2,8 +2,8 @@
 
 // Defining a struct called ScreenInfo.
 struct ScreenInfo {
-  int alignX;
-  int alignY;
+  int alignmentX;
+  int alignmentY;
   int colorRange;
   int fontSize;
   string content;
@@ -11,7 +11,7 @@ struct ScreenInfo {
 
 void modifyScreenContentPlacement(ScreenInfo screenInfo) {
   // Modifying the screen content placement.
-  centerContent(screenInfo.alignX, screenInfo.alignY);
+  centerContent(screenInfo.alignmentX, screenInfo.alignmentY);
   applyColor(screenInfo.colorRange);
   adjustFont(screenInfo.fontSize);
 
