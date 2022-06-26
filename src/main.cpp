@@ -6,7 +6,7 @@
 #include "./includes/utilities/color.h"
 #include "./includes/utilities/font.h"
 #include "./includes/utilities/gotoxy.h"
-#include "./includes/utilities/menu.h"
+// #include "./includes/utilities/menu.h"
 #include "./includes/utilities/screen.h"
 
 #include "./includes/constants/escapeSequence.h"
@@ -52,15 +52,21 @@ int main() {
 
   generateBorder(88, 32);
 
-  MenuStruct menu;
+  MenuStruct secondSemMenu, midtermMenu, finalSemMenu, addedProgramMenu;
+  Item item;
 
-  menu.setMaxItem(4);
-  menu.addItem('1. Second Sem')->setAlignment(5, 5);
-  menu.addItem('2. Midterm')->setAlignment(5, 6);
-  menu.addItem('3. Final Sem')->setAlignment(5, 7);
-  menu.addItem('4. Added Programs')->setAlignment(5, 8);
+  secondSemMenu.setMaxItem(4);
 
-  createMenu(menu);
+  //   item.setText('Second');
+  //   item.action() { cout << "second"; };
+  //   menu.setName('1. Second Sem')
+  //       ->setAlignment(5, 5)
+  //       ->addItem(item)
+  //       ->createMenu(menu);
+
+  //   menu.setName('2. Midterm')->setAlignment(5, 6)->createMenu(menu);
+  //   menu.setName('3. Final Sem')->setAlignment(5, 7)->createMenu(menu);
+  //   menu.setName('4. Added Programs')->setAlignment(5, 8)->createMenu(menu);
 
   return 0;
 }
