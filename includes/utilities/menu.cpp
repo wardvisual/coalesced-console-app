@@ -1,5 +1,8 @@
+#include "./constants/escapeSequence.h"
 #include "./constants/keycode.h"
+#include "./constants/runtime.h"
 #include "./screen.h"
+
 #include "windows.h"
 #include <conio.h>
 
@@ -18,20 +21,28 @@ struct MenuStruct {};
 void createMenu(ScreenStruct screenStruct) {
   MenuStruct menuStruct;
 
-  char key;
+  char keyCode;
   int counter = 2;
 
   for (int i = 0;;) {
     modifyScreenContentPlacement(screenStruct);
 
-    key = _getch();
+    keyCode = _getch();
 
-    if (key == ESCAPE_KEY && (counter >= 2 && counter <= 3)) {
+    if (keyCode == ESCAPE_KEY && (counter >= 2 && counter <= 3)) {
       counter--;
     }
 
-    if (key == DOWN_ARROW_KEY && (counter >= 2 && counter <= 3)) {
+    if (keyCode == DOWN_ARROW_KEY && (counter >= 1 && counter <= 2)) {
       counter++;
+    }
+
+    if (keyCode == ESCAPE_KEY) {
+      exit(EXIT_FAILURE);
+    }
+
+    if (keyCode == CURRIAGE_RETURN) {
+      if (counter == 1)
     }
   }
 }
