@@ -6,6 +6,7 @@
 #include "./includes/utilities/color.h"
 #include "./includes/utilities/font.h"
 #include "./includes/utilities/gotoxy.h"
+#include "./includes/utilities/menu.h"
 #include "./includes/utilities/screen.h"
 
 #include "./includes/constants/escapeSequence.h"
@@ -49,16 +50,17 @@ void displayFinalSemMenu() {
 
 int main() {
 
-  // cout << "\n\n" << generateSymbol("_", 50) << "\n";
-  // cout << "\n" << generateSymbol("_", 50) << "\n\n";
-
-  // cout << "Welcome to the Group Six Console Based Application";
-
-  // cout << "\n\n" << generateSymbol("_", 50) << "\n";
-  // cout << "\n" << generateSymbol("_", 50) << "\n\n";
-
   generateBorder(88, 32);
-  // cout << " ";
+
+  MenuStruct menu;
+
+  menu.setMaxItem(4);
+  menu.addItem('1. Second Sem')->setAlignment(5, 5);
+  menu.addItem('2. Midterm')->setAlignment(5, 6);
+  menu.addItem('3. Final Sem')->setAlignment(5, 7);
+  menu.addItem('4. Added Programs')->setAlignment(5, 8);
+
+  createMenu(menu);
 
   return 0;
 }

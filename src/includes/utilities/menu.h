@@ -11,24 +11,44 @@
 struct Item {
   int id;
   string text;
+  int colorRange;
   void action();
 };
 
 // Defining a struct called ScreenStruct.
 struct MenuStruct {
-  int alignX;
-  int alignY;
+  int alignmentX;
+  int alignmentY;
   int colorRange;
   int fontSize;
   string content;
   int maxItem;
 
-  void addItem(Item _item) {
+  // MenuStruct *createFunction() {}
+
+  // MenuStruct *createVariable() {}
+
+  MenuStruct *addItem(Item _item) {
     Item item;
 
     item.id = generateId();
     item.text = _item.text;
     item.action = _item.action;
+
+    return this;
+  }
+
+  MenuStruct *setAlignment(short x, short y) {
+    this->alignmentX = x;
+    this->alignmentY = y;
+
+    return this;
+  }
+
+  MenuStruct *setMaxItem(int maxItem) {
+    this->maxItem = maxItem;
+
+    return this;
   }
 };
 
@@ -41,19 +61,17 @@ void createMenu(MenuStruct menuStruct) {
   for (int i = 0;;) {
     modifyScreenContentPlacement(menuStruct);
 
+    /* Read a single character from the console without echoing the character */
     keyCode = _getch();
 
-    if (keyCode == ESCAPE_KEY && (counter >= 2 && counter <= 3)) {
+    if (keyCode == ESCAPE_KEY && (counter >= 2 && counter <= 3))
       counter--;
-    }
 
-    if (keyCode == DOWN_ARROW_KEY && (counter >= 1 && counter <= 2)) {
+    if (keyCode == DOWN_ARROW_KEY && (counter >= 1 && counter <= 2))
       counter++;
-    }
 
-    if (keyCode == ESCAPE_KEY) {
+    if (keyCode == ESCAPE_KEY)
       exit(EXIT_FAILURE);
-    }
 
     if (keyCode == CURRIAGE_RETURN) {
       for (int i = 1; i < menuStruct.maxItem; i++) {
@@ -63,20 +81,12 @@ void createMenu(MenuStruct menuStruct) {
       }
     }
 
-    Set[0] = 7; // default white clr
-    Set[1] = 7;
-    Set[2] = 7;
+    for (int i = 1; i < menuStruct.maxItem; i++) {
+      itemList[i].colorRange = 7; // default color white
 
-    if (counter == 1) {
-      Set[0] = 12; // 12 is color red
-    }
-
-    if (counter == 2) {
-      Set[1] = 12; // 12 is color red
-    }
-
-    if (counter == 3) {
-      Set[2] = 12; // 12 is color red
+      if (counter == i) {
+        itemList[i].colorRange = 12; // color red
+      }
     }
   }
 }
