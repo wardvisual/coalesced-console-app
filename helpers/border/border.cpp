@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int generateBorder(const int width, const int height) {
+void generateBorder(const int width, const int height) {
   cout << "\n";
   for (int i = 0; i < width - 30; i++) {
     cout << "||";
