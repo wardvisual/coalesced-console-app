@@ -26,13 +26,41 @@ void centerContent(short x, short y) {
 
 int main() {
 
-  cout << "\n\n" << generateSymbol("_", 50) << "\n";
-  cout << "\n" << generateSymbol("_", 50) << "\n\n";
+  // cout << "\n\n" << generateSymbol("_", 50) << "\n";
+  // cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
-  cout << "Welcome to the Group Six Console Based Application";
+  // cout << "Welcome to the Group Six Console Based Application";
 
-  cout << "\n\n" << generateSymbol("_", 50) << "\n";
-  cout << "\n" << generateSymbol("_", 50) << "\n\n";
+  // cout << "\n\n" << generateSymbol("_", 50) << "\n";
+  // cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
+  const int width = 80;
+  const int height = 32;
+
+  cout << "\n\t\t";
+  for (int i = 0; i < width - 30; i++) {
+    cout << "||";
+  }
+
+  cout << endl;
+
+  for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) {
+      if (j == 0) {
+        cout << "\t\t\t||";
+      }
+      cout << " ";
+      if (j == width - 1)
+        cout << "||";
+    }
+    cout << endl;
+  }
+
+  cout << "\t\t";
+  for (int i = 0; i < width - 30; i++) {
+    cout << "||";
+  }
+
+  // cout << " ";
   return 0;
 }
