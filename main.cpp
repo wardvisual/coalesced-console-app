@@ -8,35 +8,43 @@
 #include "./includes/utilities/gotoxy.h"
 #include "./includes/utilities/screen.h"
 
-/* Moves the active position to the initial position of the current line. */
-#define CURRIAGE_RETURN 13
-#define ESCAPE_KEY 27
-
-/* Reports the termination when some error or interruption occurs during the
- execution of the program. */
-#define EXIT_FAILURE 1
+#include "./includes/constants/escapeSequence.h"
+#include "./includes/constants/keycode.h"
+#include "./includes/constants/runtime.h"
 
 using namespace std;
 
 void displaySecondSemMenu() {
-  ScreenInfo screenInfo;
+  ScreenStruct screenStruct;
 
-  screenInfo.gotoxyX = 30;
-  screenInfo.gotoxyY = 5;
-  screenInfo.colorRange = 2;
-  screenInfo.content = "Second Sem";
+  screenStruct.alignX = 30;
+  screenStruct.alignX = 5;
+  screenStruct.colorRange = 2;
+  screenStruct.content = "Second Sem";
 
-  modifyScreenContentPlacement(screenInfo);
+  modifyScreenContentPlacement(screenStruct);
 }
 
 void displayMidtermMenu() {
-  centerContent(30, 5);
-  cout << "displayMidtermMenu";
+  ScreenStruct screenStruct;
+
+  screenStruct.alignX = 30;
+  screenStruct.alignX = 5;
+  screenStruct.colorRange = 2;
+  screenStruct.content = "Midterm";
+
+  modifyScreenContentPlacement(screenStruct);
 }
 
 void displayFinalSemMenu() {
-  centerContent(30, 5);
-  cout << "displayFinalSemMenu";
+  ScreenStruct screenStruct;
+
+  screenStruct.alignX = 30;
+  screenStruct.alignX = 5;
+  screenStruct.colorRange = 2;
+  screenStruct.content = "Final Sem";
+
+  modifyScreenContentPlacement(screenStruct);
 }
 
 int main() {
