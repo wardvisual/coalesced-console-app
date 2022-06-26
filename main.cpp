@@ -34,10 +34,10 @@ int main() {
   // cout << "\n\n" << generateSymbol("_", 50) << "\n";
   // cout << "\n" << generateSymbol("_", 50) << "\n\n";
 
-  const int width = 80;
+  const int width = 88;
   const int height = 32;
 
-  cout << "\n\t\t";
+  cout << "\n";
   for (int i = 0; i < width - 30; i++) {
     cout << "||";
   }
@@ -56,7 +56,6 @@ int main() {
     cout << endl;
   }
 
-  cout << "\t\t";
   for (int i = 0; i < width - 30; i++) {
     cout << "||";
   }
