@@ -1,20 +1,16 @@
-#include "windows.h"
+#include "../structures/screenStruct.cpp"
 
-// Defining a struct called ScreenInfo.
-struct ScreenInfo {
-  int alignmentX;
-  int alignmentY;
-  int colorRange;
-  int fontSize;
-  string content;
-};
+#ifndef SCREEN
+#define SCREEN
 
-void modifyScreenContentPlacement(ScreenInfo screenInfo) {
+void modifyScreenContentPlacement(ScreenStruct screenStruct) {
   // Modifying the screen content placement.
-  centerContent(screenInfo.alignmentX, screenInfo.alignmentY);
-  applyColor(screenInfo.colorRange);
-  adjustFont(screenInfo.fontSize);
+  centerContent(screenStruct.alignmentX, screenStruct.alignmentY);
+  applyColor(screenStruct.colorRange);
+  adjustFont(screenStruct.fontSize);
 
-  // Printing the content of the screenInfo.content variable.
-  cout << screenInfo.content;
+  // Printing the content of the screenStruct.content variable.
+  cout << screenStruct.name;
 }
+
+#endif 
