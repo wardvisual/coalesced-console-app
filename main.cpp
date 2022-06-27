@@ -1,3 +1,3 @@
-#include <iostream>
+#include "./src/app.cpp"
 
-int main(int, char **) { std::cout << "Hello, world!\n"; }
+int main() { renderConsoleApp(); }
