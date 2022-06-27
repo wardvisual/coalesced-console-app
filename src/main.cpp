@@ -6,7 +6,7 @@
 #include "./includes/utilities/color.h"
 #include "./includes/utilities/font.h"
 #include "./includes/utilities/gotoxy.h"
-// #include "./includes/utilities/menu.h"
+#include "./includes/utilities/menu.h"
 #include "./includes/utilities/screen.h"
 
 #include "./includes/constants/escapeSequence.h"
@@ -15,38 +15,38 @@
 
 using namespace std;
 
-void displaySecondSemMenu() {
-  ScreenStruct screenStruct;
+// void displaySecondSemMenu() {
+//   ScreenStruct screenStruct;
 
-  screenStruct.alignX = 30;
-  screenStruct.alignX = 5;
-  screenStruct.colorRange = 2;
-  screenStruct.content = "Second Sem";
+//   screenStruct.alignX = 30;
+//   screenStruct.alignX = 5;
+//   screenStruct.colorRange = 2;
+//   screenStruct.content = "Second Sem";
 
-  modifyScreenContentPlacement(screenStruct);
-}
+//   modifyScreenContentPlacement(screenStruct);
+// }
 
-void displayMidtermMenu() {
-  ScreenStruct screenStruct;
+// void displayMidtermMenu() {
+//   ScreenStruct screenStruct;
 
-  screenStruct.alignX = 30;
-  screenStruct.alignX = 5;
-  screenStruct.colorRange = 2;
-  screenStruct.content = "Midterm";
+//   screenStruct.alignX = 30;
+//   screenStruct.alignX = 5;
+//   screenStruct.colorRange = 2;
+//   screenStruct.content = "Midterm";
 
-  modifyScreenContentPlacement(screenStruct);
-}
+//   modifyScreenContentPlacement(screenStruct);
+// }
 
-void displayFinalSemMenu() {
-  ScreenStruct screenStruct;
+// void displayFinalSemMenu() {
+//   ScreenStruct screenStruct;
 
-  screenStruct.alignX = 30;
-  screenStruct.alignX = 5;
-  screenStruct.colorRange = 2;
-  screenStruct.content = "Final Sem";
+//   screenStruct.alignX = 30;
+//   screenStruct.alignX = 5;
+//   screenStruct.colorRange = 2;
+//   screenStruct.content = "Final Sem";
 
-  modifyScreenContentPlacement(screenStruct);
-}
+//   modifyScreenContentPlacement(screenStruct);
+// }
 
 int main() {
 
