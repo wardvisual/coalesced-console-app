@@ -6,14 +6,15 @@
 #include "../constants/keycode.cpp"
 #include "../constants/runtime.cpp"
 
-#include "../structures/screenStruct.cpp"
+#include "../structures/appContainer.cpp"
 #include "../structures/menuStruct.cpp"
+#include "../structures/screenStruct.cpp"
 
 #include "generateId.cpp"
 #include "screen.cpp"
 
 void displaySecondSemMenu() {
-  ScreenInfo screenStruct;
+  ScreenStruct screenStruct;
 
   screenStruct.alignmentX = 30;
   screenStruct.alignmentY = 5;
@@ -23,7 +24,7 @@ void displaySecondSemMenu() {
 }
 
 void displayMidtermMenu() {
-  ScreenInfo screenStruct;
+  ScreenStruct screenStruct;
 
   screenStruct.alignmentX = 30;
   screenStruct.alignmentY = 5;
@@ -34,7 +35,7 @@ void displayMidtermMenu() {
 }
 
 void displayFinalSemMenu() {
-  ScreenInfo screenStruct;
+  ScreenStruct screenStruct;
 
   screenStruct.alignmentX = 30;
   screenStruct.alignmentY = 5;
@@ -53,7 +54,16 @@ struct Item {
 
 // Defining a struct called ScreenStruct.
 void createMenu(MenuStruct menuStruct) {
-  ScreenInfo screenStruct;
+  ScreenStruct screenStruct;
+  vector<ScreenStruct> screenVector;
+  ApplicationContainer applicationContainer;
+
+  char keyCode;
+  int counter = 2;
+
+  for (int i = 1; i < menuStruct.maxItem; i++) {
+    applicationContainer.menuStruct.push_back(menuStruct);
+  }
 
   screenStruct.alignmentX = menuStruct.menuItemAlignmentX;
   screenStruct.alignmentY = menuStruct.menuItemAlignmentY;
@@ -61,13 +71,13 @@ void createMenu(MenuStruct menuStruct) {
   screenStruct.fontSize = menuStruct.fontSize;
   screenStruct.name = menuStruct.name;
 
-  char keyCode;
-  int counter = 2;
-
   // struct Item itemList[menuStruct.maxItem];
 
   for (int i = 0;;) {
-    modifyScreenContentPlacement(screenStruct);
+    for (int i = 1; i < menuStruct.maxItem; i++) {
+      screenVector.push_back(screenStruct);
+    }
+    modifyScreenContentPlacement();
 
     /* Read a single character from the console without echoing the character
      */
