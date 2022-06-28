@@ -3,14 +3,15 @@
 #ifndef SCREEN
 #define SCREEN
 
-void modifyScreenContentPlacement(ScreenStruct screenStruct) {
-  // Modifying the screen content placement.
-  centerContent(screenStruct.alignmentX, screenStruct.alignmentY);
-  applyColor(screenStruct.colorRange);
-  adjustFont(screenStruct.fontSize);
+void modifyScreenContentPlacement(vector<ScreenStruct> screenStruct) {
 
-  // Printing the content of the screenStruct.content variable.
-  cout << screenStruct.name;
+  for (int i = 1; i < screenStruct.size(); i++) {
+    // Modifying the screen content placement.
+    centerContent(screenStruct[i].alignmentX, screenStruct[i].alignmentY);
+    applyColor(screenStruct[i].colorRange);
+    adjustFont(screenStruct[i].fontSize);
+    cout << screenStruct[i].name;
+  }
 }
 
-#endif 
+#endif
