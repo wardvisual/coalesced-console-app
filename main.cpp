@@ -1,3 +1,3 @@
-#include "./src/app.cpp"
+#include "./src/application.cpp"
 
-int main() { renderConsoleApp(); }
+int main() { renderConsoleApplication(); }
