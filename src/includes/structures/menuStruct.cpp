@@ -10,4 +10,4 @@ struct MenuStruct {
   string name;
 };
 
-#endif 
+#endif
