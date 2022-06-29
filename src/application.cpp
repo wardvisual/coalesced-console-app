@@ -22,7 +22,7 @@ using namespace std;
 
 //   screenStruct.alignX = 30;
 //   screenStruct.alignX = 5;
-//   screenStruct.colorRange = 2;
+//   screenStruct.textColor = 2;
 //   screenStruct.content = "Second Sem";
 
 //   modifyScreenContentPlacement(screenStruct);
@@ -33,7 +33,7 @@ using namespace std;
 
 //   screenStruct.alignX = 30;
 //   screenStruct.alignX = 5;
-//   screenStruct.colorRange = 2;
+//   screenStruct.textColor = 2;
 //   screenStruct.content = "Midterm";
 
 //   modifyScreenContentPlacement(screenStruct);
@@ -44,42 +44,41 @@ using namespace std;
 
 //   screenStruct.alignX = 30;
 //   screenStruct.alignX = 5;
-//   screenStruct.colorRange = 2;
+//   screenStruct.textColor = 2;
 //   screenStruct.content = "Final Sem";
 
 //   modifyScreenContentPlacement(screenStruct);
 // }
 
-
 void renderConsoleApplication() {
   generateBorder(88, 32);
+  const int MAX = 3;
 
   MenuStruct secondSemMenu, midtermMenu, finalSemMenu, addedProgramMenu;
 
   secondSemMenu.name = "01. Second Sem";
-  secondSemMenu.maxItem = 3;
-  secondSemMenu.colorRange = 7;
+  secondSemMenu.textColor = 7;
   secondSemMenu.fontSize = 20;
-  secondSemMenu.menuItemAlignmentX = 5;
-  secondSemMenu.menuItemAlignmentY = 6;
-
-  createMenu(secondSemMenu);
+  secondSemMenu.alignmentX = 5;
+  secondSemMenu.alignmentY = 6;
+  secondSemMenu.menuStruct = void() { cout << "secondSemMenu"; };
 
   midtermMenu.name = "02. Midterm";
-  midtermMenu.maxItem = 3;
-  midtermMenu.colorRange = 7;
+  midtermMenu.textColor = 7;
   midtermMenu.fontSize = 20;
-  midtermMenu.menuItemAlignmentX = 5;
-  midtermMenu.menuItemAlignmentY = 7;
-
-  createMenu(midtermMenu);
+  midtermMenu.alignmentX = 5;
+  midtermMenu.alignmentY = 7;
+  midtermMenu.menuStruct = void() { cout << "midtermMenu"; };
 
   finalSemMenu.name = "03. Final Sem";
-  finalSemMenu.maxItem = 3;
-  finalSemMenu.colorRange = 7;
+  finalSemMenu.textColor = 7;
   finalSemMenu.fontSize = 20;
-  finalSemMenu.menuItemAlignmentX = 5;
-  finalSemMenu.menuItemAlignmentY = 8;
+  finalSemMenu.alignmentX = 5;
+  finalSemMenu.alignmentY = 8;
+  finalSemMenu.menuStruct = void() { cout << "finalSemMenu"; };
 
-  createMenu(finalSemMenu);
+  struct MenuStruct menuStruct[MAX] = {secondSemMenu, midtermMenu,
+                                       finalSemMenu};
+
+  createMenu(menuStruct, MAX);
 }
