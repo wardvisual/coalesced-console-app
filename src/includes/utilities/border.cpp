@@ -3,7 +3,7 @@
 using namespace std;
 
 void generateBorder(const int width, const int height) {
-  cout << "\n";
+  cout << "\n\n\n";
   for (int i = 0; i < width - 30; i++) {
     cout << "||";
   }
@@ -25,4 +25,5 @@ void generateBorder(const int width, const int height) {
   for (int i = 0; i < width - 30; i++) {
     cout << "||";
   }
+  cout << "\n\n\n";
 }
