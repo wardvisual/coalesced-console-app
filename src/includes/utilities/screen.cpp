@@ -1,16 +1,15 @@
-#include "../structures/screenStruct.cpp"
+#include "../structures/menuStruct.cpp"
 
 #ifndef SCREEN
 #define SCREEN
 
-void modifyScreenContentPlacement(vector<ScreenStruct> screenStruct) {
-
-  for (int i = 1; i < screenStruct.size(); i++) {
+void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
+  for (int i = 0; i < maxItem; i++) {
     // Modifying the screen content placement.
-    centerContent(screenStruct[i].alignmentX, screenStruct[i].alignmentY);
-    applyColor(screenStruct[i].colorRange);
-    adjustFont(screenStruct[i].fontSize);
-    cout << screenStruct[i].name;
+    centerContent(menuStruct[i].alignmentX, menuStruct[i].alignmentY);
+    applyColor(menuStruct[i].textColor);
+    adjustFont(menuStruct[i].fontSize);
+    cout << menuStruct[i].name;
   }
 }
 
