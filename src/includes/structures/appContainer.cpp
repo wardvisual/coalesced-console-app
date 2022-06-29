@@ -6,5 +6,4 @@
 
 struct ApplicationContainer {
   vector<MenuStruct> menuStruct;
-  //   struct MenuStruct menuStructContainer[MAX_ARRAY_LENGTH_LOW];
-}
+};
