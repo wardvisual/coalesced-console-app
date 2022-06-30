@@ -23,13 +23,13 @@ struct MenuStruct : SeconSemMethods, MidtermMethods, FinalSemMethods {
   string name;
   string type;
   void execute(string type) {
-    if (type == "SECOND_SEM") {
+    if (type == SECOND_SEM) {
       displaySecondSemMenu();
     }
-    if (type == "MID_TERM") {
+    if (type == MID_TERM) {
       displayMidtermMenu();
     }
-    if (type == "FINAL_SEM") {
+    if (type == FINAL_SEM) {
       displayFinalSemMenu();
     }
   };
