@@ -1,3 +1,5 @@
+#include "../constants/apps.cpp"
+
 #ifndef MENU_STRUCT
 #define MENU_STRUCT
 
@@ -19,7 +21,18 @@ struct MenuStruct : SeconSemMethods, MidtermMethods, FinalSemMethods {
   int textColor;
   int fontSize;
   string name;
-  void execute(void callback()) { callback(); };
+  string type;
+  void execute(string type) {
+    if (type == "SECOND_SEM") {
+      displaySecondSemMenu();
+    }
+    if (type == "MID_TERM") {
+      displayMidtermMenu();
+    }
+    if (type == "FINAL_SEM") {
+      displayFinalSemMenu();
+    }
+  };
 };
 
 #endif
