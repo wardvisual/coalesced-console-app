@@ -1,5 +1,8 @@
 #include "windows.h"
 
+#ifndef CPP_COLOR
+#define CPP_COLOR
+
 /**
  * @brief Macro contants for colors
  */
@@ -17,3 +20,5 @@
 void applyColor(int color) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
+
+#endif
