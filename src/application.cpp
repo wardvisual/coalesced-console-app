@@ -2,12 +2,13 @@
 #include <iostream>
 #include <windows.h>
 
-#include "./includes/utilities/border.cpp"
+#include "./includes/helpers/border.cpp"
+#include "./includes/helpers/screen.cpp"
+
 #include "./includes/utilities/color.cpp"
 #include "./includes/utilities/font.cpp"
 #include "./includes/utilities/gotoxy.cpp"
 #include "./includes/utilities/menu.cpp"
-#include "./includes/utilities/screen.cpp"
 
 #include "./includes/constants/apps.cpp"
 #include "./includes/constants/escapeSequence.cpp"
