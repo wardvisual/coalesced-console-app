@@ -15,16 +15,12 @@
 
 // Defining a struct called ScreenStruct.
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
-  char keyCode;
+  char keyCode = _getch();
   int counter = 2;
 
-  for (int i = 0;;) {
+  while (keyCode == ESCAPE_KEY) {
 
     modifyScreenContentPlacement(menuStruct, maxItem);
-
-    /* Read a single character from the console without echoing the character
-     */
-    keyCode = _getch();
 
     if (keyCode == UP_ARROW_KEY && (counter >= 2 && counter <= 3))
       counter--;
@@ -32,13 +28,10 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
     if (keyCode == DOWN_ARROW_KEY && (counter >= 1 && counter <= 2))
       counter++;
 
-    if (keyCode == ESCAPE_KEY)
-      exit(EXIT_FAILURE);
-
     if (keyCode == CURRIAGE_RETURN) {
-      for (int i = 1; i < maxItem; i++) {
+      for (int i = 0; i < maxItem; i++) {
         if (counter == i) {
-          menuStruct->execute();
+          menuStruct->execute(menuStruct[i].type);
         }
       }
     }
