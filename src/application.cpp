@@ -61,24 +61,23 @@ void renderConsoleApplication() {
   secondSemMenu.fontSize = 20;
   secondSemMenu.alignmentX = 5;
   secondSemMenu.alignmentY = 6;
-  secondSemMenu.menuStruct = void() { cout << "secondSemMenu"; };
+  secondSemMenu.displaySecondSemMenu();
 
   midtermMenu.name = "02. Midterm";
   midtermMenu.textColor = 7;
   midtermMenu.fontSize = 20;
   midtermMenu.alignmentX = 5;
   midtermMenu.alignmentY = 7;
-  midtermMenu.menuStruct = void() { cout << "midtermMenu"; };
+  midtermMenu.displayMidtermMenu();
 
   finalSemMenu.name = "03. Final Sem";
   finalSemMenu.textColor = 7;
   finalSemMenu.fontSize = 20;
   finalSemMenu.alignmentX = 5;
   finalSemMenu.alignmentY = 8;
-  finalSemMenu.menuStruct = void() { cout << "finalSemMenu"; };
+  finalSemMenu.displayFinalSemMenu();
 
   struct MenuStruct menuStruct[MAX] = {secondSemMenu, midtermMenu,
                                        finalSemMenu};
-
   createMenu(menuStruct, MAX);
 }
