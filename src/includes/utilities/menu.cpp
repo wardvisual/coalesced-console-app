@@ -10,10 +10,12 @@
 #include "../structures/menuStruct.cpp"
 #include "../structures/screenStruct.cpp"
 
+#include "../helpers/screen.cpp"
 #include "generateId.cpp"
-#include "screen.cpp"
 
-// Defining a struct called ScreenStruct.
+#ifndef CPP_MENU
+#define CPP_MENU
+
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   char keyCode;
   int counter = 2;
@@ -51,3 +53,5 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
     }
   }
 }
+
+#endif
