@@ -13,45 +13,6 @@
 #include "generateId.cpp"
 #include "screen.cpp"
 
-// void displaySecondSemMenu() {
-//   ScreenStruct screenStruct;
-
-//   screenStruct.alignmentX = 30;
-//   screenStruct.alignmentY = 5;
-//   screenStruct.textColor = 2;
-//   screenStruct.name = "Second Sem";
-//   modifyScreenContentPlacement(screenStruct);
-// }
-
-// void displayMidtermMenu() {
-//   ScreenStruct screenStruct;
-
-//   screenStruct.alignmentX = 30;
-//   screenStruct.alignmentY = 5;
-//   screenStruct.textColor = 2;
-//   screenStruct.name = "Midterm";
-
-//   modifyScreenContentPlacement(screenStruct);
-// }
-
-// void displayFinalSemMenu() {
-//   ScreenStruct screenStruct;
-
-//   screenStruct.alignmentX = 30;
-//   screenStruct.alignmentY = 5;
-//   screenStruct.textColor = 2;
-//   screenStruct.name = "Final Sem";
-
-//   modifyScreenContentPlacement(screenStruct);
-// }
-
-struct Item {
-  int id;
-  string text;
-  int textColor;
-  void setAction(void *action()) { action(); };
-};
-
 // Defining a struct called ScreenStruct.
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   char keyCode;
@@ -77,23 +38,10 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
     if (keyCode == CURRIAGE_RETURN) {
       for (int i = 1; i < maxItem; i++) {
         if (counter == i) {
-          menuStruct->execute(menuStruct.callback);
+          menuStruct->execute();
         }
       }
     }
-
-    // if (keyCode == CURRIAGE_RETURN) {
-    //   // carriage return = enter key
-    //   if (counter == 1) {
-    //     cout << "displaySecondSemMenu()";
-    //   }
-    //   if (counter == 2) {
-    //     cout << "displayMidtermMenu()";
-    //   }
-    //   if (counter == 3) {
-    //     cout << "displayFinalSemMenu()";
-    //   }
-    // }
 
     for (int i = 0; i < maxItem; i++) {
       menuStruct[i].textColor = 7; // default color white
