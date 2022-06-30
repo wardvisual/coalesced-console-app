@@ -9,6 +9,7 @@
 #include "./includes/utilities/menu.cpp"
 #include "./includes/utilities/screen.cpp"
 
+#include "./includes/constants/apps.cpp"
 #include "./includes/constants/escapeSequence.cpp"
 #include "./includes/constants/keycode.cpp"
 #include "./includes/constants/runtime.cpp"
@@ -61,21 +62,21 @@ void renderConsoleApplication() {
   secondSemMenu.fontSize = 20;
   secondSemMenu.alignmentX = 5;
   secondSemMenu.alignmentY = 6;
-  secondSemMenu.displaySecondSemMenu();
+  secondSemMenu.type = SECOND_SEM;
 
   midtermMenu.name = "02. Midterm";
   midtermMenu.textColor = 7;
   midtermMenu.fontSize = 20;
   midtermMenu.alignmentX = 5;
   midtermMenu.alignmentY = 7;
-  midtermMenu.displayMidtermMenu();
+  midtermMenu.type = MID_TERM;
 
   finalSemMenu.name = "03. Final Sem";
   finalSemMenu.textColor = 7;
   finalSemMenu.fontSize = 20;
   finalSemMenu.alignmentX = 5;
   finalSemMenu.alignmentY = 8;
-  finalSemMenu.displayFinalSemMenu();
+  finalSemMenu.type = FINAL_SEM;
 
   struct MenuStruct menuStruct[MAX] = {secondSemMenu, midtermMenu,
                                        finalSemMenu};
