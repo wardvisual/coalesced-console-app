@@ -36,7 +36,7 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
 
     if (keyCode == CURRIAGE_RETURN) {
       for (int i = 0; i < maxItem; i++) {
-        if (counter == i) {
+        if (counter == i + 1) {
           menuStruct->execute(menuStruct[i].type);
         }
       }
