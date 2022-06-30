@@ -9,6 +9,7 @@ void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
     centerContent(menuStruct[i].alignmentX, menuStruct[i].alignmentY);
     applyColor(menuStruct[i].textColor);
     adjustFont(menuStruct[i].fontSize);
+
     cout << menuStruct[i].name;
   }
 }
