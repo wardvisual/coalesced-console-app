@@ -1,7 +1,7 @@
 #include "../constants/apps.cpp"
 
-#ifndef MENU_STRUCT
-#define MENU_STRUCT
+#ifndef CPP_MENU_STRUCT
+#define CPP_MENU_STRUCT
 
 struct SeconSemMethods {
   void displaySecondSemMenu() { cout << "second sem"; };
@@ -23,15 +23,14 @@ struct MenuStruct : SeconSemMethods, MidtermMethods, FinalSemMethods {
   string name;
   string type;
   void execute(string type) {
-    if (type == SECOND_SEM) {
+    if (type == SECOND_SEM)
       displaySecondSemMenu();
-    }
-    if (type == MID_TERM) {
+
+    if (type == MID_TERM)
       displayMidtermMenu();
-    }
-    if (type == FINAL_SEM) {
+
+    if (type == FINAL_SEM)
       displayFinalSemMenu();
-    }
   };
 };
 
