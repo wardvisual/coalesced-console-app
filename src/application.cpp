@@ -60,21 +60,21 @@ void renderConsoleApplication() {
   secondSemMenu.name = "01. Second Sem";
   secondSemMenu.textColor = 7;
   secondSemMenu.fontSize = 20;
-  secondSemMenu.alignmentX = 5;
+  secondSemMenu.alignmentX = 4;
   secondSemMenu.alignmentY = 6;
   secondSemMenu.type = SECOND_SEM;
 
   midtermMenu.name = "02. Midterm";
   midtermMenu.textColor = 7;
   midtermMenu.fontSize = 20;
-  midtermMenu.alignmentX = 5;
+  midtermMenu.alignmentX = 4;
   midtermMenu.alignmentY = 7;
   midtermMenu.type = MID_TERM;
 
   finalSemMenu.name = "03. Final Sem";
   finalSemMenu.textColor = 7;
   finalSemMenu.fontSize = 20;
-  finalSemMenu.alignmentX = 5;
+  finalSemMenu.alignmentX = 4;
   finalSemMenu.alignmentY = 8;
   finalSemMenu.type = FINAL_SEM;
 
