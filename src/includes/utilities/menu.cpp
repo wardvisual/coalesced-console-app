@@ -18,7 +18,7 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   char keyCode = _getch();
   int counter = 2;
 
-  while (keyCode == ESCAPE_KEY) {
+  while (keyCode != ESCAPE_KEY) {
 
     modifyScreenContentPlacement(menuStruct, maxItem);
 
