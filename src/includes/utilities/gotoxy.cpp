@@ -1,13 +1,15 @@
+/* Including the library that is used in this utility. */
 #include "windows.h"
 
 #ifndef CPP_GOTOXY
 #define CPP_GOTOXY
-/**
- * @name applyColor
- * @brief this void function is for applying color to the text.
- * @param color {int}
- */
 
+/**
+ * It sets the cursor position to the specified coordinates
+ *
+ * @param x The X coordinate of the console window.
+ * @param y The y coordinate of the console's buffer area.
+ */
 void centerContent(short x, short y) {
   COORD coordinates;
 

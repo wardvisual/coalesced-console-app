@@ -1,6 +1,15 @@
 #ifndef CPP_ERROR_HANDLER
 #define CPP_ERROR_HANDLER
 
-void errorHandler() { cout << "\nhey error"; }
+/**
+ * It takes a string as an argument and prints it to the console
+ *
+ * @param message The message to be displayed.
+ */
+void errorHandler(std::string message) {
+  cout << "\n--------------------";
+  cout << "\n" << message;
+  cout << "\n--------------------";
+}
 
 #endif

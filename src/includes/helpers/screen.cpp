@@ -7,6 +7,12 @@
 #ifndef CPP_SCREEN
 #define CPP_SCREEN
 
+/**
+ * It modifies the screen content placement
+ *
+ * @param menuStruct The array of structs that contains the menu items.
+ * @param maxItem The number of items in the menu.
+ */
 void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
   for (int i = 0; i < maxItem; i++) {
     // Modifying the screen content placement.
@@ -14,7 +20,7 @@ void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
     applyColor(menuStruct[i].textColor);
     adjustFont(menuStruct[i].fontSize);
 
-    cout << menuStruct[i].name;
+    std::cout << menuStruct[i].name;
   }
 }
 

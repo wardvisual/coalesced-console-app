@@ -1,3 +1,4 @@
+/* Including the library that is used in this utility. */
 #include "windows.h"
 
 #ifndef CPP_COLOR
@@ -12,11 +13,10 @@
 #define WHITE 15
 
 /**
- * @name apply_color
- * @brief this void function is for applying color to the text.
- * @param color {int}
+ * It sets the color of the text in the console
+ *
+ * @param color The color you want to apply.
  */
-
 void applyColor(int color) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
