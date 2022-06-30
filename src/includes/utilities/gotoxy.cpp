@@ -1,5 +1,7 @@
 #include "windows.h"
 
+#ifndef CPP_GOTOXY
+#define CPP_GOTOXY
 /**
  * @name applyColor
  * @brief this void function is for applying color to the text.
@@ -14,3 +16,5 @@ void centerContent(short x, short y) {
 
   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
 }
+
+#endif
