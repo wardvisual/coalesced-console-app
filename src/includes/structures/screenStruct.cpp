@@ -1,7 +1,8 @@
 // Defining a struct called ScreenInfo.
 
-#ifndef SCREEN_INFO
-#define SCREEN_INFO
+#ifndef CPP_SCREEN_STRUCT
+#define CPP_SCREEN_STRUCT
+
 struct ScreenStruct {
   int alignmentX;
   int alignmentY;
@@ -9,5 +10,5 @@ struct ScreenStruct {
   int fontSize;
   string name;
 };
-#endif 
 
+#endif
