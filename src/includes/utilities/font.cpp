@@ -1,5 +1,9 @@
-#include <cwchar>
 #include "windows.h"
+#include <cwchar>
+
+
+#ifndef CPP_FONT
+#define CPP_FONT
 
 /**
  * @name applyColor
@@ -9,9 +13,11 @@
 
 void adjustFont(int fontSize) {
   CONSOLE_FONT_INFOEX cfi;
-    
-  cfi.dwFontSize.X = 4; // weight
+
+  cfi.dwFontSize.X = 4;        // weight
   cfi.dwFontSize.Y = fontSize; // height
 
   SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 }
+
+#endif
