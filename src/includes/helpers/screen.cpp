@@ -14,7 +14,7 @@
  * @param maxItem The number of items in the menu.
  */
 void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
-  for (int i = 0; i < maxItem; i++) {
+  for (int i = 0; i <= maxItem; i++) {
     // Modifying the screen content placement.
     centerContent(menuStruct[i].alignmentX, menuStruct[i].alignmentY);
     applyColor(menuStruct[i].textColor);
