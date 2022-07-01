@@ -1,8 +1,8 @@
-#include "../constants/apps.cpp"
+#include "../constants/app.cpp"
 
-#include "../../apps/finals/menu/showMenu.cpp"
-#include "../../apps/midterm/menu/showMenu.cpp"
-#include "../../apps/seconsem/menu/showMenu.cpp"
+// #include "../../core/app/finals/menu/showMenu.cpp"
+// #include "../../core/app/midterm/menu/showMenu.cpp"
+// #include "../../core/app/seconsem/menu/showMenu.cpp"
 
 #ifndef CPP_MENU_STRUCT
 #define CPP_MENU_STRUCT
@@ -17,6 +17,7 @@
  * @property {int} textColor - The color of the text.
  * @property {int} fontSize - The size of the font
  */
+
 struct MenuStruct {
   std::string name;
   std::string type;
@@ -25,17 +26,20 @@ struct MenuStruct {
   int textColor;
   int fontSize;
   void renderItems(std::string type) {
+    if (type == DEVELOPERS_INFORMATION)
+      std::cout << DEVELOPERS_INFORMATION;
+
     if (type == SECOND_SEM)
       std::cout << SECOND_SEM;
-    // displaySecondSemMenu();
 
     if (type == MID_TERM)
       std::cout << MID_TERM;
-    // displayMidtermMenu();
 
     if (type == FINAL_SEM)
       std::cout << FINAL_SEM;
-    // displayFinalsMenu();
+
+    if (type == SUMPPLEMENTARY_APP)
+      std::cout << SUMPPLEMENTARY_APP;
   };
 };
 
