@@ -1,16 +1,8 @@
 #include "../constants/apps.cpp"
 
-struct SeconSemMethods {
-  void displaySecondSemMenu() { std::cout << "second sem"; };
-};
-
-struct MidtermMethods {
-  void displayMidtermMenu() { std::cout << "Midterm "; };
-};
-
-struct FinalSemMethods {
-  void displayFinalSemMenu() { std::cout << "Final sem"; };
-};
+#include "../../apps/finals/menu/showMenu.cpp"
+#include "../../apps/midterm/menu/showMenu.cpp"
+#include "../../apps/seconsem/menu/showMenu.cpp"
 
 #ifndef CPP_MENU_STRUCT
 #define CPP_MENU_STRUCT
@@ -25,22 +17,25 @@ struct FinalSemMethods {
  * @property {int} textColor - The color of the text.
  * @property {int} fontSize - The size of the font
  */
-struct MenuStruct : SeconSemMethods, MidtermMethods, FinalSemMethods {
+struct MenuStruct {
   std::string name;
   std::string type;
   int alignmentX;
   int alignmentY;
   int textColor;
   int fontSize;
-  void execute(std::string type) {
+  void renderItems(std::string type) {
     if (type == SECOND_SEM)
-      displaySecondSemMenu();
+      std::cout << SECOND_SEM;
+    // displaySecondSemMenu();
 
     if (type == MID_TERM)
-      displayMidtermMenu();
+      std::cout << MID_TERM;
+    // displayMidtermMenu();
 
     if (type == FINAL_SEM)
-      displayFinalSemMenu();
+      std::cout << FINAL_SEM;
+    // displayFinalsMenu();
   };
 };
 
