@@ -1,8 +1,8 @@
 /* Including the library. */
 #include <iostream>
 
-#ifndef CPP_BORDER
-#define CPP_BORDER
+#ifndef CPP_BORDER_HELPER
+#define CPP_BORDER_HELPER
 
 /**
  * It prints a border around the console window

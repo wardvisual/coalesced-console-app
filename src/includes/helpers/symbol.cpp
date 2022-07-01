@@ -1,7 +1,5 @@
-using namespace std;
-
-#ifndef CPP_SYMBOL
-#define CPP_SYMBOL
+#ifndef CPP_SYMBOL_HELPER
+#define CPP_SYMBOL_HELPER
 
 /**
  * It takes a string and an integer as arguments and returns a string that is
@@ -12,8 +10,8 @@ using namespace std;
  *
  * @return A string.
  */
-string generateSymbol(string symbol, int count) {
-  string generatedSymbol;
+std::string generateSymbol(std::string symbol, int count) {
+  std::string generatedSymbol;
 
   for (int i = 1; i <= count; i++) {
     generatedSymbol += symbol;

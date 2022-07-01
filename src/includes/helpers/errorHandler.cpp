@@ -1,5 +1,5 @@
-#ifndef CPP_ERROR_HANDLER
-#define CPP_ERROR_HANDLER
+#ifndef CPP_ERROR_HANDLER_HELPER
+#define CPP_ERROR_HANDLER_HELPER
 
 /**
  * It takes a string as an argument and prints it to the console

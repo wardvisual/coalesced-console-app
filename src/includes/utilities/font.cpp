@@ -2,8 +2,8 @@
 #include "windows.h"
 #include <cwchar>
 
-#ifndef CPP_FONT
-#define CPP_FONT
+#ifndef CPP_FONT_UTILITY
+#define CPP_FONT_UTILITY
 
 /**
  * It changes the font size of the console window.

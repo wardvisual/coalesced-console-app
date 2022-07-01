@@ -1,8 +1,8 @@
 /* Including the library that is used in this utility. */
 #include <ctime>
 
-#ifndef CPP_GENERATE_ID
-#define CPP_GENERATE_ID
+#ifndef CPP_GENERATE_ID_UTILITY
+#define CPP_GENERATE_ID_UTILITY
 
 /**
  * It returns the current time in seconds. It is basically for generating a

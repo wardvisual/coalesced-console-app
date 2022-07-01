@@ -1,3 +1,6 @@
+#ifndef CPP_RUNTIME_CONSTANT
+#define CPP_RUNTIME_CONSTANT
+
 
 /* Reports the termination when some error or interruption occurs during the
  execution of the program. */
@@ -6,3 +9,5 @@
  termination of the program, i.e. program has been executed without any error
  or interrupt. */
 #define EXIT_SUCCESS 0
+
+#endif
