@@ -9,9 +9,7 @@
 #include "../constants/runtime.cpp"
 
 /* Including the files in the structures folder. */
-#include "../structures/appContainer.cpp"
 #include "../structures/menuStruct.cpp"
-#include "../structures/screenStruct.cpp"
 
 /* Including the files in the helpers folder. */
 #include "../helpers/screen.cpp"
@@ -57,15 +55,15 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
     /* Checking if the key pressed is the carriage return key. If it is, then it
     will execute the function that is in the execute property. */
     if (keyCode == CURRIAGE_RETURN) {
-      for (int i = 0; i < maxItem; i++) {
+      for (int i = 0; i <= maxItem; i++) {
         if (counter == i + 1) {
-          menuStruct->execute(menuStruct[i].type);
+          menuStruct->renderItems(menuStruct[i].type);
         }
       }
     }
 
     /* Changing the color of the text. */
-    for (int i = 0; i < maxItem; i++) {
+    for (int i = 0; i <= maxItem; i++) {
       menuStruct[i].textColor = 7; // default color white
 
       if (counter == i + 1) {
