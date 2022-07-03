@@ -28,25 +28,21 @@
  */
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   char keyCode;
-  int counter = 2;
+  int counter = 1;
 
-  for (int i = 0;;) {
+  /* Renders default menu. */
+  menuStruct->renderItems("DEVELOPERS_INFORMATION");
+  menuStruct[0].textColor = TEXT_BLUE;
 
-    if (keyCode == ESCAPE_KEY) {
-      exit(1);
-    }
-
+  while (keyCode != ESCAPE_KEY) {
     /* A function that is used to modify the screen content placement. */
     modifyScreenContentPlacement(menuStruct, maxItem);
 
     /* Getting the key code of the key that is pressed. */
     keyCode = _getch();
 
-    /* Checking if the key pressed is the up arrow key and if the counter is
-    greater than or equal to 2 and less than or equal to 3. If it is, then it
-    will decrease the counter by 1. If the key pressed is the down arrow key and
-    if the counter is greater than or equal to 1 and less than or equal to 2,
-    then it will increase the counter by 1. */
+    /* Checking if the key pressed is the up arrow key or the down arrow key. If
+    it is, then it will increment or decrement the counter. */
     if (keyCode == UP_ARROW_KEY &&
         (counter >= 2 && counter <= 3 || counter >= 3 || counter >= 4 ||
          counter >= 5))
@@ -69,10 +65,10 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
 
     /* Changing the color of the text. */
     for (int i = 0; i <= maxItem; i++) {
-      menuStruct[i].textColor = TEXT_WHITE; // default color white
+      menuStruct[i].textColor = TEXT_WHITE;
 
       if (counter == i + 1) {
-        menuStruct[i].textColor = TEXT_BLUE; // color red
+        menuStruct[i].textColor = TEXT_BLUE;
       }
     }
   }
