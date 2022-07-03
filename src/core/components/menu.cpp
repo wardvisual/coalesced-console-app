@@ -23,29 +23,23 @@ using std::cout;
 void menuComponent() {
   const int maxMenuLength = 5;
   std::string generatedSymbol18 = generateSymbol("-", 20);
-  std::string generatedSymbol91 = generateSymbol(" ", 20);
-  std::string generatedSymbol87 = generateSymbol("-", 20);
+  std::string generatedSymbol30 = generateSymbol("-", 30);
 
   MenuStruct developersInformation, secondSemMenu, midtermMenu, finalSemMenu,
       supplementaryMenu;
   TextStruct title;
 
-  // applyBackgroundColor(BG_BLUE);
-  // alignContent(10, 3);
-  // std::cout << generatedSymbol91;
+  applyTextColor(TEXT_BLUE);
+  alignContent(6, 10);
+  std::cout << "*" << generatedSymbol30 << "*";
 
-  // title.textColor = TEXT_BLUE;
-  // title.alignmentX = 6;
-  // title.alignmentY = 10;
-  // title.content = "Main Menu1";
-
-  // text(title);
+  text("Main Menu", TEXT_BLUE, 6, 12);
 
   /* Assigning values to the secondSemMenu struct instance. */
   developersInformation.name = "01. About Us";
   developersInformation.textColor = TEXT_WHITE;
   developersInformation.alignmentX = 6;
-  developersInformation.alignmentY = 12;
+  developersInformation.alignmentY = 14;
   developersInformation.fontSize = 20;
   developersInformation.type = DEVELOPERS_INFORMATION;
 
@@ -53,7 +47,7 @@ void menuComponent() {
   secondSemMenu.textColor = TEXT_WHITE;
   secondSemMenu.fontSize = 20;
   secondSemMenu.alignmentX = 6;
-  secondSemMenu.alignmentY = 14;
+  secondSemMenu.alignmentY = 16;
   secondSemMenu.type = SECOND_SEM;
 
   /* Assigning values to the  midtermMenu struct instance. */
@@ -61,7 +55,7 @@ void menuComponent() {
   midtermMenu.textColor = TEXT_WHITE;
   midtermMenu.fontSize = 20;
   midtermMenu.alignmentX = 6;
-  midtermMenu.alignmentY = 16;
+  midtermMenu.alignmentY = 18;
   midtermMenu.type = MID_TERM;
 
   /* Assigning values to the  finalSemMenu struct instance. */
@@ -69,14 +63,14 @@ void menuComponent() {
   finalSemMenu.textColor = TEXT_WHITE;
   finalSemMenu.fontSize = 20;
   finalSemMenu.alignmentX = 6;
-  finalSemMenu.alignmentY = 18;
+  finalSemMenu.alignmentY = 20;
   finalSemMenu.type = FINAL_SEM;
 
   supplementaryMenu.name = "05. Supplementary Applications";
   supplementaryMenu.textColor = TEXT_WHITE;
   supplementaryMenu.fontSize = 20;
   supplementaryMenu.alignmentX = 6;
-  supplementaryMenu.alignmentY = 20;
+  supplementaryMenu.alignmentY = 22;
   supplementaryMenu.type = SUMPPLEMENTARY_APP;
 
   /* Creating an array of MenuStruct. */
