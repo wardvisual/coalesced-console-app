@@ -34,7 +34,7 @@ void animateTextColor(std::string content) {
     Sleep(1000);
 
     applyTextColor(colors[i]);
-    if (i >= 4)
+    if (i >= sizeof(colors) / sizeof(colors[0]))
       i = 0;
 
     applyTextColor(colors[i]);
