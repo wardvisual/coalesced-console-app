@@ -6,19 +6,15 @@
 #include "../../core/apps/seconsem/menu/showMenu.cpp"
 #include "../../core/apps/supplementary/menu/showMenu.cpp"
 
+#include "../../core/components/header.cpp"
+
 #ifndef CPP_MENU_STRUCT
 #define CPP_MENU_STRUCT
 
-/**
- * It's a struct that contains a string, a string, two ints, an int, an int, and
- * a function that takes a string and returns nothing.
- * @property name - The name of the menu
- * @property type - The type of menu to be displayed.
- * @property {int} alignmentX - The X-axis alignment of the menu.
- * @property {int} alignmentY - The Y coordinate of the menu.
- * @property {int} textColor - The color of the text.
- * @property {int} fontSize - The size of the font
- */
+void cleanUpScreen() {
+  system("clear");
+  headerComponent("GROUP SIX FINAL PROJECT | CONSOLE APPLICATION");
+}
 
 struct MenuStruct {
   std::string name;
@@ -28,20 +24,29 @@ struct MenuStruct {
   int textColor;
   int fontSize;
   void renderItems(std::string type) {
-    if (type == DEVELOPERS_INFORMATION)
+    if (type == DEVELOPERS_INFORMATION) {
+      cleanUpScreen();
       displayAboutUsMenu();
+    }
 
-    if (type == SECOND_SEM)
+    if (type == SECOND_SEM) {
+      cleanUpScreen();
       displaySecondSemMenu();
+    }
 
-    if (type == MID_TERM)
+    if (type == MID_TERM) {
+      cleanUpScreen();
       displayMidtermMenu();
-
-    if (type == FINAL_SEM)
+    }
+    if (type == FINAL_SEM) {
+      cleanUpScreen();
       displayFinalsMenu();
+    }
 
-    if (type == SUMPPLEMENTARY_APP)
+    if (type == SUMPPLEMENTARY_APP) {
+      cleanUpScreen();
       displaySupplementaryMenu();
+    }
   };
 };
 
