@@ -10,7 +10,6 @@
 #include "../../includes/helpers/gotoxy.cpp"
 #include "../../includes/helpers/menu.cpp"
 
-
 /* Including the files in the constants folder. */
 #include "../../includes/constants/app.cpp"
 #include "../../includes/constants/color.cpp"
@@ -28,48 +27,44 @@ void menuComponent() {
       supplementaryMenu;
   TextStruct title;
 
-  applyTextColor(TEXT_BLUE);
-  alignContent(6, 10);
-  std::cout << "*" << generatedSymbol30 << "*";
-
-  text("Main Menu", TEXT_BLUE, 6, 12);
+  text("Main Menu", TEXT_BLUE, 2, 5);
 
   /* Assigning values to the secondSemMenu struct instance. */
-  developersInformation.name = "01. About Us";
+  developersInformation.name = "01. About the Project";
   developersInformation.textColor = TEXT_WHITE;
-  developersInformation.alignmentX = 6;
-  developersInformation.alignmentY = 14;
+  developersInformation.alignmentX = 2;
+  developersInformation.alignmentY = 8;
   developersInformation.fontSize = 20;
   developersInformation.type = DEVELOPERS_INFORMATION;
 
   secondSemMenu.name = "02. Second Sem Applications";
   secondSemMenu.textColor = TEXT_WHITE;
   secondSemMenu.fontSize = 20;
-  secondSemMenu.alignmentX = 6;
-  secondSemMenu.alignmentY = 16;
+  secondSemMenu.alignmentX = 2;
+  secondSemMenu.alignmentY = 10;
   secondSemMenu.type = SECOND_SEM;
 
   /* Assigning values to the  midtermMenu struct instance. */
   midtermMenu.name = "03. Midterm Applications";
   midtermMenu.textColor = TEXT_WHITE;
   midtermMenu.fontSize = 20;
-  midtermMenu.alignmentX = 6;
-  midtermMenu.alignmentY = 18;
+  midtermMenu.alignmentX = 2;
+  midtermMenu.alignmentY = 12;
   midtermMenu.type = MID_TERM;
 
   /* Assigning values to the  finalSemMenu struct instance. */
   finalSemMenu.name = "04. Final Sem Applications";
   finalSemMenu.textColor = TEXT_WHITE;
   finalSemMenu.fontSize = 20;
-  finalSemMenu.alignmentX = 6;
-  finalSemMenu.alignmentY = 20;
+  finalSemMenu.alignmentX = 2;
+  finalSemMenu.alignmentY = 14;
   finalSemMenu.type = FINAL_SEM;
 
   supplementaryMenu.name = "05. Supplementary Applications";
   supplementaryMenu.textColor = TEXT_WHITE;
   supplementaryMenu.fontSize = 20;
-  supplementaryMenu.alignmentX = 6;
-  supplementaryMenu.alignmentY = 22;
+  supplementaryMenu.alignmentX = 2;
+  supplementaryMenu.alignmentY = 16;
   supplementaryMenu.type = SUMPPLEMENTARY_APP;
 
   /* Creating an array of MenuStruct. */
