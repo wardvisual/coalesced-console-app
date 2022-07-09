@@ -5,7 +5,7 @@
 #include "../../includes/structures/textStruct.cpp"
 
 /* Including the files in the utilities folder. */
-#include "../../includes/utilities/gotoxy.cpp"
+#include "../../includes/helpers/gotoxy.cpp"
 
 void text(std::string content, int textColor, int alignmentX, int alignmentY) {
   applyTextColor(textColor);
