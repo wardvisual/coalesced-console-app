@@ -6,11 +6,10 @@
 #include "../../includes/structures/textStruct.cpp"
 
 /* Including the files in the helpers folder. */
+#include "../../includes/helpers/color.cpp"
+#include "../../includes/helpers/gotoxy.cpp"
 #include "../../includes/helpers/menu.cpp"
 
-/* Including the files in the utilities folder. */
-#include "../../includes/utilities/color.cpp"
-#include "../../includes/utilities/gotoxy.cpp"
 
 /* Including the files in the constants folder. */
 #include "../../includes/constants/app.cpp"
