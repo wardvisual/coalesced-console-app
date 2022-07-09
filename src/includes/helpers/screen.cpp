@@ -4,9 +4,9 @@
 
 #include "../structures/menuStruct.cpp"
 
-#include "../utilities/color.cpp"
-#include "../utilities/font.cpp"
-#include "../utilities/gotoxy.cpp"
+#include "./color.cpp"
+#include "./font.cpp"
+#include "./gotoxy.cpp"
 
 /**
  * It modifies the screen content placement
