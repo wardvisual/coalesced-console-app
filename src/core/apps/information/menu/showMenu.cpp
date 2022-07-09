@@ -1,6 +1,7 @@
 #ifndef CPP_INFORMATION_MENU
 #define CPP_INFORMATION_MENU
 
+#include "../../../../includes/constants/alignment.cpp"
 #include "../../../../includes/constants/color.cpp"
 #include "../../../../includes/helpers/color.cpp"
 #include "../../../../includes/helpers/gotoxy.cpp"
@@ -9,40 +10,53 @@
 #include "../../../components/text.cpp"
 
 void displayAboutUsMenu() {
-  int MAX = 6;
-  std::string developers[MAX] = {
+  int maxArraySize = 6;
+  std::string developers[maxArraySize] = {
       "Manlangit, Eduardo Jr.\n", "Galindo, Mark Lim.\n",
       "Cortez, Fletcher.\n",      "Santarin, Khenjie.\n",
       "Gagauiz, Angelica.\n",     "Abdon, Williane Antonette.\n"};
 
   /* Text Heading. */
-  text("Description:", TEXT_BLUE, 34, 10);
-  text("Programming Language(s) and Tools:", TEXT_BLUE, 34, 20);
-  text("Our Development Process:", TEXT_BLUE, 34, 25);
-  text("Developers:", TEXT_BLUE, 100, 10);
-  text("Professor:", TEXT_BLUE, 100, 25);
+  text("Description:", TEXT_BLUE, ALIGNMENTX34, ALIGNMENTY10);
+
+  text("Programming Language(s) and Tools:", TEXT_BLUE, ALIGNMENTX34,
+       ALIGNMENTY20);
+
+  text("Our Development Process:", TEXT_BLUE, ALIGNMENTX34, ALIGNMENTY25);
+
+  text("Developers:", TEXT_BLUE, ALIGNMENTX100, ALIGNMENTY10);
+
+  text("Professor:", TEXT_BLUE, ALIGNMENTX100, ALIGNMENTY25);
 
   /* Text Paragraph. */
   text("A project submitted for fulfillment for the final semester", TEXT_WHITE,
-       34, 12);
+       ALIGNMENTX34, ALIGNMENTY12);
+
   text("of the first year of computer science at the Eulogio Amang", TEXT_WHITE,
-       34, 13);
+       ALIGNMENTX34, ALIGNMENTY13);
+
   text("Rodriguez Institute of Science and Technology General Mariano",
-       TEXT_WHITE, 34, 14);
-  text("Alvarez, Cavite. We proudly present this wonderful and", TEXT_WHITE, 34,
-       15);
-  text("interactive console-based application made in the C++", TEXT_WHITE, 34,
-       16);
-  text("programming language.", TEXT_WHITE, 34, 17);
-  text("C++ Programming Language, Visual Studio Code/C++ IDEs.", TEXT_WHITE, 34,
-       22);
+       TEXT_WHITE, ALIGNMENTX34, ALIGNMENTY14);
+
+  text("Alvarez, Cavite. We proudly present this wonderful and", TEXT_WHITE,
+       ALIGNMENTX34, ALIGNMENTY15);
+
+  text("interactive console-based application made in the C++", TEXT_WHITE,
+       ALIGNMENTX34, ALIGNMENTY16);
+
+  text("programming language.", TEXT_WHITE, ALIGNMENTX34, ALIGNMENTY17);
+
+  text("C++ Programming Language, Visual Studio Code/C++ IDEs.", TEXT_WHITE,
+       ALIGNMENTX34, ALIGNMENTY22);
+
   text("Planning, Implementation/Development, Code Refactoring.", TEXT_WHITE,
-       34, 27);
-  text("Mrs. Catherine S. Dumpit.", TEXT_WHITE, 100, 27);
+       ALIGNMENTX34, ALIGNMENTY27);
+
+  text("Mrs. Catherine S. Dumpit.", TEXT_WHITE, ALIGNMENTX100, ALIGNMENTY27);
 
   /* Displaying all the members of the project */
-  for (int i = 0; i < MAX; i++) {
-    text(developers[i] + "\n", TEXT_WHITE, 100, 12 + i + i);
+  for (int i = 0; i < maxArraySize; i++) {
+    text(developers[i] + "\n", TEXT_WHITE, ALIGNMENTX100, ALIGNMENTY12 + i + i);
   }
 }
 
