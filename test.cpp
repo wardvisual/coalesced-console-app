@@ -166,6 +166,8 @@ void checkAndValidateGradeResult(float generalPointAverage) {
     cout << "\nCongrats! You are qualified to be an honor student";
   }
 
+  generalPointAverage = 0;
+
   cout << endl << HORIZONTAL << endl;
 }
 
