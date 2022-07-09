@@ -4,9 +4,9 @@
 
 #include "../../../../includes/constants/color.cpp"
 
-#include "../../../../includes/utilities/color.cpp"
+#include "../../../../includes/helpers/color.cpp"
 
-#include "../../../../includes/utilities/gotoxy.cpp"
+#include "../../../../includes/helpers/gotoxy.cpp"
 
 #include "../../../../includes/helpers/symbol.cpp"
 
