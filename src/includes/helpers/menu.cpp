@@ -30,10 +30,6 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   char keyCode;
   int counter = 1;
 
-  /* Renders default menu. */
-  menuStruct->renderItems("DEVELOPERS_INFORMATION");
-  menuStruct[0].textColor = TEXT_BLUE;
-
   while (keyCode != ESCAPE_KEY) {
     /* A function that is used to modify the screen content placement. */
     modifyScreenContentPlacement(menuStruct, maxItem);
