@@ -12,7 +12,6 @@
 #include "../structures/menuStruct.cpp"
 
 /* Including the files in the helpers folder. */
-#include "./generateId.cpp"
 #include "./screen.cpp"
 
 #ifndef CPP_MENU_HELPER
