@@ -5,7 +5,6 @@
 #include "../structures/menuStruct.cpp"
 
 #include "./color.cpp"
-#include "./font.cpp"
 #include "./gotoxy.cpp"
 
 /**
@@ -19,7 +18,6 @@ void modifyScreenContentPlacement(struct MenuStruct menuStruct[], int maxItem) {
     // Modifying the screen content placement.
     alignContent(menuStruct[i].alignmentX, menuStruct[i].alignmentY);
     applyTextColor(menuStruct[i].textColor);
-    adjustFont(menuStruct[i].fontSize);
 
     std::cout << menuStruct[i].name;
   }
