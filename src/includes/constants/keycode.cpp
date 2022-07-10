@@ -1,3 +1,10 @@
+/**
+ * @file /src/includes/constants/keyCode.cpp
+ * @brief A macro constant that is used to determine what key code is on the
+ * keyboard.
+ *
+ * */
+
 #ifndef CPP_KEYCODE_CONSTANT
 #define CPP_KEYCODE_CONSTANT
 
