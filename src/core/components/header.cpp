@@ -7,33 +7,28 @@
 #include "../../includes/helpers/symbol.cpp"
 
 /* Including the files in the constants folder. */
+#include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
+
+#include "text.cpp"
 
 void headerComponent(std::string title) {
   std::string generatedSymbol18 = generateSymbol("-", 18);
   std::string generatedSymbol91 = generateSymbol(" ", 91);
   std::string generatedSymbol80 = generateSymbol("-", 80);
 
-  applyBackgroundColor(BG_BLUE);
-  alignContent(34, 3);
-  std::cout << generatedSymbol91;
+  text(generatedSymbol91, BG_BLUE, ALIGNMENTX34, ALIGNMENTY3);
 
-  applyTextColor(TEXT_BLUE);
-  alignContent(32, 4);
-  std::cout << "|| >>>> " << generatedSymbol80 << " <<<< || ";
+  text("|| >>>> " + generatedSymbol80 + " <<<< || ", TEXT_BLUE, ALIGNMENTX32,
+       ALIGNMENTY4);
 
-  applyTextColor(TEXT_WHITE);
-  alignContent(33, 5);
-  std::cout << " >>>> " + generatedSymbol18 + title + generatedSymbol18 +
-                   " <<<<< ";
+  text(" >>>> " + generatedSymbol18 + title + generatedSymbol18 + " <<<<< ",
+       TEXT_WHITE, ALIGNMENTX33, ALIGNMENTY5);
 
-  applyTextColor(TEXT_BLUE);
-  alignContent(32, 6);
-  std::cout << "|| >>>> " << generatedSymbol80 << " <<<< || ";
+  text("|| >>>> " + generatedSymbol80 + " <<<< || ", TEXT_BLUE, ALIGNMENTX32,
+       ALIGNMENTY6);
 
-  applyBackgroundColor(BG_BLUE);
-  alignContent(34, 7);
-  std::cout << generatedSymbol91;
+  text(generatedSymbol91, BG_BLUE, ALIGNMENTX34, ALIGNMENTY7);
 
   std::cout << "\n\n";
 }
