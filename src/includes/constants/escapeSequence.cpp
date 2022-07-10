@@ -1,3 +1,10 @@
+/**
+ * @file /src/includes/constants/escapeSequence.cpp
+ * @brief A macro constant that is used to have a single file for every escape
+ * sequence character.
+ *
+ * */
+
 #ifndef CPP_ESCAPE_SEQUENCE_CONSTANT
 #define CPP_ESCAPE_SEQUENCE_CONSTANT
 
