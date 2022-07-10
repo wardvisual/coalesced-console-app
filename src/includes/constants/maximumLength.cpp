@@ -1,3 +1,9 @@
+/**
+ * @file /src/includes/constants/maximumLength.cpp
+ * @brief A macro constant that is used to supply a value for the array size.
+ *
+ * */
+
 #ifndef CPP_MAX_ARRAY_LENGTH_CONSTANT
 #define CPP_MAX_ARRAY_LENGTH_CONSTANT
 
