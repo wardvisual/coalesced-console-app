@@ -1,3 +1,10 @@
+/**
+ * @file /src/includes/constants/alignment.cpp
+ * @brief A macro constant that is used to supply the value of gotoxy
+ * coordinates. This constant is related to
+ * src/includes/helpers/gotoxy.cpp.
+ */
+
 #ifndef CPP_ALIGNMENT_CONSTANT
 #define CPP_ALIGNMENT_CONSTANT
 
