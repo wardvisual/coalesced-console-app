@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/menu.cpp
+ * @brief  A helper that is used to create a menu.
+ */
+
 /* Including the libraries that are used in this utility. */
 #include "windows.h"
 #include <conio.h>
@@ -6,13 +11,11 @@
 #include "../constants/color.cpp"
 #include "../constants/escapeSequence.cpp"
 #include "../constants/keycode.cpp"
-#include "../constants/runtime.cpp"
 
 /* Including the files in the structures folder. */
 #include "../structures/menuStruct.cpp"
 
-/* Including the files in the helpers folder. */
-#include "./screen.cpp"
+#include "../../core/components/text.cpp"
 
 #ifndef CPP_MENU_HELPER
 #define CPP_MENU_HELPER
@@ -28,8 +31,10 @@ void createMenu(struct MenuStruct menuStruct[], int maxItem) {
   int counter = 1;
 
   while (keyCode != ESCAPE_KEY) {
-    /* A function that is used to modify the screen content placement. */
-    modifyScreenContentPlacement(menuStruct, maxItem);
+    for (int i = 0; i <= maxItem; i++) {
+      text(menuStruct[i].name, menuStruct[i].textColor,
+           menuStruct[i].alignmentX, menuStruct[i].alignmentY);
+    }
 
     /* Getting the key code of the key that is pressed. */
     keyCode = _getch();
