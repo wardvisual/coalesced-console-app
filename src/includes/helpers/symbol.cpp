@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/symbol.cpp
+ * @brief  A helper that is used to generate a symbol.
+ */
+
 #ifndef CPP_SYMBOL_HELPER
 #define CPP_SYMBOL_HELPER
 
