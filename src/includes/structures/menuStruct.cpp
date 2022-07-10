@@ -13,7 +13,7 @@
 
 void cleanUpScreen() {
   system("clear");
-  headerComponent("GROUP SIX FINAL PROJECT | CONSOLE APPLICATION");
+  headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
 }
 
 struct MenuStruct {
@@ -22,7 +22,6 @@ struct MenuStruct {
   int alignmentX;
   int alignmentY;
   int textColor;
-  int fontSize;
   void renderItems(std::string type) {
     if (type == DEVELOPERS_INFORMATION) {
       cleanUpScreen();
