@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/gotoxy.cpp
+ * @brief  A helper that is used to align corrdinates of a content.
+ */
+
 /* Including the library that is used in this utility. */
 #include "windows.h"
 
