@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/errorHandler.cpp
+ * @brief  A helper that is used to handle an error.
+ */
+
 #ifndef CPP_ERROR_HANDLER_HELPER
 #define CPP_ERROR_HANDLER_HELPER
 
