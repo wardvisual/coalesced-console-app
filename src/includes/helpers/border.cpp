@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/border.cpp
+ * @brief A helper that is used to generate a border line.
+ */
+
 /* Including the library. */
 #include <iostream>
 
