@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/helpers/color.cpp
+ * @brief A helper that is used to apply a color to content.
+ */
+
 /* Including the library that is used in this utility. */
 #include "windows.h"
 
