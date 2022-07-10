@@ -1,3 +1,8 @@
+/**
+ * @file /src/includes/structures/menuStruct.cpp
+ * @brief  A structure that is used to create a menu.
+ */
+
 #include "../constants/app.cpp"
 
 #include "../../core/apps/finals/menu/showMenu.cpp"
@@ -14,6 +19,7 @@
 void cleanUpScreen() {
   system("clear");
   headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
+  mainMenuHeaderComponent(" MAIN MENU ");
 }
 
 struct MenuStruct {
