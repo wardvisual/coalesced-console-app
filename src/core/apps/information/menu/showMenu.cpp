@@ -14,50 +14,59 @@ void displayAboutUsMenu() {
   std::string developers[maxArraySize] = {
       "Manlangit, Eduardo Jr.\n", "Galindo, Mark Lim.\n",
       "Cortez, Fletcher.\n",      "Santarin, Khenjie.\n",
-      "Gagauiz, Angelica.\n",     "Abdon, Williane Antonette.\n"};
+      "Gagauis, Angelika.\n",     "Abdon, Williane Antonette.\n"};
 
   /* Text Heading. */
-  text("Description:", TEXT_BLUE, ALIGNMENTX34, ALIGNMENTY10);
+  text("Description:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
 
-  text("Programming Language(s) and Tools:", TEXT_BLUE, ALIGNMENTX34,
-       ALIGNMENTY20);
+  text("Programming Language(s) and Tools:", TEXT_BLUE, ALIGNMENTX38,
+       ALIGNMENTY21);
 
-  text("Our Development Process:", TEXT_BLUE, ALIGNMENTX34, ALIGNMENTY25);
+  text("Our Development Process:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY26);
 
-  text("Developers:", TEXT_BLUE, ALIGNMENTX100, ALIGNMENTY10);
+  text("Developers:", TEXT_BLUE, ALIGNMENTX100 + ALIGNMENTX5, ALIGNMENTY10);
 
-  text("Professor:", TEXT_BLUE, ALIGNMENTX100, ALIGNMENTY25);
+  text("Professor:", TEXT_BLUE, ALIGNMENTX100 + ALIGNMENTX5, ALIGNMENTY25);
 
   /* Text Paragraph. */
   text("A project submitted for fulfillment for the final semester", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY12);
+       ALIGNMENTX38, ALIGNMENTY12);
 
   text("of the first year of computer science at the Eulogio Amang", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY13);
+       ALIGNMENTX38, ALIGNMENTY13);
 
   text("Rodriguez Institute of Science and Technology General Mariano",
-       TEXT_WHITE, ALIGNMENTX34, ALIGNMENTY14);
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY14);
 
-  text("Alvarez, Cavite. We proudly present this wonderful and", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY15);
+  text("Alvarez, Cavite.", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY15);
 
-  text("interactive console-based application made in the C++", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY16);
+  text("We proudly present this wonderful and interactive console-based",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY17);
 
-  text("programming language.", TEXT_WHITE, ALIGNMENTX34, ALIGNMENTY17);
+  text("application made in the C++ programming language.", TEXT_WHITE,
+       ALIGNMENTX38, ALIGNMENTY18);
 
   text("C++ Programming Language, Visual Studio Code/C++ IDEs.", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY22);
+       ALIGNMENTX38, ALIGNMENTY23);
 
   text("Planning, Implementation/Development, Code Refactoring.", TEXT_WHITE,
-       ALIGNMENTX34, ALIGNMENTY27);
+       ALIGNMENTX38, ALIGNMENTY28);
 
-  text("Mrs. Catherine S. Dumpit.", TEXT_WHITE, ALIGNMENTX100, ALIGNMENTY27);
+  text("Mrs. Catherine S. Dumpit.", TEXT_WHITE, ALIGNMENTX100 + ALIGNMENTX5,
+       ALIGNMENTY27);
 
   /* Displaying all the members of the project */
   for (int i = 0; i < maxArraySize; i++) {
-    text(developers[i] + "\n", TEXT_WHITE, ALIGNMENTX100, ALIGNMENTY12 + i + i);
+    text(developers[i] + "\n", TEXT_WHITE, ALIGNMENTX100 + ALIGNMENTX5,
+         ALIGNMENTY12 + i + i);
   }
+
+  std::string name;
+
+  std::cout << "\n\nname: ";
+  std::cin >> name;
+
+  std::cout << "hello";
 }
 
 #endif
