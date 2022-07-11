@@ -53,6 +53,9 @@ struct MenuStruct {
       displaySupplementaryMenu();
     }
   };
+  // void renderItems(void(*callbackFn)) {
+  //   callbackFn();
+  // };
 };
 
 #endif
