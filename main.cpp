@@ -11,4 +11,10 @@
  * It renders a consoleAapplication function
  */
 
+void newFunction() { std::cout << "new function"; }
+// new comment
+// 10:11 AM
+// ang angas
+// tangina
+
 int main() { renderConsoleApplication(); }
