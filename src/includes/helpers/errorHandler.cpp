@@ -11,10 +11,6 @@
  *
  * @param message The message to be displayed.
  */
-void errorHandler(std::string message) {
-  cout << "\n--------------------";
-  cout << "\n" << message;
-  cout << "\n--------------------";
-}
+bool hasAnError(std::string message) {}
 
 #endif
