@@ -9,6 +9,8 @@
 
 #define BG_BLUE 30
 #define BG_LIGHT_GREEN 50
+#define BG_LIGHT_RED 70
+#define BG_WHITE 120
 
 #define TEXT_BLUE 1
 #define TEXT_GREEN 2
