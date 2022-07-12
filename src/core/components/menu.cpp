@@ -24,12 +24,12 @@
 #include "text.cpp"
 
 void menuComponent() {
-  const int maxMenuLength = 5;
+  const int maxMenuItem = 6;
   std::string generatedSymbol18 = generateSymbol("-", 20);
   std::string generatedSymbol30 = generateSymbol("-", 30);
 
   MenuStruct developersInformation, secondSemMenu, midtermMenu, finalSemMenu,
-      supplementaryMenu;
+      supplementaryMenu, exitApplication;
 
   mainMenuHeaderComponent(" MAIN MENU ");
   /* Assigning values to the secondSemMenu struct instance. */
@@ -65,14 +65,20 @@ void menuComponent() {
   supplementaryMenu.alignmentY = ALIGNMENTX18;
   supplementaryMenu.type = SUMPPLEMENTARY_APP;
 
+  exitApplication.name = "06. Exit";
+  exitApplication.textColor = TEXT_WHITE;
+  exitApplication.alignmentX = ALIGNMENTX2;
+  exitApplication.alignmentY = ALIGNMENTX20;
+  exitApplication.type = EXIT_APPLICATION;
+
   /* Creating an array of MenuStruct. */
-  struct MenuStruct menuStruct[maxMenuLength] = {
-      developersInformation, secondSemMenu, midtermMenu, finalSemMenu,
-      supplementaryMenu};
+  struct MenuStruct menuStruct[maxMenuItem] = {
+      developersInformation, secondSemMenu,     midtermMenu,
+      finalSemMenu,          supplementaryMenu, exitApplication};
 
   /* Calling the function createMenu() and passing the array of MenuStruct and
-the maxMenuLength value. */
-  createMenu(menuStruct, maxMenuLength);
+the maxMenuItem value. */
+  createMenu(menuStruct, maxMenuItem);
 }
 
 #endif
