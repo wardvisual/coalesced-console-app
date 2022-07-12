@@ -8,7 +8,6 @@
 
 struct MenuStruct {
   std::string name;
-  std::string type;
   int alignmentX;
   int alignmentY;
   int textColor;
