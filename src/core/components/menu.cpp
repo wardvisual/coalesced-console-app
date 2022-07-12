@@ -21,10 +21,13 @@
 #include "../../includes/constants/color.cpp"
 
 #include "header.cpp"
+#include "input.cpp"
 #include "text.cpp"
 
 void menuComponent() {
   const int maxMenuItem = 6;
+  int userInput;
+
   std::string generatedSymbol18 = generateSymbol("-", 20);
   std::string generatedSymbol30 = generateSymbol("-", 30);
 
@@ -76,9 +79,11 @@ void menuComponent() {
       developersInformation, secondSemMenu,     midtermMenu,
       finalSemMenu,          supplementaryMenu, exitApplication};
 
+  input<int>("Input", userInput);
+
   /* Calling the function createMenu() and passing the array of MenuStruct and
 the maxMenuItem value. */
-  createMenu(menuStruct, maxMenuItem);
+  createMenu(menuStruct, maxMenuItem, userInput);
 }
 
 #endif
