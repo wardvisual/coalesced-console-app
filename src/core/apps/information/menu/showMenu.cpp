@@ -60,13 +60,6 @@ void displayAboutUsMenu() {
     text(developers[i] + "\n", TEXT_WHITE, ALIGNMENTX100 + ALIGNMENTX5,
          ALIGNMENTY12 + i + i);
   }
-
-  std::string name;
-
-  std::cout << "\n\nname: ";
-  std::cin >> name;
-
-  std::cout << "hello";
 }
 
 #endif
