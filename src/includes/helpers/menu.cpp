@@ -76,15 +76,5 @@
 //     // system("cls");
 //   }
 // }
-void createMenu(struct MenuStruct menuStruct[], int maxItem, int userInput) {
-  for (int i = 0; i < maxItem; i++) {
-    text(menuStruct[i].name, TEXT_WHITE, menuStruct[i].alignmentX,
-         menuStruct[i].alignmentY);
-
-    if (userInput == i) {
-      menuStruct[i].renderItems(menuStruct[i].type);
-    }
-  }
-}
 
 #endif
