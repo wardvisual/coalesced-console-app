@@ -27,48 +27,53 @@
  * @param maxItem The number of items in the menu.
  */
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
-  char keyStroke;
-  int counter = 1;
+  int ptr = 0;
+  int keyStroke = 0;
+  int color[] = {TEXT_WHITE, TEXT_BLUE};
+  int index[maxItem];
+  index[ptr] = 1;
+
+  for (int i = 1; i < maxItem; i++)
+    index[i] = ptr;
 
   while (keyStroke != ESCAPE_KEY) {
-    for (int i = 0; i <= maxItem; i++) {
-      text(menuStruct[i].name, menuStruct[i].textColor,
-           menuStruct[i].alignmentX, menuStruct[i].alignmentY);
+    for (int i = 0; i < maxItem; i++) {
+      text(menuStruct[i].name, color[index[i]], menuStruct[i].alignmentX,
+           menuStruct[i].alignmentY);
     }
 
-    /* Getting the key code of the key that is pressed. */
     keyStroke = _getch();
+    fflush(stdin);
 
-    /* Checking if the key pressed is the up arrow key or the down arrow key. If
-    it is, then it will increment or decrement the counter. */
-    if (keyStroke == UP_ARROW_KEY &&
-        (counter >= 2 && counter <= 3 || counter >= 3 || counter >= 4 ||
-         counter >= 5))
-      counter--;
+    // UP_ARROW: 72
+    if (keyStroke == UP_ARROW_KEY) {
+      index[ptr] = 0;
+      if (ptr == 0)
+        ptr = maxItem - 1;
+      else
+        ptr--;
+      index[ptr] = 1;
+    }
 
-    if (keyStroke == DOWN_ARROW_KEY &&
-        (counter >= 1 && counter <= 2 || counter <= 3 || counter <= 4 ||
-         counter <= 5))
-      counter++;
+    // DOWN_ARROW: 80
+    if (keyStroke == DOWN_ARROW_KEY) {
+      index[ptr] = 0;
+      if (ptr == maxItem - 1)
+        ptr = 0;
+      else
+        ptr++;
+      index[ptr] = 1;
+    }
 
-    /* Checking if the key pressed is the carriage return key. If it is, then it
-    will execute the function that is in the execute property. */
     if (keyStroke == CURRIAGE_RETURN) {
       for (int i = 0; i <= maxItem; i++) {
-        if (counter == i + 1) {
-          menuStruct->renderItems(menuStruct[i].type);
+        if (ptr == i) {
+          menuStruct[i].renderItems(menuStruct[i].type);
         }
       }
     }
 
-    /* Changing the color of the text. */
-    for (int i = 0; i <= maxItem; i++) {
-      menuStruct[i].textColor = TEXT_WHITE;
-
-      if (counter == i + 1) {
-        menuStruct[i].textColor = TEXT_BLUE;
-      }
-    }
+    // system("cls");
   }
 }
 
