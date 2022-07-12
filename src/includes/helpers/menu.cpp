@@ -10,7 +10,7 @@
 /* Including the files in the constants folder. */
 #include "../constants/color.cpp"
 #include "../constants/escapeSequence.cpp"
-#include "../constants/keycode.cpp"
+#include "../constants/keyStroke.cpp"
 
 /* Including the files in the structures folder. */
 #include "../structures/menuStruct.cpp"
@@ -27,33 +27,33 @@
  * @param maxItem The number of items in the menu.
  */
 void createMenu(struct MenuStruct menuStruct[], int maxItem) {
-  char keyCode;
+  char keyStroke;
   int counter = 1;
 
-  while (keyCode != ESCAPE_KEY) {
+  while (keyStroke != ESCAPE_KEY) {
     for (int i = 0; i <= maxItem; i++) {
       text(menuStruct[i].name, menuStruct[i].textColor,
            menuStruct[i].alignmentX, menuStruct[i].alignmentY);
     }
 
     /* Getting the key code of the key that is pressed. */
-    keyCode = _getch();
+    keyStroke = _getch();
 
     /* Checking if the key pressed is the up arrow key or the down arrow key. If
     it is, then it will increment or decrement the counter. */
-    if (keyCode == UP_ARROW_KEY &&
+    if (keyStroke == UP_ARROW_KEY &&
         (counter >= 2 && counter <= 3 || counter >= 3 || counter >= 4 ||
          counter >= 5))
       counter--;
 
-    if (keyCode == DOWN_ARROW_KEY &&
+    if (keyStroke == DOWN_ARROW_KEY &&
         (counter >= 1 && counter <= 2 || counter <= 3 || counter <= 4 ||
          counter <= 5))
       counter++;
 
     /* Checking if the key pressed is the carriage return key. If it is, then it
     will execute the function that is in the execute property. */
-    if (keyCode == CURRIAGE_RETURN) {
+    if (keyStroke == CURRIAGE_RETURN) {
       for (int i = 0; i <= maxItem; i++) {
         if (counter == i + 1) {
           menuStruct->renderItems(menuStruct[i].type);
