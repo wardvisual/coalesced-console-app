@@ -22,68 +22,21 @@
 #include "../../includes/constants/color.cpp"
 
 #include "../../core/apps/information/menu/showMenu.cpp"
+#include "../../core/apps/midterm/menu/showMenu.cpp"
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
 
 #include "header.cpp"
 #include "input.cpp"
 #include "text.cpp"
 
+void menuItems(int selected);
+
 void menuComponent() {
   const int maxMenuItem = 6;
   int userInput, keyStroke = 0;
 
-  std::string generatedSymbol18 = generateSymbol("-", 20);
-  std::string generatedSymbol30 = generateSymbol("-", 30);
-
-  MenuStruct developersInformation, secondSemMenu, midtermMenu, finalSemMenu,
-      supplementaryMenu, exitApplication;
-
   mainMenuHeaderComponent(" MAIN MENU ");
-  /* Assigning values to the secondSemMenu struct instance. */
-  developersInformation.name = "01. About the Project";
-  developersInformation.textColor = TEXT_WHITE;
-  developersInformation.alignmentX = ALIGNMENTX2;
-  developersInformation.alignmentY = ALIGNMENTY10;
-  developersInformation.type = DEVELOPERS_INFORMATION;
-
-  secondSemMenu.name = "02. Second Sem Applications";
-  secondSemMenu.textColor = TEXT_WHITE;
-  secondSemMenu.alignmentX = ALIGNMENTX2;
-  secondSemMenu.alignmentY = ALIGNMENTY12;
-  secondSemMenu.type = SECOND_SEM;
-
-  /* Assigning values to the  midtermMenu struct instance. */
-  midtermMenu.name = "03. Midterm Applications";
-  midtermMenu.textColor = TEXT_WHITE;
-  midtermMenu.alignmentX = ALIGNMENTX2;
-  midtermMenu.alignmentY = ALIGNMENTX14;
-  midtermMenu.type = MID_TERM;
-
-  /* Assigning values to the  finalSemMenu struct instance. */
-  finalSemMenu.name = "04. Final Sem Applications";
-  finalSemMenu.textColor = TEXT_WHITE;
-  finalSemMenu.alignmentX = ALIGNMENTX2;
-  finalSemMenu.alignmentY = ALIGNMENTX16;
-  finalSemMenu.type = FINAL_SEM;
-
-  supplementaryMenu.name = "05. Supplementary Applications";
-  supplementaryMenu.textColor = TEXT_WHITE;
-  supplementaryMenu.alignmentX = ALIGNMENTX2;
-  supplementaryMenu.alignmentY = ALIGNMENTX18;
-  supplementaryMenu.type = SUMPPLEMENTARY_APP;
-
-  exitApplication.name = "06. Exit";
-  exitApplication.textColor = TEXT_WHITE;
-  exitApplication.alignmentX = ALIGNMENTX2;
-  exitApplication.alignmentY = ALIGNMENTX20;
-  exitApplication.type = EXIT_APPLICATION;
-
-  /* Creating an array of MenuStruct. */
-  struct MenuStruct menuStruct[maxMenuItem] = {
-      developersInformation, secondSemMenu,     midtermMenu,
-      finalSemMenu,          supplementaryMenu, exitApplication};
-
-  menuItems(menuStruct, maxMenuItem);
+  menuItems(0);
 
   do {
     input<int>("Input", userInput);
@@ -91,15 +44,57 @@ void menuComponent() {
     keyStroke = _getch();
 
     if (userInput == 1) {
-      cleanUpScreen(menuStruct, maxMenuItem);
+      cleanUpScreen();
+      menuItems(1);
       displayAboutUsMenu();
     }
 
     if (userInput == 2) {
-      cleanUpScreen(menuStruct, maxMenuItem);
+      cleanUpScreen();
+      menuItems(2);
       displaySecondSemMenu();
     }
+
+    if (userInput == 3) {
+      cleanUpScreen();
+      menuItems(3);
+      displayMidtermMenu();
+    }
+
+    if (userInput == 6) {
+      keyStroke = ESCAPE_KEY;
+      menuItems(6);
+
+      text("Thank your for using this application!\n\n", TEXT_BLUE, ALIGNMENTX2,
+           ALIGNMENTY24);
+    }
   } while (keyStroke != ESCAPE_KEY);
+}
+
+void menuItems(int selected) {
+  int itemOne = 1, itemTwo = 2, itemThree = 3, itemFour = 4, itemFive = 5,
+      itemSix = 6;
+
+  text("01. About the Project", selected == itemOne ? TEXT_BLUE : TEXT_WHITE,
+       ALIGNMENTX2, ALIGNMENTY10);
+
+  text("02. Second Sem Applications",
+       selected == itemTwo ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY12);
+
+  text("03. Midterm Applications",
+       selected == itemThree ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY14);
+
+  text("04. Final Sem Applications",
+       selected == itemFour ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY16);
+
+  text("05. Supplementary Applications",
+       selected == itemFive ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY18);
+
+  text("06. Exit", selected == itemSix ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY20);
 }
 
 #endif
