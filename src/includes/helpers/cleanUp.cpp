@@ -8,22 +8,14 @@
 #define CPP_CLEAN_UP_HELPER
 
 #include "../../core/components/header.cpp"
-#include "../../includes/structures/menuStruct.cpp"
+#include "../../includes/constants/color.cpp"
 
-void menuItems(struct MenuStruct menuStruct[], int maxMenuItem);
-
-void cleanUpScreen(struct MenuStruct menuStruct[], int maxMenuItem) {
+void cleanUpScreen() {
   system("clear");
-  menuItems(menuStruct, maxMenuItem);
-  headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
-  mainMenuHeaderComponent(" MAIN MENU ");
-}
 
-void menuItems(struct MenuStruct menuStruct[], int maxMenuItem) {
-  for (int i = 0; i < maxMenuItem; i++) {
-    text(menuStruct[i].name, TEXT_WHITE, menuStruct[i].alignmentX,
-         menuStruct[i].alignmentY);
-  }
+  headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
+
+  mainMenuHeaderComponent(" MAIN MENU ");
 }
 
 #endif
