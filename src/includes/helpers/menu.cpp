@@ -26,54 +26,64 @@
  * @param menuStruct is a struct array that contains the menu items.
  * @param maxItem The number of items in the menu.
  */
-void createMenu(struct MenuStruct menuStruct[], int maxItem) {
-  int ptr = 0;
-  int keyStroke = 0;
-  int color[] = {TEXT_WHITE, TEXT_BLUE};
-  int index[maxItem];
-  index[ptr] = 1;
+// void createMenu(struct MenuStruct menuStruct[], int maxItem) {
+//   int ptr = 0;
+//   int keyStroke = 0;
+//   int color[] = {TEXT_WHITE, TEXT_BLUE};
+//   int index[maxItem];
+//   index[ptr] = 1;
 
-  for (int i = 1; i < maxItem; i++)
-    index[i] = ptr;
+//   for (int i = 1; i < maxItem; i++)
+//     index[i] = ptr;
 
-  while (keyStroke != ESCAPE_KEY) {
-    for (int i = 0; i < maxItem; i++) {
-      text(menuStruct[i].name, color[index[i]], menuStruct[i].alignmentX,
-           menuStruct[i].alignmentY);
+//   while (keyStroke != ESCAPE_KEY) {
+//     for (int i = 0; i < maxItem; i++) {
+//       text(menuStruct[i].name, color[index[i]], menuStruct[i].alignmentX,
+//            menuStruct[i].alignmentY);
+//     }
+
+//     keyStroke = _getch();
+//     fflush(stdin);
+
+//     // UP_ARROW: 72
+//     if (keyStroke == UP_ARROW_KEY) {
+//       index[ptr] = 0;
+//       if (ptr == 0)
+//         ptr = maxItem - 1;
+//       else
+//         ptr--;
+//       index[ptr] = 1;
+//     }
+
+//     // DOWN_ARROW: 80
+//     if (keyStroke == DOWN_ARROW_KEY) {
+//       index[ptr] = 0;
+//       if (ptr == maxItem - 1)
+//         ptr = 0;
+//       else
+//         ptr++;
+//       index[ptr] = 1;
+//     }
+
+//     if (keyStroke == CURRIAGE_RETURN) {
+//       for (int i = 0; i <= maxItem; i++) {
+//         if (ptr == i) {
+//           menuStruct[i].renderItems(menuStruct[i].type);
+//         }
+//       }
+//     }
+
+//     // system("cls");
+//   }
+// }
+void createMenu(struct MenuStruct menuStruct[], int maxItem, int userInput) {
+  for (int i = 0; i < maxItem; i++) {
+    text(menuStruct[i].name, TEXT_WHITE, menuStruct[i].alignmentX,
+         menuStruct[i].alignmentY);
+
+    if (userInput == i) {
+      menuStruct[i].renderItems(menuStruct[i].type);
     }
-
-    keyStroke = _getch();
-    fflush(stdin);
-
-    // UP_ARROW: 72
-    if (keyStroke == UP_ARROW_KEY) {
-      index[ptr] = 0;
-      if (ptr == 0)
-        ptr = maxItem - 1;
-      else
-        ptr--;
-      index[ptr] = 1;
-    }
-
-    // DOWN_ARROW: 80
-    if (keyStroke == DOWN_ARROW_KEY) {
-      index[ptr] = 0;
-      if (ptr == maxItem - 1)
-        ptr = 0;
-      else
-        ptr++;
-      index[ptr] = 1;
-    }
-
-    if (keyStroke == CURRIAGE_RETURN) {
-      for (int i = 0; i <= maxItem; i++) {
-        if (ptr == i) {
-          menuStruct[i].renderItems(menuStruct[i].type);
-        }
-      }
-    }
-
-    // system("cls");
   }
 }
 
