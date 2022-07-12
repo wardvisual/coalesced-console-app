@@ -16,13 +16,16 @@
 #include <limits>
 
 template <typename T> void input(std::string label, T &referenceValue) {
-  std::string generatedSymbol31 = generateSymbol("-", 31);
-
   int maxInputLength = 1;
+  int generatedSymbolLength = 31;
+
+  std::string generatedSymbol31 = generateSymbol("-", generatedSymbolLength);
   std::string errorMessage = "Invalid Input. Please try again!";
 
+  /* Input Border */
   text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY23);
   text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY25);
+  /* Input Border End */
 
   text(label + ": ", TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY24);
   std::cin >> std::setw(maxInputLength) >> referenceValue;
