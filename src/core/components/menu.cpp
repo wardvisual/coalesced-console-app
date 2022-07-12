@@ -11,6 +11,7 @@
 #include "../../includes/structures/menuStruct.cpp"
 
 /* Including the files in the helpers folder. */
+#include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/color.cpp"
 #include "../../includes/helpers/gotoxy.cpp"
 #include "../../includes/helpers/menu.cpp"
@@ -20,13 +21,16 @@
 #include "../../includes/constants/app.cpp"
 #include "../../includes/constants/color.cpp"
 
+#include "../../core/apps/information/menu/showMenu.cpp"
+#include "../../core/apps/secondsem/menu/showMenu.cpp"
+
 #include "header.cpp"
 #include "input.cpp"
 #include "text.cpp"
 
 void menuComponent() {
   const int maxMenuItem = 6;
-  int userInput;
+  int userInput, keyStroke = 0;
 
   std::string generatedSymbol18 = generateSymbol("-", 20);
   std::string generatedSymbol30 = generateSymbol("-", 30);
@@ -79,11 +83,23 @@ void menuComponent() {
       developersInformation, secondSemMenu,     midtermMenu,
       finalSemMenu,          supplementaryMenu, exitApplication};
 
-  input<int>("Input", userInput);
+  menuItems(menuStruct, maxMenuItem);
 
-  /* Calling the function createMenu() and passing the array of MenuStruct and
-the maxMenuItem value. */
-  createMenu(menuStruct, maxMenuItem, userInput);
+  do {
+    input<int>("Input", userInput);
+
+    keyStroke = _getch();
+
+    if (userInput == 1) {
+      cleanUpScreen(menuStruct, maxMenuItem);
+      displayAboutUsMenu();
+    }
+
+    if (userInput == 2) {
+      cleanUpScreen(menuStruct, maxMenuItem);
+      displaySecondSemMenu();
+    }
+  } while (keyStroke != ESCAPE_KEY);
 }
 
 #endif
