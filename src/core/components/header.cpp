@@ -57,8 +57,6 @@ void mainMenuHeaderComponent(std::string title) {
 
   text(generatedSymbol31, BG_WHITE, ALIGNMENTX2, ALIGNMENTY7);
 
-  //   text(generateSymbol("\n ", 18), BG_WHITE, ALIGNMENTX30, ALIGNMENTY2);
-
   std::cout << "\n\n";
 }
 
