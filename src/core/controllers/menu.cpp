@@ -14,11 +14,11 @@
 
 void mainMenuController() {
   int userInput, keyStroke = 0;
+  std::string inputLabel = "Input";
 
   menuComponent(MENU_ITEM_NONE);
-
   do {
-    input<int>("Input", userInput);
+    input<int>(inputLabel, userInput);
 
     keyStroke = _getch();
 
