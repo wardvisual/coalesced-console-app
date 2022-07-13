@@ -7,15 +7,12 @@
 #ifndef CPP_CLEAN_UP_HELPER
 #define CPP_CLEAN_UP_HELPER
 
-#include "../../core/components/header.cpp"
-#include "../../includes/constants/color.cpp"
-
-void cleanUpScreen() {
+void cleanUpScreen(void (&retainComponenOne)(), void (&retainComponenTwo)()) {
   system("clear");
 
-  headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
+  retainComponenOne();
 
-  mainMenuHeaderComponent(" MAIN MENU ");
+  retainComponenTwo();
 }
 
 #endif
