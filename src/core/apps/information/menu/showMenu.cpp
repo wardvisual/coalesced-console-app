@@ -14,7 +14,7 @@ void displayAboutUsMenu() {
   std::string developers[maxArraySize] = {
       "Manlangit, Eduardo Jr.\n", "Galindo, Mark Lim.\n",
       "Cortez, Fletcher.\n",      "Santarin, Khenjie.\n",
-      "Gagauis, Angelika.\n",     "Abdon, Williane Antonette.\n"};
+      "Gaguis, Angelika.\n",      "Abdon, Williane Antonette.\n"};
 
   /* Text Heading. */
   text("Description:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
