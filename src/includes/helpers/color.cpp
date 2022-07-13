@@ -7,6 +7,7 @@
 #include "windows.h"
 
 #include "../constants/color.cpp"
+#include "../helpers/gotoxy.cpp"
 
 #ifndef CPP_COLOR_UTILITY
 #define CPP_COLOR_UTILITY
@@ -30,7 +31,7 @@ void clearScreen(int length) {
   }
 }
 
-void animateTextColor(std::string content) {
+void animateTextColor(std::string content, int alignmentX, int alignmentY) {
   int colors[] = {TEXT_BLUE, TEXT_GREEN, TEXT_WHITE, TEXT_RED};
   std::string textContent;
   int i = 0;
@@ -44,6 +45,7 @@ void animateTextColor(std::string content) {
 
     applyTextColor(colors[i]);
 
+    alignContent(alignmentX, alignmentY);
     std::cout << content;
 
     clearScreen(content.length());
