@@ -11,8 +11,13 @@
 #include "./core/components/header.cpp"
 #include "./core/components/menu.cpp"
 
-void renderConsoleApplication() {
-  headerComponent(" GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ");
+#include "./core/controllers/menu.cpp"
 
-  menuComponent();
+void renderConsoleApplication() {
+  /* =============== || COMPONENTS || ============== */
+  headerComponent();
+  mainMenuHeaderComponent();
+
+  /* =============== || CONTROLLERS || ============== */
+  mainMenuController();
 }
