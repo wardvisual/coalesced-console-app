@@ -13,6 +13,8 @@
 
 #include "./core/controllers/menu.cpp"
 
+void gridLines() {}
+
 void renderConsoleApplication() {
   /* =============== || COMPONENTS || ============== */
   headerComponent();
