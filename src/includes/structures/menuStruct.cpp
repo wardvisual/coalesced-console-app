@@ -6,11 +6,11 @@
 #ifndef CPP_MENU_STRUCT
 #define CPP_MENU_STRUCT
 
-struct MenuStruct {
-  std::string name;
-  int alignmentX;
-  int alignmentY;
-  int textColor;
-};
+struct CleanUpParams {
+  void retainComponentOne(std::string) {}
+  std::string retainComponentOneParam;
+  void retainComponentTwo(std::string) {}
+  std::string retainComponentTwoParam;
+}
 
 #endif

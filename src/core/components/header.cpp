@@ -18,7 +18,9 @@
 
 #include "text.cpp"
 
-void headerComponent(std::string title) {
+void headerComponent() {
+  std::string title = " GROUP SIX FINAL PROJECT | CONSOLE APPLICATION ";
+
   std::string generatedSymbol18 = generateSymbol("-", 18);
   std::string generatedSymbol91 = generateSymbol(" ", 91);
   std::string generatedSymbol83 = generateSymbol("-", 83);
@@ -39,7 +41,9 @@ void headerComponent(std::string title) {
   std::cout << "\n\n";
 }
 
-void mainMenuHeaderComponent(std::string title) {
+void mainMenuHeaderComponent() {
+  std::string title = " MAIN MENU ";
+
   std::string generatedSymbol5 = generateSymbol("-", 5);
   std::string generatedSymbol23 = generateSymbol("-", 23);
   std::string generatedSymbol31 = generateSymbol(" ", 31);

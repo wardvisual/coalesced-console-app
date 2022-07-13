@@ -14,5 +14,6 @@
 #define DOWN_ARROW_KEY 80
 #define LEFT_ARROW_KEY 75
 #define RIGHT_ARROW_KEY 77
+#define ENTER_KEY 13
 
 #endif
