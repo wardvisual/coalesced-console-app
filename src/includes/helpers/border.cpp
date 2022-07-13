@@ -11,6 +11,8 @@
 #include <iostream>
 
 #include "../constants/border.cpp"
+#include "../constants/color.cpp"
+#include "../helpers/color.cpp"
 #include "../helpers/gotoxy.cpp"
 
 /**
@@ -30,6 +32,7 @@ void generateBorder(std::string type, std::string symbol, int count,
   if (type == HORIZONTAL) {
     for (int i = 0; i <= count; i++) {
       generatedSymbol += symbol;
+      applyTextColor(TEXT_BLUE);
       alignContent(alignmentX, alignmentY);
       std::cout << generatedSymbol;
     }
@@ -37,6 +40,7 @@ void generateBorder(std::string type, std::string symbol, int count,
 
   if (type == VERTICAL) {
     for (int i = 0; i <= count; i++) {
+      applyTextColor(TEXT_BLUE);
       alignContent(alignmentX, alignmentY + i);
       std::cout << std::setw(alignmentX) << symbol;
     }
