@@ -8,13 +8,9 @@
 #include "./src/application.cpp"
 
 /**
- * It renders a consoleAapplication function
+ * It renders a consoleApplication function
  */
-
-void newFunction() { std::cout << "new function"; }
-// new comment
-// 10:11 AM
-// ang angas
-// tangina
-
-int main() { renderConsoleApplication(); }
+int main() {
+  renderConsoleApplication();
+  return 0;
+}
