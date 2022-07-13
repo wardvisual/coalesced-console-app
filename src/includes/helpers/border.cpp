@@ -3,42 +3,44 @@
  * @brief A helper that is used to generate a border line.
  */
 
-/* Including the library. */
-#include <iostream>
-
 #ifndef CPP_BORDER_HELPER
 #define CPP_BORDER_HELPER
 
+/* Including the library. */
+#include <iomanip>
+#include <iostream>
+
+#include "../constants/border.cpp"
+#include "../helpers/gotoxy.cpp"
+
 /**
- * It prints a border around the console window
+ * It generates a border of a specified symbol, count, x and y coordinates, and
+ * type (horizontal or vertical)
  *
- * @param width The width of the border
- * @param height The height of the border
+ * @param type "horizontal" or "vertical"
+ * @param symbol The symbol you want to use to generate the border.
+ * @param count The number of times the symbol will be repeated.
+ * @param x x-axis position
+ * @param y y-axis
  */
-void generateBorder(const int width, const int height) {
-  std::cout << "\n\n\n";
-  for (int i = 0; i < width - 30; i++) {
-    std::cout << "||";
-  }
+void generateBorder(std::string type, std::string symbol, int count,
+                    int alignmentX, int alignmentY) {
+  std::string generatedSymbol;
 
-  std::cout << std::endl;
-
-  for (int i = 0; i < height; i++) {
-    for (int j = 0; j < width; j++) {
-      if (j == 0) {
-        std::cout << "\t\t\t||";
-      }
-      std::cout << " ";
-      if (j == width - 1)
-        std::cout << "||";
+  if (type == HORIZONTAL) {
+    for (int i = 0; i <= count; i++) {
+      generatedSymbol += symbol;
+      alignContent(alignmentX, alignmentY);
+      std::cout << generatedSymbol;
     }
-    std::cout << std::endl;
   }
 
-  for (int i = 0; i < width - 30; i++) {
-    std::cout << "||";
+  if (type == VERTICAL) {
+    for (int i = 0; i <= count; i++) {
+      alignContent(alignmentX, alignmentY + i);
+      std::cout << std::setw(alignmentX) << symbol;
+    }
   }
-  std::cout << "\n\n\n";
 }
 
 #endif
