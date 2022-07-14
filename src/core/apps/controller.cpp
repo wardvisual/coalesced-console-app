@@ -10,7 +10,7 @@
 #include "../components/input.cpp"
 #include "../components/menu.cpp"
 
-#include "./secondsem/activityOne.cpp"
+#include "./secondsem/activityOne/index.cpp"
 #include "./secondsem/menu/showMenu.cpp"
 
 #include "./information/index.cpp"
