@@ -6,7 +6,7 @@
 #ifndef CPP_STRING_HELPER
 #define CPP_STRING_HELPER
 
-std::string lowerCaseString(string _string) {
+void lowerCaseString(std::string &_string) {
   int counter = 0;
 
   while (counter < _string.length()) {
@@ -16,7 +16,6 @@ std::string lowerCaseString(string _string) {
 
     counter++;
   }
-  return _string;
 }
 
 #endif
