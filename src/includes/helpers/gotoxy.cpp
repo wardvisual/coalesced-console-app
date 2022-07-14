@@ -3,11 +3,11 @@
  * @brief  A helper that is used to align corrdinates of a content.
  */
 
-/* Including the library that is used in this utility. */
+/* Including the library that is used in this HELPER. */
 #include "windows.h"
 
-#ifndef CPP_GOTOXY_UTILITY
-#define CPP_GOTOXY_UTILITY
+#ifndef CPP_GOTOXY_HELPER
+#define CPP_GOTOXY_HELPER
 
 /**
  * It sets the cursor position to the specified coordinates
