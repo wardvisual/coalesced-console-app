@@ -11,55 +11,61 @@
 #include "../../includes/constants/color.cpp"
 #include "../../includes/constants/keyStroke.cpp"
 #include "../../includes/constants/menu.cpp"
+#include "../../includes/constants/validation.cpp"
 
 #include "../../includes/helpers/cleanUp.cpp"
 
+#include "../../includes/structures/inputParameter.cpp"
+
 void mainMenuController() {
   int userInput, keyStroke = 0;
-  std::string inputLabel = "Input";
+  std::string inputLabel = "Select Menu";
 
   /* It displays the menu items without the selected item.*/
   menuComponent(MENU_ITEM_NONE);
 
   do {
-    input<int>(inputLabel, userInput);
+    input<int>(inputLabel, userInput, IS_RESTRICTED_INPUT);
 
     keyStroke = _getch();
 
-    if (userInput == MENU_ITEM_ONE) {
+    if (userInput == MENU_ITEM_A) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-      menuComponent(MENU_ITEM_ONE);
+      menuComponent(MENU_ITEM_A);
 
       appController::systemInformation();
+
+      userInput = MENU_ITEM_A; // persist selected menu
     }
 
-    if (userInput == MENU_ITEM_TWO) {
+    if (userInput == MENU_ITEM_B) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+      menuComponent(MENU_ITEM_B);
 
-      menuComponent(MENU_ITEM_TWO);
-
-      appController::secondSem();
+      while (userInput == MENU_ITEM_B) {
+        // referencing user input for exit option
+        appController::secondSem(userInput);
+      }
     }
 
-    if (userInput == MENU_ITEM_THREE) {
+    if (userInput == MENU_ITEM_C) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      menuComponent(MENU_ITEM_THREE);
+      menuComponent(MENU_ITEM_C);
     }
 
-    if (userInput == MENU_ITEM_FOUR) {
+    if (userInput == MENU_ITEM_D) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      menuComponent(MENU_ITEM_FOUR);
+      menuComponent(MENU_ITEM_D);
     }
 
-    if (userInput == MENU_ITEM_FIVE) {
+    if (userInput == MENU_ITEM_E) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      menuComponent(MENU_ITEM_FIVE);
+      menuComponent(MENU_ITEM_E);
     }
 
-    if (userInput == MENU_ITEM_SIX) {
+    if (userInput == MENU_ITEM_F) {
       keyStroke = ESCAPE_KEY;
-      menuComponent(MENU_ITEM_SIX);
+      menuComponent(MENU_ITEM_F);
 
       text("Thank you for using this application!", TEXT_BLUE, ALIGNMENTX2,
            ALIGNMENTY24);
