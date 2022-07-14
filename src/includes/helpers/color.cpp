@@ -3,14 +3,14 @@
  * @brief A helper that is used to apply a color to content.
  */
 
-/* Including the library that is used in this utility. */
+/* Including the library that is used in this HELPER. */
 #include "windows.h"
 
 #include "../constants/color.cpp"
 #include "../helpers/gotoxy.cpp"
 
-#ifndef CPP_COLOR_UTILITY
-#define CPP_COLOR_UTILITY
+#ifndef CPP_COLOR_HELPER
+#define CPP_COLOR_HELPER
 
 /**
  * It sets the color of the text in the console
