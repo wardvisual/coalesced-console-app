@@ -9,7 +9,13 @@
 #define CPP_INPUT_COMPONENT
 
 #include "../../includes/constants/alignment.cpp"
+#include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/gotoxy.cpp"
+
+#include "../../includes/structures/inputParameter.cpp"
+
+#include "./header.cpp"
+#include "./menu.cpp"
 #include "./text.cpp"
 
 #include <iomanip>
@@ -17,32 +23,36 @@
 
 template <typename T>
 
-// void restrictInput() {}
-// bool isInputRestrictedForSingleValue;
+void inputStyle() {
+  int symbolLength = 31;
+  std::string generatedSymbol31 = generateSymbol("-", symbolLength);
 
-void input(std::string label, T &referenceValue) {
+  text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2,
+       reAlignLabelYCoordinate - ALIGNMENTY1);
+  text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2,
+       reAlignLabelYCoordinate + ALIGNMENTY1);
+}
+
+void input(InputParameter param) {
+  inputStyle(); // append input style (border)
+
   int restrictedInput = 1;
-  int generatedSymbolLength = 31;
+  int maximumInputLength = 10;
 
-  std::string generatedSymbol31 = generateSymbol("-", generatedSymbolLength);
-  std::string errorMessage = "Invalid Input. Please try again!";
+  text(param.label + ": ", TEXT_WHITE, ALIGNMENTX2,
+       param.reAlignLabelYCoordinate);
 
-  /* Input Border */
-  text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY23);
-  text(generatedSymbol31, TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY25);
-  /* Input Border End */
-
-  text(label + ": ", TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY24);
-  while (!(std::cin >> std::setw(restrictedInput) >> referenceValue) &&
+  while (!(std::cin >> std::setw(param.isInputRestrictedForSingleValue
+                                     ? restrictedInput
+                                     : maximumInputLength) >>
+           referenceValue) &&
          !(std::cin.good())) {
 
-    text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, ALIGNMENTY26);
+    text(param.errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2,
+         param.reAlignErrorMsgYCoordinate);
 
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-    text(label + ": ", TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY24);
-    std::cin >> std::setw(restrictedInput) >> referenceValue;
   }
 
   std::cin.clear();
