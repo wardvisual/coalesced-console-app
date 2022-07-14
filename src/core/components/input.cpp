@@ -15,8 +15,13 @@
 #include <iomanip>
 #include <limits>
 
-template <typename T> void input(std::string label, T &referenceValue) {
-  int maxInputLength = 1;
+template <typename T>
+
+// void restrictInput() {}
+// bool isInputRestrictedForSingleValue;
+
+void input(std::string label, T &referenceValue) {
+  int restrictedInput = 1;
   int generatedSymbolLength = 31;
 
   std::string generatedSymbol31 = generateSymbol("-", generatedSymbolLength);
@@ -28,16 +33,16 @@ template <typename T> void input(std::string label, T &referenceValue) {
   /* Input Border End */
 
   text(label + ": ", TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY24);
-  std::cin >> std::setw(maxInputLength) >> referenceValue;
+  while (!(std::cin >> std::setw(restrictedInput) >> referenceValue) &&
+         !(std::cin.good())) {
 
-  while (!std::cin.good()) {
     text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, ALIGNMENTY26);
 
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     text(label + ": ", TEXT_WHITE, ALIGNMENTX2, ALIGNMENTY24);
-    std::cin >> std::setw(maxInputLength) >> referenceValue;
+    std::cin >> std::setw(restrictedInput) >> referenceValue;
   }
 
   std::cin.clear();
