@@ -7,10 +7,12 @@
 #ifndef CPP_DATA_TYPE_CONSTANT
 #define CPP_DATA_TYPE_CONSTANT
 
-#define STRING_ID typeid(std::string).name()
-#define INTEGER_ID typeid(int).name()
-#define FLOAT_ID typeid(float).name()
-#define DOUBLE_ID typeid(double).name()
-#define CHAR_ID typeid(char).name()
+#include <typeinfo>
+
+#define STRING_TYPE_ID typeid(std::string).name()
+#define INTEGER_TYPE_ID typeid(int).name()
+#define FLOAT_TYPE_ID typeid(float).name()
+#define DOUBLE_TYPE_ID typeid(double).name()
+#define CHAR_TYPE_ID typeid(char).name()
 
 #endif
