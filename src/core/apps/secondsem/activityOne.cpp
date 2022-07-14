@@ -4,20 +4,30 @@
  *
  * */
 
-#ifndef CPP_ACTIVTY_ONE_SECONDSEM
-#define CPP_ACTIVTY_ONE_SECONDSEM
+#ifndef CPP_ACTIVTY_A_SECONDSEM
+#define CPP_ACTIVTY_A_SECONDSEM
 
 #include "../../components/input.cpp"
 #include "../../components/text.cpp"
 
 #include "../../../includes/constants/alignment.cpp"
 #include "../../../includes/constants/color.cpp"
+#include "../../../includes/constants/validation.cpp"
 
 void activityOne() {
-  std::string username, course;
+  bool isInputRestrictedForSingleValue = false;
+  int reAlignLabelYCoordinate = ALIGNMENTY31;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY33;
 
-  input("Enter your name", username);
-  input("Enter your course", course);
+  std::string username, course;
+  std::string getNameLabel = "Enter your name";
+  std::string getCourseLabel = "Enter your course";
+
+  input<std::string>(getNameLabel, username, !IS_RESTRICTED_INPUT,
+                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+
+  input<std::string>(getCourseLabel, course, !IS_RESTRICTED_INPUT,
+                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
   text("\n\nYour details: \nName: " + username, TEXT_GREEN, ALIGNMENTX13,
        ALIGNMENTY13);
