@@ -10,10 +10,10 @@
 
 #include "../constants/datatype.cpp"
 
-template <typename T> bool validateTypeId(T variable, string dataTypeID) {
+template <typename T> bool compareTypeId(T variable, string dataTypeID) {
   bool isTypeIdValid = false;
 
-  if (typeid(variable).name() == dataTypeID) {
+  if (std::to_string(typeid(variable).name()) == dataTypeID) {
     isTypeIdValid = true;
   }
 
