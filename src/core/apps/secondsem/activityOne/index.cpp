@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/secondse,/activityOne.cpp
+ * @file /src/core/apps/secondsem/activityOne/index.cpp
  * @brief
  *
  * */
@@ -7,12 +7,12 @@
 #ifndef CPP_ACTIVTY_A_SECONDSEM
 #define CPP_ACTIVTY_A_SECONDSEM
 
-#include "../../components/input.cpp"
-#include "../../components/text.cpp"
+#include "../../../components/input.cpp"
+#include "../../../components/text.cpp"
 
-#include "../../../includes/constants/alignment.cpp"
-#include "../../../includes/constants/color.cpp"
-#include "../../../includes/constants/validation.cpp"
+#include "../../../../includes/constants/alignment.cpp"
+#include "../../../../includes/constants/color.cpp"
+#include "../../../../includes/constants/validation.cpp"
 
 void activityOne() {
   bool isInputRestrictedForSingleValue = false;
