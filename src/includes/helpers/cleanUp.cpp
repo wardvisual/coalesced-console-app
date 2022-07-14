@@ -19,7 +19,7 @@
  * screen.
  */
 void cleanUpScreen(void (&retainComponenOne)(), void (&retainComponenTwo)()) {
-  system("clear");
+  system("cls");
 
   retainComponenOne();
 
