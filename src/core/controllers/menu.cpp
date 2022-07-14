@@ -15,18 +15,20 @@
 
 #include "../../includes/helpers/cleanUp.cpp"
 
-#include "../../includes/structures/inputParameter.cpp"
-
 void mainMenuController() {
-  int userInput, keyStroke = 0;
+  char userInput;
+  int reAlignLabelYCoordinate = ALIGNMENTY24,
+      reAlignErrorMsgYCoordinate = ALIGNMENTY26, keyStroke = 0;
   std::string inputLabel = "Select Menu";
 
   /* It displays the menu items without the selected item.*/
   menuComponent(MENU_ITEM_NONE);
 
   do {
-    input<int>(inputLabel, userInput, IS_RESTRICTED_INPUT);
+    input<int>(inputLabel, userInput, IS_RESTRICTED_INPUT,
+               reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
+    /* Accessing keyboard stroke */
     keyStroke = _getch();
 
     if (userInput == MENU_ITEM_A) {
@@ -35,7 +37,8 @@ void mainMenuController() {
 
       appController::systemInformation();
 
-      userInput = MENU_ITEM_A; // persist selected menu
+      /* persist selected menu */
+      userInput = MENU_ITEM_A;
     }
 
     if (userInput == MENU_ITEM_B) {
@@ -43,7 +46,7 @@ void mainMenuController() {
       menuComponent(MENU_ITEM_B);
 
       while (userInput == MENU_ITEM_B) {
-        // referencing user input for exit option
+        // referencing userInput for exit option inside this controller
         appController::secondSem(userInput);
       }
     }
