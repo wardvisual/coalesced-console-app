@@ -3,7 +3,7 @@
  * @brief  A helper that is used to create a menu.
  */
 
-/* Including the libraries that are used in this utility. */
+/* Including the libraries that are used in this HELPER. */
 #include "windows.h"
 #include <conio.h>
 
