@@ -38,7 +38,7 @@ void headerComponent() {
 
   text(generatedSymbol91, BG_BLUE, ALIGNMENTX38, ALIGNMENTY7);
 
-  std::cout << "\n\n";
+  std::cout << "\n";
 }
 
 void mainMenuHeaderComponent() {
@@ -61,7 +61,7 @@ void mainMenuHeaderComponent() {
 
   text(generatedSymbol31, BG_WHITE, ALIGNMENTX2, ALIGNMENTY7);
 
-  std::cout << "\n\n";
+  std::cout << "\n";
 }
 
 #endif
