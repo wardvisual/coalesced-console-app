@@ -12,19 +12,42 @@
 #include "../../../components/text.cpp"
 
 void displaySecondSemMenu(int selectedMenuItem) {
-  text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
+  text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
-  text("Activity 01",
-       selectedMenuItem == MENU_ITEM_ONE ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX38,
+  text("[A]. Activity One",
+       selectedMenuItem == MENU_ITEM_A ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("Activity 02",
-       selectedMenuItem == MENU_ITEM_TWO ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX38,
+  text("[B]. Activity Two",
+       selectedMenuItem == MENU_ITEM_B ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
-  text("Activity 03",
-       selectedMenuItem == MENU_ITEM_THREE ? TEXT_BLUE : TEXT_WHITE,
-       ALIGNMENTX38, ALIGNMENTY16);
+  text("[C]. Activity Three",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY16);
+
+  text("[D]. Activity Four",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY18);
+
+  text("[E]. Activity Five",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY20);
+
+  text("[F]. Group Activty",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY22);
+
+  text("[G]. Quiz One",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY24);
+
+  text("[H]. Quiz Two",
+       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY26);
+
+  text("[I]. Exit", selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE,
+       ALIGNMENTX2, ALIGNMENTY28);
 }
 
 #endif
