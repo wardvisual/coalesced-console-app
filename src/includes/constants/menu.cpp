@@ -19,4 +19,17 @@
 #define MENU_ITEM_I 'i'
 #define MENU_ITEM_J 'j'
 
+// namespace menuConstants {
+// char *seconSem() {
+//   int constantsLength = 11;
+
+//   char all[] = {MENU_ITEM_NONE, MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C,
+//                 MENU_ITEM_D,    MENU_ITEM_E, MENU_ITEM_F, MENU_ITEM_G,
+//                 MENU_ITEM_H,    MENU_ITEM_I, MENU_ITEM_J};
+
+//   return &all;
+// }
+
+// } // namespace menuConstants
+
 #endif
