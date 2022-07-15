@@ -14,6 +14,7 @@
 #include "../../includes/constants/validation.cpp"
 
 #include "../../includes/helpers/cleanUp.cpp"
+#include "../../includes/helpers/dataType.cpp"
 
 void mainMenuController() {
   char userInput;
@@ -25,8 +26,10 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
-    input<int>(inputLabel, userInput, IS_RESTRICTED_INPUT,
-               reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+    input<char>(inputLabel, userInput, RESTRICTED_INPUT,
+                reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+
+    lowerCaseCharacter(userInput);
 
     /* Accessing keyboard stroke */
     keyStroke = _getch();
@@ -45,9 +48,10 @@ void mainMenuController() {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
       menuComponent(MENU_ITEM_B);
 
+      /* referencing userInput and current function for exit option inside this
+        controller */
       while (userInput == MENU_ITEM_B) {
-        // referencing userInput for exit option inside this controller
-        appController::secondSem(userInput);
+        appController::secondSem(userInput, mainMenuController);
       }
     }
 
