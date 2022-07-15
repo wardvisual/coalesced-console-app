@@ -1,7 +1,6 @@
 /**
  * @file /src/includes/helpers/dataType.cpp
- * @brief  A helper that is used to identify the datatype ID of a certian
- * variable
+ * @brief
  * .
  */
 
@@ -10,14 +9,28 @@
 
 #include "../constants/datatype.cpp"
 
-template <typename T> bool compareTypeId(T variable, string dataTypeID) {
+template <typename T> bool compareTypeId(T variable, std::string dataTypeID) {
   bool isTypeIdValid = false;
 
-  if (std::to_string(typeid(variable).name()) == dataTypeID) {
+  if (typeid(variable).name() == dataTypeID) {
     isTypeIdValid = true;
   }
 
   return isTypeIdValid;
 }
+
+void lowerCaseString(std::string &_string) {
+  int counter = 0;
+
+  while (counter < _string.length()) {
+    if (isupper(_string[counter])) {
+      _string[counter] = tolower(_string[counter]);
+    }
+
+    counter++;
+  }
+}
+
+void lowerCaseCharacter(char &_char) { _char = tolower(_char); }
 
 #endif
