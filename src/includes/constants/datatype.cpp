@@ -9,10 +9,10 @@
 
 #include <typeinfo>
 
-#define STRING_TYPE_ID typeid(std::string).name()
-#define INTEGER_TYPE_ID typeid(int).name()
-#define FLOAT_TYPE_ID typeid(float).name()
-#define DOUBLE_TYPE_ID typeid(double).name()
-#define CHAR_TYPE_ID typeid(char).name()
+const std::string STRING_TYPE_ID = typeid(std::string).name();
+const std::string INTEGER_TYPE_ID = typeid(int).name();
+const std::string FLOAT_TYPE_ID = typeid(float).name();
+const std::string DOUBLE_TYPE_ID = typeid(double).name();
+const std::string CHAR_TYPE_ID = typeid(char).name();
 
 #endif
