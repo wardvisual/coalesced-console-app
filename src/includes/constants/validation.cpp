@@ -1,1 +1,1 @@
-#define IS_RESTRICTED_INPUT true
+#define RESTRICTED_INPUT true
