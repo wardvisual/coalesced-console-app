@@ -16,11 +16,11 @@
 #include "./information/index.cpp"
 
 namespace appController {
-int userInput;
+char userInput;
 
 void systemInformation() { displaySystemInformation(); }
 
-void secondSem(char &currentSelectedMenu) {
+void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY33;
 
@@ -28,8 +28,8 @@ void secondSem(char &currentSelectedMenu) {
 
   displaySecondSemMenu(MENU_ITEM_NONE);
 
-  input<int>(inputLabel, userInput, IS_RESTRICTED_INPUT,
-             reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+  input<char>(inputLabel, userInput, RESTRICTED_INPUT, reAlignLabelYCoordinate,
+              reAlignErrorMsgYCoordinate);
 
   if (userInput == MENU_ITEM_A) {
     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
@@ -38,13 +38,15 @@ void secondSem(char &currentSelectedMenu) {
   }
 
   if (userInput == MENU_ITEM_I) {
-    // cleanUpScreen(mainMenuHeaderComponent, headerComponent);
     displaySecondSemMenu(MENU_ITEM_A);
+    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+
+    /* Rerendering previous function caller*/
+    previousFunctionCaller();
 
     currentSelectedMenu = MENU_ITEM_NONE;
   }
 }
-
 } // namespace appController
 
 #endif
