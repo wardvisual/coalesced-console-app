@@ -8,11 +8,13 @@
 #include "../../../../includes/helpers/symbol.cpp"
 
 void displayFinalsMenu() {
-  std::string generatedSymbol87 = generateSymbol("-", 20);
+  // std::string generatedSymbol87 = generateSymbol("-", 20);
 
-  applyTextColor(TEXT_WHITE);
-  alignContent(40, 10);
-  std::cout << "<< " << generatedSymbol87 << " >>";
+  // applyTextColor(TEXT_WHITE);
+  // alignContent(40, 10);
+  // std::cout << "<< " << generatedSymbol87 << " >>";
+
+  sttd::cout << "finals";
 }
 
 #endif

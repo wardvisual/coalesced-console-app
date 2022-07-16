@@ -1,5 +1,5 @@
-#ifndef CPP_INFORMATION_MENU
-#define CPP_INFORMATION_MENU
+#ifndef CPP_INDEX_INFORMATION
+#define CPP_INDEX_INFORMATION
 
 #include "../../../includes/constants/alignment.cpp"
 #include "../../../includes/constants/color.cpp"

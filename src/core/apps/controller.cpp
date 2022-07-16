@@ -15,7 +15,7 @@
 #include "./secondsem/index.cpp"
 #include "./secondsem/menu/showMenu.cpp"
 
-#include "./information/index.cpp"
+#include "information/index.cpp"
 
 namespace appController {
 char userInput;
