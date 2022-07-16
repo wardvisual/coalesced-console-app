@@ -23,11 +23,11 @@ void activityOne() {
   std::string getNameLabel = "Enter your name";
   std::string getCourseLabel = "Enter your course";
 
-  input<std::string>(getNameLabel, username, !RESTRICTED_INPUT,
-                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+  // input<std::string>(getNameLabel, username, !RESTRICTED_INPUT,
+  //                    reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
-  input<std::string>(getCourseLabel, course, !RESTRICTED_INPUT,
-                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+  // input<std::string>(getCourseLabel, course, !RESTRICTED_INPUT,
+  //                    reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
   text("\n\nYour details: \nName: " + username, TEXT_GREEN, ALIGNMENTX13,
        ALIGNMENTY13);
