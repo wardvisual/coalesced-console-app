@@ -64,6 +64,7 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+      text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
