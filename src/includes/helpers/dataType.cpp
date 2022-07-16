@@ -9,10 +9,22 @@
 
 #include "../constants/datatype.cpp"
 
-template <typename T> bool compareTypeId(T variable, std::string dataTypeID) {
+// template <typename T> bool compareTypeId(T variable, std::string dataTypeID)
+// {
+//   bool isTypeIdValid = false;
+
+//   if (typeid(variable).name() == dataTypeID) {
+//     isTypeIdValid = true;
+//   }
+
+//   return isTypeIdValid;
+// }
+
+template <typename T>
+bool compareTypeId(std::string variableType, std::string dataTypeID) {
   bool isTypeIdValid = false;
 
-  if (typeid(variable).name() == dataTypeID) {
+  if (variableType == dataTypeID) {
     isTypeIdValid = true;
   }
 
@@ -32,5 +44,16 @@ void lowerCaseString(std::string &_string) {
 }
 
 void lowerCaseCharacter(char &_char) { _char = std::tolower(_char); }
+
+bool validateString(std::string str) {
+  bool isValidated = false;
+
+  for (int i = 0; i < str.length(); i++) {
+    if (std::isdigit(str[i]) == false)
+      isValidated = false;
+  }
+
+  isValidated = true;
+}
 
 #endif

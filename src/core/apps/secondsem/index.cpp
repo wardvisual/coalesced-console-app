@@ -10,6 +10,8 @@
 #define MAX_MENU_ITEM_LENGTH 9
 
 #include "activityOne/index.cpp"
+#include "activityThree/index.cpp"
+#include "activityTwo/index.cpp"
 
 #include "../../controllers/menu.cpp"
 
@@ -25,8 +27,9 @@
 
 #include "./menu/showMenu.cpp"
 
+/* Function blueprint */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(char currentMenu) = {
-    activityOne};
+    activityOne, activityTwo, activityThree};
 
 void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   char userInput;
@@ -36,6 +39,8 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   std::string inputLabel = "Select Application";
   int firstIndex = 0;
   int maxMenuLength = 9;
+  int exitMenu = MENU_ITEM_I;
+
   char expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C, MENU_ITEM_D, MENU_ITEM_E,
       MENU_ITEM_F, MENU_ITEM_G, MENU_ITEM_H, MENU_ITEM_I};
@@ -48,21 +53,19 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
               RESTRICTED_INPUT, reAlignLabelYCoordinate,
               reAlignErrorMsgYCoordinate);
 
-  char foundedElement =
-      findElement(expectedArrayOfValue, maxMenuLength, userInput);
+  while (userInput != exitMenu) {
+    char foundedElement =
+        findElement(expectedArrayOfValue, maxMenuLength, userInput);
 
-  if (userInput == foundedElement) {
-    char currentMenuItem = userInput;
-    int exitMenu = MENU_ITEM_I;
-
-    while (userInput != exitMenu) {
-
-      cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-      displaySecondSemMenu(foundedElement);
+    if (userInput == foundedElement) {
+      char currentMenuItem = userInput;
 
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundedElement == expectedArrayOfValue[i]) {
+          cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+
+          displaySecondSemMenu(foundedElement);
+
           (*secondSemFunctions[i])(foundedElement);
         }
       }
@@ -71,17 +74,14 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
                   RESTRICTED_INPUT, reAlignLabelYCoordinate,
                   reAlignErrorMsgYCoordinate);
     }
-
-    displaySecondSemMenu(MENU_ITEM_NONE);
-
-    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-    /* renders previous function caller*/
-    previousFunctionCaller();
-
-    // exit
-    currentSelectedMenu = MENU_ITEM_NONE;
   }
+
+  displaySecondSemMenu(MENU_ITEM_NONE);
+  cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+  /* renders previous function caller*/
+  previousFunctionCaller();
+  // exit
+  currentSelectedMenu = MENU_ITEM_NONE;
 }
 
 #endif

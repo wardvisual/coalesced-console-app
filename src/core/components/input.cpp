@@ -38,6 +38,8 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   int nonValidArrayLength = 0;
   int firstIndex = 0;
   std::string errorMessage = "Invalid Input. Please try again!";
+  std::string stringHasSpecialCharacterErrorMessage =
+      "Input shouldn't have any special characters.";
 
   /* Applying border style */
   inputBorder(labelYCoordinate);
@@ -47,23 +49,68 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
 
   /* Validating input */
   // String
-  if (compareTypeId(referenceValue, STRING_TYPE_ID)) {
+  if (typeid(T).name() == STRING_TYPE_ID) {
     std::cin >>
         std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
         referenceValue;
+
+    // if (!validateString(referenceValue)) {
+    //   text(stringHasSpecialCharacterErrorMessage, TEXT_LIGHT_RED,
+    //   ALIGNMENTX2,
+    //        errorMsgYCoordinate);
+    // }
   }
 
   // Char
-  if (compareTypeId(referenceValue, CHAR_TYPE_ID)) {
+  if (typeid(T).name() == CHAR_TYPE_ID) {
     /* If user input is char type then lowercase */
 
-    std::cin >>
-        std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-        referenceValue;
-
     // std::tolower(referenceValue);
+    if (arrayLength > nonValidArrayLength) {
+      std::cin >>
+          std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+          referenceValue;
+      while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
+        /* Displaying error message */
+        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
 
-    while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
+        /* Clean Up */
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+        std::cin >>
+            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+            referenceValue;
+      }
+    } else {
+      while (!(std::cin >>
+               std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+               referenceValue) &&
+             std::cin.fail()) {
+
+        /* Displaying error message */
+        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
+
+        /* Clean Up */
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+        std::cin >>
+            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+            referenceValue;
+      }
+    }
+  }
+
+  // Integer
+  if (typeid(referenceValue).name() == INTEGER_TYPE_ID) {
+    while (!(std::cin >>
+             std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+             referenceValue) &&
+           std::cin.fail()) {
+
       /* Displaying error message */
       text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
 
@@ -78,12 +125,12 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
     }
   }
 
-  // Integer
-  if (compareTypeId(referenceValue, INTEGER_TYPE_ID)) {
-    while (std::cin >>
-               std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-               referenceValue &&
-           !std::cin.good()) {
+  // Float
+  if (typeid(referenceValue).name() == FLOAT_TYPE_ID) {
+    while (!(std::cin >>
+             std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+             referenceValue) &&
+           std::cin.fail()) {
 
       /* Displaying error message */
       text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
@@ -91,6 +138,11 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
       /* Clean Up */
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+      text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+      std::cin >>
+          std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+          referenceValue;
     }
   }
 

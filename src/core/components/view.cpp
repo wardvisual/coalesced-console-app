@@ -17,14 +17,14 @@
 void reViewMainScreen(int currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   displaySecondSemMenu(currentMenu);
-  
+
   reView();
 }
 
 void reViewMenuScreen(int currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   displaySecondSemMenu(currentMenu);
-  
+
   reView();
 }
 

@@ -86,6 +86,7 @@ void mainMenuController() {
       // if (foundedElement == MENU_ITEM_C) {
       //   midterm(currentSelectedMenu, mainMenuController);
       // }
+
       // if (foundedElement == MENU_ITEM_D) {
       //   displaySystemInformation();
       //   finalSem(currentSelectedMenu, mainMenuController);

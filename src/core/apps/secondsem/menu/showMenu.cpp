@@ -27,26 +27,26 @@ void displaySecondSemMenu(int selectedMenuItem) {
        ALIGNMENTY16);
 
   text("[D]. Activity Four",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       selectedMenuItem == MENU_ITEM_D ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
   text("[E]. Activity Five",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       selectedMenuItem == MENU_ITEM_E ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY20);
 
   text("[F]. Group Activty",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       selectedMenuItem == MENU_ITEM_F ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY22);
 
   text("[G]. Quiz One",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       selectedMenuItem == MENU_ITEM_G ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY24);
 
   text("[H]. Quiz Two",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       selectedMenuItem == MENU_ITEM_H ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY26);
 
-  text("[I]. Back", selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE,
+  text("[I]. Back", selectedMenuItem == MENU_ITEM_I ? TEXT_BLUE : TEXT_WHITE,
        ALIGNMENTX2, ALIGNMENTY28);
 }
 
