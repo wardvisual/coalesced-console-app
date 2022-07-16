@@ -45,16 +45,23 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   /* Setting up input label properties */
   text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
 
-  /* If user input is char type then lowercase */
-  if (compareTypeId(referenceValue, CHAR_TYPE_ID)) {
-    lowerCaseCharacter(referenceValue);
-  }
-
-  /* Validating input for char and string type */
-  if (arrayLength > nonValidArrayLength) {
+  /* Validating input */
+  // String
+  if (compareTypeId(referenceValue, STRING_TYPE_ID)) {
     std::cin >>
         std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
         referenceValue;
+  }
+
+  // Char
+  if (compareTypeId(referenceValue, CHAR_TYPE_ID)) {
+    /* If user input is char type then lowercase */
+
+    std::cin >>
+        std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+        referenceValue;
+
+    // std::tolower(referenceValue);
 
     while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
       /* Displaying error message */
@@ -69,8 +76,10 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
     }
-  } else {
-    /* for integer type */
+  }
+
+  // Integer
+  if (compareTypeId(referenceValue, INTEGER_TYPE_ID)) {
     while (std::cin >>
                std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
                referenceValue &&

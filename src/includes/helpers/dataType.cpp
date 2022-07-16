@@ -31,6 +31,6 @@ void lowerCaseString(std::string &_string) {
   }
 }
 
-void lowerCaseCharacter(char &_char) { _char = tolower(_char); }
+void lowerCaseCharacter(char &_char) { _char = std::tolower(_char); }
 
 #endif

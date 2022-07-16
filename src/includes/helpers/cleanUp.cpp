@@ -18,6 +18,7 @@
  * @param retainComponenThree This is the last component to be displayed on the
  * screen.
  */
+
 void cleanUpScreen(void (&retainComponenOne)(), void (&retainComponenTwo)()) {
   system("cls");
 

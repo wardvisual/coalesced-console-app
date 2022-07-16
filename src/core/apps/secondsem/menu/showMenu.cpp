@@ -46,7 +46,7 @@ void displaySecondSemMenu(int selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY26);
 
-  text("[I]. Exit", selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE,
+  text("[I]. Back", selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE,
        ALIGNMENTX2, ALIGNMENTY28);
 }
 

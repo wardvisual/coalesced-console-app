@@ -19,7 +19,7 @@
 
 void heading();
 
-void activityOne(char currentMenu) {
+void activityTwo(char currentMenu) {
   bool isInputRestrictedForSingleValue = false;
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;

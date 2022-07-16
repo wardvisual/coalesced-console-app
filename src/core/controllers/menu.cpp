@@ -18,7 +18,7 @@
 // #include "../../core/apps/finals/index.cpp"
 #include "../../core/apps/information/index.cpp"
 // #include "../../core/apps/midterm/index.cpp"
-// #include "../../core/apps/secondsem/index.cpp"
+#include "../../core/apps/secondsem/index.cpp"
 
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
@@ -29,8 +29,9 @@
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/search.cpp"
 
+char userInput = _getch();
+
 void mainMenuController() {
-  char userInput = _getch();
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26, keyStroke = 0;
   std::string inputLabel = "Select Menu";
@@ -71,18 +72,17 @@ void mainMenuController() {
       }
 
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+
       menuComponent(currentMenuItem);
 
       if (foundedElement == MENU_ITEM_A) {
         displaySystemInformation();
       }
 
-      // if (foundedElement == MENU_ITEM_B) {
-      //   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      //   menuComponent(currentMenuItem);
+      if (foundedElement == MENU_ITEM_B) {
+        secondSem(currentMenuItem, mainMenuController);
+      }
 
-      //   secondSem(currentSelectedMenu, mainMenuController);
-      // }
       // if (foundedElement == MENU_ITEM_C) {
       //   midterm(currentSelectedMenu, mainMenuController);
       // }

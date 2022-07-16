@@ -25,7 +25,8 @@
 
 #include "./menu/showMenu.cpp"
 
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])() = {activityOne};
+void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(char currentMenu) = {
+    activityOne};
 
 void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   char userInput;
@@ -55,13 +56,14 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
     int exitMenu = MENU_ITEM_I;
 
     while (userInput != exitMenu) {
+
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
       displaySecondSemMenu(foundedElement);
 
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundedElement == expectedArrayOfValue[i]) {
-          (*secondSemFunctions[i])();
+          (*secondSemFunctions[i])(foundedElement);
         }
       }
 
