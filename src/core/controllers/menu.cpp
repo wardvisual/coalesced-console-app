@@ -14,7 +14,11 @@
 #include "../components/menu.cpp"
 #include "../components/text.cpp"
 
-#include "../../core/apps/controller.cpp"
+// #include "../../core/apps/controller.cpp"
+// #include "../../core/apps/finals/index.cpp"
+// #include "../../core/apps/information/index.cpp"
+// #include "../../core/apps/midterm/index.cpp"
+// #include "../../core/apps/secondsem/index.cpp"
 
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
@@ -26,7 +30,7 @@
 #include "../../includes/helpers/search.cpp"
 
 void mainMenuController() {
-  char userInput;
+  char userInput = _getch();
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26, keyStroke = 0;
   std::string inputLabel = "Select Menu";
@@ -40,20 +44,23 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
+
     /* It handles user input and prints an error if there is an error. */
-    input<char>(inputLabel, userInput, expectedArrayOfValue, RESTRICTED_INPUT,
-                reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+    input<char>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
+                RESTRICTED_INPUT, reAlignLabelYCoordinate,
+                reAlignErrorMsgYCoordinate);
+
+    std::cout << "nice good";
 
     char foundedElement =
         findElement(expectedArrayOfValue, maxMenuLength, userInput);
 
     /* Accessing keyboard stroke */
-    keyStroke = _getch();
 
     if (userInput == foundedElement) {
       char currentMenuItem = userInput;
 
-      if (userInput == MENU_ITEM_F) {
+      if (currentMenuItem == MENU_ITEM_F) {
 
         keyStroke = ESCAPE_KEY;
 
@@ -68,9 +75,27 @@ void mainMenuController() {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
       menuComponent(currentMenuItem);
 
-      while (userInput == foundedElement) {
-        renderMenu(userInput, mainMenuController);
-      }
+      // while (currentMenuItem == foundedElement) {
+      //   if (foundedElement == MENU_ITEM_A) {
+      //     displaySystemInformation();
+      //   }
+      //   if (foundedElement == MENU_ITEM_B) {
+      //     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+      //     menuComponent(currentMenuItem);
+
+      //     secondSem(currentSelectedMenu, mainMenuController);
+      //   }
+      //   if (foundedElement == MENU_ITEM_C) {
+      //     midterm(currentSelectedMenu, mainMenuController);
+      //   }
+      //   if (foundedElement == MENU_ITEM_D) {
+      //     displaySystemInformation();
+      //     finalSem(currentSelectedMenu, mainMenuController);
+      //   }
+      //   if (foundedElement == MENU_ITEM_E) {
+      //     supplementary(currentSelectedMenu, mainMenuController);
+      //   }
+      // }
     } else {
       std::cout << "\nSomething went wrong.";
     }
