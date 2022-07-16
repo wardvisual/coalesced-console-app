@@ -14,6 +14,7 @@
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/dataType.cpp"
+#include "../../includes/helpers/search.cpp"
 #include "../../includes/helpers/gotoxy.cpp"
 
 #include "../../includes/constants/dataType.cpp"
@@ -28,11 +29,13 @@
 void inputBorder(int labelYCoordinate);
 
 template <typename T>
-void input(std::string &label, T &referenceValue, bool isRestricted, int labelYCoordinate, int errorMsgYCoordinate) {
+void input(std::string &label, T &referenceValue, T arrayValues[], bool isRestricted, int labelYCoordinate, int errorMsgYCoordinate) {
 
   /* Variables */
   int restrictedInput = 1;
   int maximumInputLength = 20;
+  int nonValidArrayLength = 0;
+  int firstIndex = 0; 
   std::string errorMessage = "Invalid Input. Please try again!";
 
   /* Applying border style */
@@ -40,20 +43,41 @@ void input(std::string &label, T &referenceValue, bool isRestricted, int labelYC
 
   /* Setting up input label properties */
   text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+  
+  /* If user input is char type then lowercase */
+  if(compareTypeId(referenceValue, CHAR_TYPE_ID)) {
+    lowerCaseCharacter(referenceValue);
+  }
+  
+  /* Validating input for char and string type */
+  if(sizeof(arrayValues) / sizeof(arrayValues[firstIndex]) > nonValidArrayLength) {
+    std::cin >> std::setw(isRestricted ? restrictedInput : maximumInputLength) >> referenceValue;
+    
+    while (!isInArray<T>(arrayValues, sizeof(arrayValues) / sizeof(arrayValues[firstIndex]), referenceValue)) {
+      std::cin >> std::setw(isRestricted ? restrictedInput : maximumInputLength) >> referenceValue;
+      
+       /* Displaying error message */
+      text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
+      
+      /* Clean Up */
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+  } else {
+    /* for integer type */
+    while (std::cin >> std::setw(isRestricted ? restrictedInput : maximumInputLength) 
+            >> referenceValue && !std::cin.good()) {
+              
+      /* Displaying error message */
+      text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
 
-  /* Validating input */
-  while (std::cin >> std::setw(isRestricted ? restrictedInput : maximumInputLength) 
-          >> referenceValue && !std::cin.good()) {
-            
-    /* Displaying error message */
-    text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
-
-    /* Cleaning Up */
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      /* Clean Up */
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
   }
 
-  /* Cleaning Up */
+  /* Clean Up */
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
