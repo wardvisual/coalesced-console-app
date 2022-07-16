@@ -16,7 +16,7 @@
 
 // #include "../../core/apps/controller.cpp"
 // #include "../../core/apps/finals/index.cpp"
-// #include "../../core/apps/information/index.cpp"
+#include "../../core/apps/information/index.cpp"
 // #include "../../core/apps/midterm/index.cpp"
 // #include "../../core/apps/secondsem/index.cpp"
 
@@ -50,8 +50,6 @@ void mainMenuController() {
                 RESTRICTED_INPUT, reAlignLabelYCoordinate,
                 reAlignErrorMsgYCoordinate);
 
-    std::cout << "nice good";
-
     char foundedElement =
         findElement(expectedArrayOfValue, maxMenuLength, userInput);
 
@@ -75,31 +73,27 @@ void mainMenuController() {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);
       menuComponent(currentMenuItem);
 
-      // while (currentMenuItem == foundedElement) {
-      //   if (foundedElement == MENU_ITEM_A) {
-      //     displaySystemInformation();
-      //   }
-      //   if (foundedElement == MENU_ITEM_B) {
-      //     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      //     menuComponent(currentMenuItem);
+      if (foundedElement == MENU_ITEM_A) {
+        displaySystemInformation();
+      }
 
-      //     secondSem(currentSelectedMenu, mainMenuController);
-      //   }
-      //   if (foundedElement == MENU_ITEM_C) {
-      //     midterm(currentSelectedMenu, mainMenuController);
-      //   }
-      //   if (foundedElement == MENU_ITEM_D) {
-      //     displaySystemInformation();
-      //     finalSem(currentSelectedMenu, mainMenuController);
-      //   }
-      //   if (foundedElement == MENU_ITEM_E) {
-      //     supplementary(currentSelectedMenu, mainMenuController);
-      //   }
+      // if (foundedElement == MENU_ITEM_B) {
+      //   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+      //   menuComponent(currentMenuItem);
+
+      //   secondSem(currentSelectedMenu, mainMenuController);
       // }
-    } else {
-      std::cout << "\nSomething went wrong.";
+      // if (foundedElement == MENU_ITEM_C) {
+      //   midterm(currentSelectedMenu, mainMenuController);
+      // }
+      // if (foundedElement == MENU_ITEM_D) {
+      //   displaySystemInformation();
+      //   finalSem(currentSelectedMenu, mainMenuController);
+      // }
+      // if (foundedElement == MENU_ITEM_E) {
+      //   supplementary(currentSelectedMenu, mainMenuController);
+      // }
     }
-
   } while (keyStroke != ESCAPE_KEY);
 }
 

@@ -25,7 +25,7 @@ void applyBackgroundColor(int range) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), range);
 }
 
-void clearScreen(int length) {
+void clearPrevious(int length) {
   for (int i = 0; i < length; i++) {
     std::cout << "\b";
   }
@@ -48,7 +48,7 @@ void animateTextColor(std::string content, int alignmentX, int alignmentY) {
     alignContent(alignmentX, alignmentY);
     std::cout << content;
 
-    clearScreen(content.length());
+    // clearPrevious(content.length());
 
     i++;
   }
