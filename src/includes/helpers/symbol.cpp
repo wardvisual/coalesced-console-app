@@ -3,6 +3,8 @@
  * @brief  A helper function for generating symbols
  */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_SYMBOL_HELPER
 #define CPP_SYMBOL_HELPER
 

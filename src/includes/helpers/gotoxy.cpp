@@ -3,11 +3,14 @@
  * @brief A helper function for aligning a content's coordinates.
  */
 
-/* Including the library that is used in this HELPER. */
-#include "windows.h"
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_GOTOXY_HELPER
 #define CPP_GOTOXY_HELPER
+
+/* Including the library that is used in this HELPER. */
+#include "windows.h"
 
 /**
  * It sets the cursor position to the specified coordinates

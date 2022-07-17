@@ -3,6 +3,11 @@
  * @brief A helper function for applying color to certain content.
  */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
+#ifndef CPP_COLOR_HELPER
+#define CPP_COLOR_HELPER
+
 /* Built-in header library */
 #include "windows.h"
 /* Contants. */
@@ -10,8 +15,6 @@
 /* Helpers. */
 #include "../helpers/gotoxy.cpp"
 
-#ifndef CPP_COLOR_HELPER
-#define CPP_COLOR_HELPER
 
 /**
  * It sets the color of the text in the console

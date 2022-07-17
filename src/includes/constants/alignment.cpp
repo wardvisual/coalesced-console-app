@@ -4,6 +4,8 @@
  * related to src/includes/helpers/gotoxy.cpp.
  */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_ALIGNMENT_CONSTANT
 #define CPP_ALIGNMENT_CONSTANT
 

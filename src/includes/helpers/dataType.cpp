@@ -4,12 +4,23 @@
  * .
  */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_DATA_TYPE_HELPER
 #define CPP_DATA_TYPE_HELPER
 
+/* Constants */
 #include "../constants/datatype.cpp"
 
 template <typename T>
+/**
+ * It compares the variable type to the data type ID
+ *
+ * @param variableType The type of the variable that is being checked.
+ * @param dataTypeID The data type ID of the variable.
+ *
+ * @return a boolean value.
+ */
 bool compareTypeId(std::string variableType, std::string dataTypeID) {
   bool isTypeIdValid = false;
 
@@ -20,6 +31,12 @@ bool compareTypeId(std::string variableType, std::string dataTypeID) {
   return isTypeIdValid;
 }
 
+/**
+ * It takes a string and converts all of the uppercase letters to lowercase
+ * letters
+ *
+ * @param _string The string to be converted to lowercase.
+ */
 void lowerCaseString(std::string &_string) {
   int counter = 0;
 
@@ -32,10 +49,20 @@ void lowerCaseString(std::string &_string) {
   }
 }
 
+/**
+ * It takes a string and checks if it's a number
+ *
+ * @param _char The character to be converted to lowercase.
+ */
 void lowerCaseCharacter(char &_char) {
   _char = std::tolower(_char, std::locale());
 }
 
+/**
+ * It checks if the string contains only digits
+ * 
+ * @param str The string to be validated.
+ */
 bool validateString(std::string str) {
   bool isValidated = false;
 

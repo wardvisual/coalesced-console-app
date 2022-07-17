@@ -4,6 +4,8 @@
  *
  * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_MAIN_MENU_CONTROLLER
 #define CPP_MAIN_MENU_CONTROLLER
 
@@ -91,7 +93,7 @@ void mainMenuController() {
         }
 
         if (foundElement == MENU_ITEM_B) {
-          secondSem(currentMenuItem, mainMenuController);
+          displaySecondSemMenu(currentMenuItem, mainMenuController);
         }
 
         // if (foundElement == MENU_ITEM_C) {

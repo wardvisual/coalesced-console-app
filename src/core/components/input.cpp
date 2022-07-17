@@ -6,6 +6,8 @@
  *
  * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_INPUT_COMPONENT
 #define CPP_INPUT_COMPONENT
 

@@ -4,6 +4,8 @@
  *
  * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_KEYCODE_CONSTANT
 #define CPP_KEYCODE_CONSTANT
 

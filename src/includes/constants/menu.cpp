@@ -3,7 +3,9 @@
  * @brief A macro constant for determining the selected menu item
  *
  * */
-
+ 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_MENU_CONSTANT
 #define CPP_MENU_CONSTANT
 

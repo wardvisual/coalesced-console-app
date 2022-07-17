@@ -3,6 +3,8 @@
  * @brief A view component
  * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_VIEW_COMPONENT
 #define CPP_VIEW_COMPONENT
 

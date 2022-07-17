@@ -3,6 +3,8 @@
  * @brief A helper function for generating border lines
  */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_BORDER_HELPER
 #define CPP_BORDER_HELPER
 

@@ -2,15 +2,23 @@
 #ifndef CPP_SECOND_SEM_MENU
 #define CPP_SECOND_SEM_MENU
 
+/* Constants */
 #include "../../../../includes/constants/alignment.cpp"
 #include "../../../../includes/constants/color.cpp"
 #include "../../../../includes/constants/menu.cpp"
 
+/* Helpers */
 #include "../../../../includes/helpers/color.cpp"
 #include "../../../../includes/helpers/gotoxy.cpp"
 
+/* Components */
 #include "../../../components/text.cpp"
 
+/**
+ * It displays the second semester menu
+ *
+ * @param selectedMenuItem The menu item that is currently selected.
+ */
 void displaySecondSemMenu(std::string selectedMenuItem) {
   text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
