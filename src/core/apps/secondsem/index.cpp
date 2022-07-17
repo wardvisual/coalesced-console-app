@@ -29,20 +29,21 @@
 #include "./menu/showMenu.cpp"
 
 /* Function blueprint */
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(char currentMenu) = {
+void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
     activityOne, activityTwo, activityThree, activityFour};
 
-void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
-  char userInput;
+void secondSem(std::string &currentSelectedMenu,
+               void (&previousFunctionCaller)()) {
+  std::string userInput;
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
   std::string inputLabel = "Select Application";
   int firstIndex = 0;
   int maxMenuLength = 9;
-  int exitMenu = MENU_ITEM_I;
+  std::string exitMenu = MENU_ITEM_I;
 
-  char expectedArrayOfValue[maxMenuLength] = {
+  std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C, MENU_ITEM_D, MENU_ITEM_E,
       MENU_ITEM_F, MENU_ITEM_G, MENU_ITEM_H, MENU_ITEM_I};
 
@@ -50,16 +51,16 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   displaySecondSemMenu(MENU_ITEM_NONE);
 
   /* It handles user input and prints an error if there is an error. */
-  input<char>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
-              RESTRICTED_INPUT, reAlignLabelYCoordinate,
-              reAlignErrorMsgYCoordinate);
+  input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
+                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
+                     reAlignErrorMsgYCoordinate);
 
   while (userInput != exitMenu) {
-    char foundedElement =
-        findElement(expectedArrayOfValue, maxMenuLength, userInput);
+    std::string foundedElement = findElement<std::string>(
+        expectedArrayOfValue, maxMenuLength, userInput);
 
     if (userInput == foundedElement) {
-      char currentMenuItem = userInput;
+      std::string currentMenuItem = userInput;
 
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundedElement == expectedArrayOfValue[i]) {
@@ -70,9 +71,9 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
         }
       }
 
-      input<char>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
-                  RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                  reAlignErrorMsgYCoordinate);
+      input<std::string>(inputLabel, userInput, expectedArrayOfValue,
+                         maxMenuLength, RESTRICTED_INPUT,
+                         reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
     }
   }
 

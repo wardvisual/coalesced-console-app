@@ -19,7 +19,7 @@
 
 void activityTwoHeading();
 
-void activityTwo(char currentMenu) {
+void activityTwo(std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

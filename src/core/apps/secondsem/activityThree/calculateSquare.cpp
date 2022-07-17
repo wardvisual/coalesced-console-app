@@ -11,7 +11,7 @@
 #include "../../../../includes/constants/validation.cpp"
 #include "../../../components/text.cpp"
 
-void calculateSquare(int currentMenu, void (&activityThreeHeading)()) {
+void calculateSquare(std::string currentMenu, void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

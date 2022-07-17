@@ -15,7 +15,8 @@
 void resultHandler(float userInputtedBase, float userInputtedLeftSide,
                    float userInputtedRightSide, float result);
 
-void calculateTriangle(int currentMenu, void (&activityThreeHeading)()) {
+void calculateTriangle(std::string currentMenu,
+                       void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

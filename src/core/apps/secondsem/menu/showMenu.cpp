@@ -11,7 +11,7 @@
 
 #include "../../../components/text.cpp"
 
-void displaySecondSemMenu(int selectedMenuItem) {
+void displaySecondSemMenu(std::string selectedMenuItem) {
   text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
   text("[A]. Activity One",

@@ -14,7 +14,7 @@
 
 #include "../../../components/view.cpp"
 
-void calculateCircle(int currentMenu, void (&activityThreeHeading)()) {
+void calculateCircle(std::string currentMenu, void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

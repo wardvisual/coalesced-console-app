@@ -11,7 +11,8 @@
 #include "../../../../includes/constants/validation.cpp"
 #include "../../../components/text.cpp"
 
-void calculateTwoInstallement(int currentMenu, void (&activityThreeHeading)()) {
+void calculateTwoInstallement(std::string currentMenu,
+                              void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

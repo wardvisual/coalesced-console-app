@@ -30,7 +30,7 @@
 
 void activityThreeHeading();
 
-void activityThree(char currentMenu) {
+void activityThree(std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 

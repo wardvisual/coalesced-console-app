@@ -25,7 +25,7 @@
 
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])() = {activityOne};
 
-void supplementary(char &currentSelectedMenu,
+void supplementary(std::string &currentSelectedMenu,
                    void (&previousFunctionCaller)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY33;
@@ -33,20 +33,21 @@ void supplementary(char &currentSelectedMenu,
   std::string inputLabel = "Select Application";
   int firstIndex = 0;
   int maxMenuLength = 9;
-  char expectedArrayOfValue[maxMenuLength] = {
+  std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C, MENU_ITEM_D, MENU_ITEM_E,
       MENU_ITEM_F, MENU_ITEM_G, MENU_ITEM_H, MENU_ITEM_I};
 
   displaySecondSemMenu(MENU_ITEM_NONE);
 
-  input<char>(inputLabel, userInput, expectedArrayOfValue, RESTRICTED_INPUT,
-              reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+  input<std::string>(inputLabel, userInput, expectedArrayOfValue,
+                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
+                     reAlignErrorMsgYCoordinate);
 
-  char foundedElement =
+  std::string foundedElement =
       findElement(expectedArrayOfValue, maxMenuLength, userInput);
 
   if (userInput == foundedElement) {
-    char currentMenuItem = userInput;
+    std::string currentMenuItem = userInput;
     int exitMenu = MENU_ITEM_I;
 
     while (foundedElement != exitMenu) {

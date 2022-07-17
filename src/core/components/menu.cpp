@@ -18,7 +18,7 @@
  *
  * @param selectedMenuItem The menu item that is currently selected.
  */
-void menuComponent(char selectedMenuItem) {
+void menuComponent(std::string selectedMenuItem) {
   text("[A]. About the Project",
        selectedMenuItem == MENU_ITEM_A ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY10);

@@ -11,7 +11,8 @@
 #include "../../../../includes/constants/validation.cpp"
 #include "../../../components/text.cpp"
 
-void calculateRectangle(int currentMenu, void (&activityThreeHeading)()) {
+void calculateRectangle(std::string currentMenu,
+                        void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
