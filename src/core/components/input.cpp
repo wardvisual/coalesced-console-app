@@ -29,6 +29,7 @@
 void inputBorder(int labelYCoordinate);
 
 template <typename T>
+
 void input(std::string &label, T &referenceValue, T arrayValues[],
            int arrayLength, bool isRestricted, int labelYCoordinate,
            int errorMsgYCoordinate) {
@@ -51,15 +52,44 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   /* Validating input */
   // String
   if (typeid(T).name() == STRING_TYPE_ID) {
-    std::cin >>
-        std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-        referenceValue;
+    if (arrayLength > nonValidArrayLength) {
+      std::cin >>
+          std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+          referenceValue;
 
-    // if (!validateString(referenceValue)) {
-    //   text(stringHasSpecialCharacterErrorMessage, TEXT_LIGHT_RED,
-    //   ALIGNMENTX2,
-    //        errorMsgYCoordinate);
-    // }
+      while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
+        /* Displaying error message */
+        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
+
+        /* Clean Up */
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+        std::cin >>
+            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+            referenceValue;
+      }
+    } else {
+      // without array
+      while (!(std::cin >>
+               std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+               referenceValue) &&
+             std::cin.fail()) {
+
+        /* Displaying error message */
+        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
+
+        /* Clean Up */
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+        std::cin >>
+            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+            referenceValue;
+      }
+    }
   }
 
   // Char
@@ -70,7 +100,6 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
 
-      // lowerCaseCharacter(referenceValue);
       while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
         /* Displaying error message */
         text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
