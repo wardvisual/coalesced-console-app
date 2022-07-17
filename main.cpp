@@ -5,7 +5,7 @@
  */
 
 /* Including the application.cpp file in the main.cpp file. */
-#include "./src/application.cpp"
+#include "src/application.cpp"
 
 /**
  * It renders a consoleApplication function

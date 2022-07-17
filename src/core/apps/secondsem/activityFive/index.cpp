@@ -76,8 +76,8 @@ void activityFive(std::string currentMenu) {
     } else {
       calculateSum(currentMenu, userEnteredInteger, activityFiveHeading);
     }
-    /* It handles user input and prints an error if there is an error. */
 
+    /* It handles user input and prints an error if there is an error. */
     input<char>(defaultLabel, isUserWantsToContinue,
                 expectedArrayOfValueForChar, arrayLength, RESTRICTED_INPUT,
                 reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);

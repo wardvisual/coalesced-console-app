@@ -44,6 +44,7 @@ void activityTwo(std::string currentMenu) {
   int firstNumber, secondNumber, sumResult = 0;
   std::string firstNumberLabel = "Enter first number";
   std::string secondNumberLabel = "Enter second number";
+  /* It's calculating the area of a circle. */
 
   /* It display the heading */
   activityTwoHeading();
