@@ -29,14 +29,15 @@
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/search.cpp"
 
-char userInput = _getch();
+int keyStroke = _getch();
 
 void mainMenuController() {
   int reAlignLabelYCoordinate = ALIGNMENTY24,
-      reAlignErrorMsgYCoordinate = ALIGNMENTY26, keyStroke = 0;
+      reAlignErrorMsgYCoordinate = ALIGNMENTY26;
   std::string inputLabel = "Select Menu";
 
   int maxMenuLength = 6;
+  char userInput;
   char expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_A, MENU_ITEM_B,
                                               MENU_ITEM_C, MENU_ITEM_D,
                                               MENU_ITEM_E, MENU_ITEM_F};
@@ -45,6 +46,9 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
+    // renders default menu
+    displaySystemInformation();
+    menuComponent(MENU_ITEM_A);
 
     /* It handles user input and prints an error if there is an error. */
     input<char>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
@@ -58,8 +62,9 @@ void mainMenuController() {
 
     if (userInput == foundedElement) {
       char currentMenuItem = userInput;
+      char exitMenu = MENU_ITEM_F;
 
-      if (currentMenuItem == MENU_ITEM_F) {
+      if (currentMenuItem == exitMenu) {
 
         keyStroke = ESCAPE_KEY;
 
@@ -69,31 +74,32 @@ void mainMenuController() {
              ALIGNMENTY24);
 
         std::cout << "\n\n";
+      } else {
+
+        cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+
+        menuComponent(currentMenuItem);
+
+        if (foundedElement == MENU_ITEM_A) {
+          displaySystemInformation();
+        }
+
+        if (foundedElement == MENU_ITEM_B) {
+          secondSem(currentMenuItem, mainMenuController);
+        }
+
+        // if (foundedElement == MENU_ITEM_C) {
+        //   midterm(currentSelectedMenu, mainMenuController);
+        // }
+
+        // if (foundedElement == MENU_ITEM_D) {
+        //   displaySystemInformation();
+        //   finalSem(currentSelectedMenu, mainMenuController);
+        // }
+        // if (foundedElement == MENU_ITEM_E) {
+        //   supplementary(currentSelectedMenu, mainMenuController);
+        // }
       }
-
-      cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-      menuComponent(currentMenuItem);
-
-      if (foundedElement == MENU_ITEM_A) {
-        displaySystemInformation();
-      }
-
-      if (foundedElement == MENU_ITEM_B) {
-        secondSem(currentMenuItem, mainMenuController);
-      }
-
-      // if (foundedElement == MENU_ITEM_C) {
-      //   midterm(currentSelectedMenu, mainMenuController);
-      // }
-
-      // if (foundedElement == MENU_ITEM_D) {
-      //   displaySystemInformation();
-      //   finalSem(currentSelectedMenu, mainMenuController);
-      // }
-      // if (foundedElement == MENU_ITEM_E) {
-      //   supplementary(currentSelectedMenu, mainMenuController);
-      // }
     }
   } while (keyStroke != ESCAPE_KEY);
 }

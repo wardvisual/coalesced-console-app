@@ -19,17 +19,15 @@ const char MENU_ITEM_H = 'h';
 const char MENU_ITEM_I = 'i';
 const char MENU_ITEM_J = 'j';
 
-// namespace menuConstants {
-// char *seconSem() {
-//   int constantsLength = 11;
-
-//   char all[] = {MENU_ITEM_NONE, MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C,
-//                 MENU_ITEM_D,    MENU_ITEM_E, MENU_ITEM_F, MENU_ITEM_G,
-//                 MENU_ITEM_H,    MENU_ITEM_I, MENU_ITEM_J};
-
-//   return &all;
-// }
-
-// } // namespace menuConstants
+const char MENU_ITEM_A2 = 'I';
+const char MENU_ITEM_B2 = 'B';
+const char MENU_ITEM_C2 = 'C';
+const char MENU_ITEM_D2 = 'D';
+const char MENU_ITEM_E2 = 'E';
+const char MENU_ITEM_F2 = 'F';
+const char MENU_ITEM_G2 = 'G';
+const char MENU_ITEM_H2 = 'H';
+const char MENU_ITEM_I2 = 'I';
+const char MENU_ITEM_J2 = 'J';
 
 #endif

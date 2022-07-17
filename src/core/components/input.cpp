@@ -14,6 +14,7 @@
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/dataType.cpp"
 #include "../../includes/helpers/gotoxy.cpp"
+#include "../../includes/helpers/menu.cpp"
 #include "../../includes/helpers/search.cpp"
 
 #include "../../includes/constants/dataType.cpp"
@@ -63,16 +64,13 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
 
   // Char
   if (typeid(T).name() == CHAR_TYPE_ID) {
-    /* If user input is char type then lowercase */
+    // with array
     if (arrayLength > nonValidArrayLength) {
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
 
-      std::tolower(referenceValue, std::localle());
-
       // lowerCaseCharacter(referenceValue);
-
       while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
         /* Displaying error message */
         text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
@@ -87,6 +85,7 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
             referenceValue;
       }
     } else {
+      // without array
       while (!(std::cin >>
                std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
                referenceValue) &&
