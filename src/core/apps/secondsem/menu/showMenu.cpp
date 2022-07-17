@@ -1,4 +1,11 @@
+/**
+ * @file /src/core/apps/secondsem/menu/showMenu.cpp
+ * @brief Second sem menu
+ *
+ * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_SECOND_SEM_MENU
 #define CPP_SECOND_SEM_MENU
 

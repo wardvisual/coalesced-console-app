@@ -38,7 +38,7 @@
 #include "../../components/input.cpp"
 #include "../../components/menu.cpp"
 
-/* Function blueprint */
+/* Function prototype */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
     activityOne, activityTwo, activityThree, activityFour, activityFive};
 
