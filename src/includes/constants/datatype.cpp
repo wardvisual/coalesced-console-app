@@ -1,6 +1,6 @@
 /**
  * @file /src/includes/constants/datatype.cpp
- * @brief A macro constant that is used provide the certain variable type ID
+ * @brief A macro constant to determine the typeID of a certain variable
  *
  * */
 

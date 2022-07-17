@@ -1,12 +1,13 @@
 /**
  * @file /src/includes/helpers/color.cpp
- * @brief A helper that is used to apply a color to content.
+ * @brief A helper function for applying color to certain content.
  */
 
-/* Including the library that is used in this HELPER. */
+/* Built-in header library */
 #include "windows.h"
-
+/* Contants. */
 #include "../constants/color.cpp"
+/* Helpers. */
 #include "../helpers/gotoxy.cpp"
 
 #ifndef CPP_COLOR_HELPER
@@ -21,16 +22,34 @@ void applyTextColor(int range) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), range);
 }
 
+/**
+ * It changes the background color of the console
+ *
+ * @param range The color range to apply.
+ */
 void applyBackgroundColor(int range) {
   SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), range);
 }
 
+/**
+ * It prints a backspace character for each character in the string
+ *
+ * @param length The length of the string you want to clear.
+ */
 void clearPrevious(int length) {
   for (int i = 0; i < length; i++) {
     std::cout << "\b";
   }
 }
 
+/**
+ * It takes a string, and an alignment, and animates the text color of the
+ * string
+ *
+ * @param content The text to be animated
+ * @param alignmentX 0 = left, 1 = center, 2 = right
+ * @param alignmentY 0 = top, 1 = middle, 2 = bottom
+ */
 void animateTextColor(std::string content, int alignmentX, int alignmentY) {
   int colors[] = {TEXT_BLUE, TEXT_GREEN, TEXT_WHITE, TEXT_RED};
   std::string textContent;

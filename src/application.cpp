@@ -7,10 +7,11 @@
 #include <iostream>
 #include <windows.h>
 
-/* Including the files in the component folder. */
+/* Components */
 #include "./core/components/header.cpp"
 #include "./core/components/menu.cpp"
 
+/* Controllers */
 #include "./core/controllers/menu.cpp"
 
 void renderConsoleApplication() {

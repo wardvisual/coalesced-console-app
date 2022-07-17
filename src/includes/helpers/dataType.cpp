@@ -1,6 +1,6 @@
 /**
  * @file /src/includes/helpers/dataType.cpp
- * @brief
+ * @brief A helper function for modifying certain variable values.
  * .
  */
 
@@ -8,17 +8,6 @@
 #define CPP_DATA_TYPE_HELPER
 
 #include "../constants/datatype.cpp"
-
-// template <typename T> bool compareTypeId(T variable, std::string dataTypeID)
-// {
-//   bool isTypeIdValid = false;
-
-//   if (typeid(variable).name() == dataTypeID) {
-//     isTypeIdValid = true;
-//   }
-
-//   return isTypeIdValid;
-// }
 
 template <typename T>
 bool compareTypeId(std::string variableType, std::string dataTypeID) {

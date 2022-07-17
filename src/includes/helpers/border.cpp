@@ -1,6 +1,6 @@
 /**
  * @file /src/includes/helpers/border.cpp
- * @brief A helper that is used to generate a border line.
+ * @brief A helper function for generating border lines
  */
 
 #ifndef CPP_BORDER_HELPER

@@ -1,6 +1,6 @@
 /**
  * @file /src/includes/helpers/cleanUp.cpp
- * @brief A helpers that is used to clean up the screen
+ * @brief A helper function for cleaning up the screen
  *
  * */
 
@@ -8,17 +8,13 @@
 #define CPP_CLEAN_UP_HELPER
 
 /**
- * It takes three functions as arguments and calls them in the order they were
- * passed in
+ * It takes two functions as arguments and calls them. It is used for clean up.
  *
  * @param retainComponenOne This is the function that will be called to retain
  * the first component.
  * @param retainComponenTwo This is the function that will be called to retain
- * the second component of the screen.
- * @param retainComponenThree This is the last component to be displayed on the
- * screen.
+ * the second component.
  */
-
 void cleanUpScreen(void (&retainComponenOne)(), void (&retainComponenTwo)()) {
   system("cls");
 

@@ -17,7 +17,6 @@
 #include "../../../../includes/constants/validation.cpp"
 
 #include "../../../../includes/helpers/cleanUp.cpp"
-#include "../../../../includes/helpers/math.cpp"
 
 #include "constants.cpp"
 #include "functions/calculateCashPayment.cpp"

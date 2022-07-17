@@ -1,6 +1,6 @@
 /**
  * @file /src/includes/helpers/gotoxy.cpp
- * @brief  A helper that is used to align corrdinates of a content.
+ * @brief A helper function for aligning a content's coordinates.
  */
 
 /* Including the library that is used in this HELPER. */

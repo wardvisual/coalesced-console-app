@@ -1,16 +1,20 @@
 /**
  * @file /src/includes/helpers/search.cpp
- * @brief
+ * @brief A helper function for searching for content in the array
  * .
  */
 
 #ifndef CPP_SEARCH_HELPER
 #define CPP_SEARCH_HELPER
 
+/* Built-in library */
 #include <iostream>
 
+/* Constants */
 #include "../../includes/constants/dataType.cpp"
 
+/* A function that takes in an array, the size of the array, and a value. It
+then checks if the value is in the array. */
 template <typename T> bool isInArray(T array[], int size, T value) {
   bool isFound = false;
 
@@ -22,7 +26,8 @@ template <typename T> bool isInArray(T array[], int size, T value) {
   return isFound;
 }
 
-// todo lowercase character value
+/* A function that takes in an array, the size of the array, and a value. It
+then checks if the value is in the array. */
 template <typename T> T findElement(T array[], int size, T value) {
   T foundValue;
 
@@ -46,27 +51,3 @@ template <typename T> T findElement(T array[], int size, T value) {
 }
 
 #endif
-
-// template <typename T> bool isInArray(T array[], int size, T value) {
-//   int singleValue = 1;
-//   int first = 0,                 // First array element
-//       last = size - singleValue, // Last array element
-//       middle;                    // Mid point of search
-//   bool isFound = false;          // Flag
-//   int itSelf = 2;
-
-//   while (!isFound && first <= last) {
-//     middle = (first + last) / itSelf; // Calculate mid point
-
-//     // If value is isFound at mid
-//     if (array[middle] == std::tolower(value, std::locale())) {
-//       isFound = true;
-
-//     } else if (array[middle] > value) // If value is in lower half
-//       last = middle - singleValue;
-//     else
-//       first = middle + singleValue; // If value is in upper half
-//   }
-
-//   return isFound;
-// }

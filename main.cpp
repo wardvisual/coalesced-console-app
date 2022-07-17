@@ -12,5 +12,6 @@
  */
 int main() {
   renderConsoleApplication();
+
   return 0;
 }
