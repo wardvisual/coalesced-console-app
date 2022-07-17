@@ -37,10 +37,10 @@ void mainMenuController() {
   std::string inputLabel = "Select Menu";
 
   int maxMenuLength = 6;
-  char userInput;
-  char expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_A, MENU_ITEM_B,
-                                              MENU_ITEM_C, MENU_ITEM_D,
-                                              MENU_ITEM_E, MENU_ITEM_F};
+  std::string userInput;
+  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_A, MENU_ITEM_B,
+                                                     MENU_ITEM_C, MENU_ITEM_D,
+                                                     MENU_ITEM_E, MENU_ITEM_F};
 
   /* It displays the menu items without the selected item.*/
   menuComponent(MENU_ITEM_NONE);
@@ -51,18 +51,18 @@ void mainMenuController() {
     menuComponent(MENU_ITEM_A);
 
     /* It handles user input and prints an error if there is an error. */
-    input<char>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
-                RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                reAlignErrorMsgYCoordinate);
+    input<std::string>(inputLabel, userInput, expectedArrayOfValue,
+                       maxMenuLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
+                       reAlignErrorMsgYCoordinate);
 
-    char foundedElement =
-        findElement(expectedArrayOfValue, maxMenuLength, userInput);
+    std::string foundedElement = findElement<std::string>(
+        expectedArrayOfValue, maxMenuLength, userInput);
 
     /* Accessing keyboard stroke */
 
     if (userInput == foundedElement) {
-      char currentMenuItem = userInput;
-      char exitMenu = MENU_ITEM_F;
+      std::string currentMenuItem = userInput;
+      std::string exitMenu = MENU_ITEM_F;
 
       if (currentMenuItem == exitMenu) {
 
