@@ -18,6 +18,7 @@
 #include "activityFour/index.cpp"
 #include "activityThree/index.cpp"
 #include "activityTwo/index.cpp"
+#include "groupActivity/index.cpp"
 
 /* Second sem menu */
 #include "./menu/showMenu.cpp"
@@ -40,7 +41,8 @@
 
 /* Function prototype */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
-    activityOne, activityTwo, activityThree, activityFour, activityFive};
+    activityOne,  activityTwo,  activityThree,
+    activityFour, activityFive, groupActivity};
 
 /**
  * It handles second sem menu
@@ -53,16 +55,16 @@ void displaySecondSemMenu(std::string &currentSelectedMenu,
                           void (&previousFunctionCaller)()) {
 
   /* Declaring variables. */
-  std::string userInput;
-  int reAlignLabelYCoordinate = ALIGNMENTY31;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
-  std::string inputLabel = "Select Application";
   int firstIndex = 0;
   int maxMenuLength = 9;
-  std::string exitMenu = MENU_ITEM_I;
+  std::string userInput;
+  std::string exitMenu = MENU_ITEM_9;
+  int reAlignLabelYCoordinate = ALIGNMENTY31;
+  std::string inputLabel = "Select Application";
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
   std::string expectedArrayOfValue[maxMenuLength] = {
-      MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C, MENU_ITEM_D, MENU_ITEM_E,
-      MENU_ITEM_F, MENU_ITEM_G, MENU_ITEM_H, MENU_ITEM_I};
+      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
+      MENU_ITEM_6, MENU_ITEM_7, MENU_ITEM_8, MENU_ITEM_9};
 
   /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);

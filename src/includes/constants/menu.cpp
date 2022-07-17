@@ -3,22 +3,22 @@
  * @brief A macro constant for determining the selected menu item
  *
  * */
- 
+
 /* A preprocessor directive that prevents the file from being included more than
   once. */
 #ifndef CPP_MENU_CONSTANT
 #define CPP_MENU_CONSTANT
 
 const std::string MENU_ITEM_NONE = "-";
-const std::string MENU_ITEM_A = "a";
-const std::string MENU_ITEM_B = "b";
-const std::string MENU_ITEM_C = "c";
-const std::string MENU_ITEM_D = "d";
-const std::string MENU_ITEM_E = "e";
-const std::string MENU_ITEM_F = "f";
-const std::string MENU_ITEM_G = "g";
-const std::string MENU_ITEM_H = "h";
-const std::string MENU_ITEM_I = "i";
-const std::string MENU_ITEM_J = "j";
+const std::string MENU_ITEM_1 = "1";
+const std::string MENU_ITEM_2 = "2";
+const std::string MENU_ITEM_3 = "3";
+const std::string MENU_ITEM_4 = "4";
+const std::string MENU_ITEM_5 = "5";
+const std::string MENU_ITEM_6 = "6";
+const std::string MENU_ITEM_7 = "7";
+const std::string MENU_ITEM_8 = "8";
+const std::string MENU_ITEM_9 = "9";
+const std::string MENU_ITEM_10 = "10";
 
 #endif

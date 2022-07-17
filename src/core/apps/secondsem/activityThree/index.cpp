@@ -60,21 +60,21 @@ void activityThree(std::string currentMenu) {
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
                      reAlignErrorMsgYCoordinate);
   /* Square */
-  if (userChoice == MENU_ITEM_A) {
+  if (userChoice == MENU_ITEM_1) {
     calculateSquare(currentMenu, activityThreeHeading);
   }
   /* Rectangle */
-  if (userChoice == MENU_ITEM_B) {
+  if (userChoice == MENU_ITEM_2) {
     calculateRectangle(currentMenu, activityThreeHeading);
   }
 
   /* Triangle */
-  if (userChoice == MENU_ITEM_C) {
+  if (userChoice == MENU_ITEM_3) {
     calculateTriangle(currentMenu, activityThreeHeading);
   }
 
   /* Circle */
-  if (userChoice == MENU_ITEM_D) {
+  if (userChoice == MENU_ITEM_4) {
     calculateCircle(currentMenu, activityThreeHeading);
   }
 }
@@ -90,10 +90,10 @@ void activityThreeHeading() {
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
 
   text("Choices: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
-  text("[A]: Area of Square ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY16);
-  text("[B]: Area of Rectangle ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY18);
-  text("[C]: Area of Triangle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY16);
-  text("[D]: Area of Circle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY18);
+  text("[1]: Area of Square ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY16);
+  text("[2]: Area of Rectangle ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY18);
+  text("[3]: Area of Triangle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY16);
+  text("[4]: Area of Circle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY18);
 }
 
 #endif

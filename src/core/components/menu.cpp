@@ -22,27 +22,27 @@
  * @param selectedMenuItem The menu item that is currently selected.
  */
 void menuComponent(std::string selectedMenuItem) {
-  text("[A]. About the Project",
-       selectedMenuItem == MENU_ITEM_A ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[1]. About the Project",
+       selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY10);
 
-  text("[B]. Second Sem Applications",
-       selectedMenuItem == MENU_ITEM_B ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[2]. Second Sem Applications",
+       selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[C]. Midterm Applications",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[3]. Midterm Applications",
+       selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
-  text("[D]. Final Sem Applications",
-       selectedMenuItem == MENU_ITEM_D ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[4]. Final Sem Applications",
+       selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[E]. Supplementary Applications",
-       selectedMenuItem == MENU_ITEM_E ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[5]. Supplementary Applications",
+       selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[F]. Exit", selectedMenuItem == MENU_ITEM_F ? TEXT_BLUE : TEXT_WHITE,
+  text("[6]. Exit", selectedMenuItem == MENU_ITEM_6 ? TEXT_BLUE : TEXT_WHITE,
        ALIGNMENTX2, ALIGNMENTY20);
 }
 

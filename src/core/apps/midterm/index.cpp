@@ -34,8 +34,8 @@ void midterm(std::string &currentSelectedMenu,
   int firstIndex = 0;
   int maxMenuLength = 9;
   std::string expectedArrayOfValue[maxMenuLength] = {
-      MENU_ITEM_A, MENU_ITEM_B, MENU_ITEM_C, MENU_ITEM_D, MENU_ITEM_E,
-      MENU_ITEM_F, MENU_ITEM_G, MENU_ITEM_H, MENU_ITEM_I};
+      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
+      MENU_ITEM_6, MENU_ITEM_7, MENU_ITEM_8, MENU_ITEM_9};
 
   displaySecondSemMenu(MENU_ITEM_NONE);
 
@@ -48,7 +48,7 @@ void midterm(std::string &currentSelectedMenu,
 
   if (userInput == foundedElement) {
     std::string currentMenuItem = userInput;
-    int exitMenu = MENU_ITEM_I;
+    int exitMenu = MENU_ITEM_9;
 
     while (foundedElement != exitMenu) {
       cleanUpScreen(mainMenuHeaderComponent, headerComponent);

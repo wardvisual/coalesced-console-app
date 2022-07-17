@@ -44,9 +44,9 @@ void mainMenuController() {
   int maxMenuLength = 6;
   std::string userInput;
   int keyStroke = _getch();
-  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_A, MENU_ITEM_B,
-                                                     MENU_ITEM_C, MENU_ITEM_D,
-                                                     MENU_ITEM_E, MENU_ITEM_F};
+  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2,
+                                                     MENU_ITEM_3, MENU_ITEM_4,
+                                                     MENU_ITEM_5, MENU_ITEM_6};
 
   /* It displays the menu items without the selected item.*/
   menuComponent(MENU_ITEM_NONE);
@@ -54,7 +54,7 @@ void mainMenuController() {
   do {
     /* renders default menu */
     displaySystemInformation();
-    menuComponent(MENU_ITEM_A);
+    menuComponent(MENU_ITEM_1);
 
     /* It handles user input and prints an error if there is an error. */
     input<std::string>(inputLabel, userInput, expectedArrayOfValue,
@@ -68,7 +68,7 @@ void mainMenuController() {
     /* Checking if the user input is equal to the found element. */
     if (userInput == foundElement) {
       std::string currentMenuItem = userInput;
-      std::string exitMenu = MENU_ITEM_F;
+      std::string exitMenu = MENU_ITEM_6;
 
       /* Checking if the user input is equal to the exit menu. If it is equal to
       the exit menu, it will display a message and exit the application. */
@@ -88,23 +88,23 @@ void mainMenuController() {
 
         menuComponent(currentMenuItem);
 
-        if (foundElement == MENU_ITEM_A) {
+        if (foundElement == MENU_ITEM_1) {
           displaySystemInformation();
         }
 
-        if (foundElement == MENU_ITEM_B) {
+        if (foundElement == MENU_ITEM_2) {
           displaySecondSemMenu(currentMenuItem, mainMenuController);
         }
 
-        // if (foundElement == MENU_ITEM_C) {
+        // if (foundElement == MENU_ITEM_3) {
         //   midterm(currentSelectedMenu, mainMenuController);
         // }
 
-        // if (foundElement == MENU_ITEM_D) {
+        // if (foundElement == MENU_ITEM_4) {
         //   displaySystemInformation();
         //   finalSem(currentSelectedMenu, mainMenuController);
         // }
-        // if (foundElement == MENU_ITEM_E) {
+        // if (foundElement == MENU_ITEM_5) {
         //   supplementary(currentSelectedMenu, mainMenuController);
         // }
       }

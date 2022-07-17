@@ -29,39 +29,39 @@
 void displaySecondSemMenu(std::string selectedMenuItem) {
   text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
-  text("[A]. Activity One",
-       selectedMenuItem == MENU_ITEM_A ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[1]. Activity One",
+       selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[B]. Activity Two",
-       selectedMenuItem == MENU_ITEM_B ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[2]. Activity Two",
+       selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
-  text("[C]. Activity Three",
-       selectedMenuItem == MENU_ITEM_C ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[3]. Activity Three",
+       selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[D]. Activity Four",
-       selectedMenuItem == MENU_ITEM_D ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[4]. Activity Four",
+       selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[E]. Activity Five",
-       selectedMenuItem == MENU_ITEM_E ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[5]. Activity Five",
+       selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY20);
 
-  text("[F]. Group Activty",
-       selectedMenuItem == MENU_ITEM_F ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[6]. Group Activty",
+       selectedMenuItem == MENU_ITEM_6 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY22);
 
-  text("[G]. Quiz One",
-       selectedMenuItem == MENU_ITEM_G ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[7]. Quiz One",
+       selectedMenuItem == MENU_ITEM_7 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY24);
 
-  text("[H]. Quiz Two",
-       selectedMenuItem == MENU_ITEM_H ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+  text("[8]. Quiz Two",
+       selectedMenuItem == MENU_ITEM_8 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY26);
 
-  text("[I]. Back", selectedMenuItem == MENU_ITEM_I ? TEXT_BLUE : TEXT_WHITE,
+  text("[9]. Back", selectedMenuItem == MENU_ITEM_9 ? TEXT_BLUE : TEXT_WHITE,
        ALIGNMENTX2, ALIGNMENTY28);
 }
 

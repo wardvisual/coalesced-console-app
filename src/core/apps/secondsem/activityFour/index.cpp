@@ -93,19 +93,19 @@ void activityFour(std::string currentMenu) {
   /* It's a function that will calculate the tuition fee of the students based
   on the given mode of payment. */
   // Cash
-  if (modeOfPayment == MENU_ITEM_A) {
+  if (modeOfPayment == MENU_ITEM_1) {
     calculateCashPayment(currentMenu, tuitionFee, activityFourHeading);
   }
   // Two-Installment
-  if (modeOfPayment == MENU_ITEM_B) {
+  if (modeOfPayment == MENU_ITEM_2) {
     calculateTwoInstallment(currentMenu, tuitionFee, activityFourHeading);
   }
   // Three-Installment
-  if (modeOfPayment == MENU_ITEM_C) {
+  if (modeOfPayment == MENU_ITEM_3) {
     calculateThreeInstallment(currentMenu, tuitionFee, activityFourHeading);
   }
   // Four-Installment
-  if (modeOfPayment == MENU_ITEM_D) {
+  if (modeOfPayment == MENU_ITEM_4) {
     calculateFourInstallment(currentMenu, tuitionFee, activityFourHeading);
   }
 }
@@ -123,12 +123,12 @@ void activityFourHeading() {
        ALIGNMENTY13);
 
   text("Mode of payment: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY17);
-  text("[A]: for Cash [10% Discount]", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY19);
-  text("[B]: for Two-Installement [5% Discount]", TEXT_WHITE, ALIGNMENTX38,
+  text("[1]: for Cash [10% Discount]", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY19);
+  text("[2]: for Two-Installement [5% Discount]", TEXT_WHITE, ALIGNMENTX38,
        ALIGNMENTY21);
-  text("[C]: for Three-Installement [10% Discount]", TEXT_WHITE, ALIGNMENTX80,
+  text("[3]: for Three-Installement [10% Discount]", TEXT_WHITE, ALIGNMENTX80,
        ALIGNMENTY19);
-  text("[D]: for Four-Installement [12% Discount]", TEXT_WHITE, ALIGNMENTX80,
+  text("[4]: for Four-Installement [12% Discount]", TEXT_WHITE, ALIGNMENTX80,
        ALIGNMENTY21);
 }
 
