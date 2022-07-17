@@ -20,6 +20,7 @@
 #include "activityTwo/index.cpp"
 #include "groupActivity/index.cpp"
 #include "quizOne/index.cpp"
+#include "quizTwo/index.cpp"
 
 /* Second sem menu */
 #include "./menu/showMenu.cpp"
@@ -43,7 +44,7 @@
 /* Function prototype */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
     activityOne,  activityTwo,   activityThree, activityFour,
-    activityFive, groupActivity, quizOne};
+    activityFive, groupActivity, quizOne,       quizTwo};
 
 /**
  * It handles second sem menu

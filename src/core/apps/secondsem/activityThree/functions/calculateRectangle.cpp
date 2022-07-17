@@ -11,6 +11,7 @@
 
 /* Constants */
 #include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/color.cpp"
 #include "../../../../../includes/constants/validation.cpp"
 
 /* Components */

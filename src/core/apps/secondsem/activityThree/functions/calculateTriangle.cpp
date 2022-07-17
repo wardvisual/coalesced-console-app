@@ -4,12 +4,18 @@
  *
  * */
 
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_CALCULATE_TRIANGLE_ACTIVTY_THREE_SECONDSEM
 #define CPP_CALCULATE_TRIANGLE_ACTIVTY_THREE_SECONDSEM
 #define TWO_SIDES 2
 
+/* Constants */
 #include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/color.cpp"
 #include "../../../../../includes/constants/validation.cpp"
+
+/* Components */
 #include "../../../../components/text.cpp"
 
 /* Function decleration */
