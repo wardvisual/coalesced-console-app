@@ -1,34 +1,39 @@
 /**
  * @file /src/core/controllers/menu.cpp
- * @brief
+ * @brief A controller for handling different menus
  *
  * */
 
 #ifndef CPP_MAIN_MENU_CONTROLLER
 #define CPP_MAIN_MENU_CONTROLLER
 
+/* Built-in library  */
 #include <conio.h>
 
+/* Components */
 #include "../components/header.cpp"
 #include "../components/input.cpp"
 #include "../components/menu.cpp"
 #include "../components/text.cpp"
 
-// #include "../../core/apps/controller.cpp"
-// #include "../../core/apps/finals/index.cpp"
+/* Core Applications */
 #include "../../core/apps/information/index.cpp"
-// #include "../../core/apps/midterm/index.cpp"
 #include "../../core/apps/secondsem/index.cpp"
 
+/* Constants */
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
 #include "../../includes/constants/keyStroke.cpp"
 #include "../../includes/constants/menu.cpp"
 #include "../../includes/constants/validation.cpp"
 
+/* Helper Functions */
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/search.cpp"
 
+/**
+ * It handles the main menu of the application
+ */
 void mainMenuController() {
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
@@ -45,7 +50,7 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
-    // renders default menu
+    /* renders default menu */
     displaySystemInformation();
     menuComponent(MENU_ITEM_A);
 
@@ -54,15 +59,17 @@ void mainMenuController() {
                        maxMenuLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
                        reAlignErrorMsgYCoordinate);
 
-    std::string foundedElement = findElement<std::string>(
+    /* Finding the element in the array of string. */
+    std::string foundElement = findElement<std::string>(
         expectedArrayOfValue, maxMenuLength, userInput);
 
-    /* Accessing keyboard stroke */
-
-    if (userInput == foundedElement) {
+    /* Checking if the user input is equal to the found element. */
+    if (userInput == foundElement) {
       std::string currentMenuItem = userInput;
       std::string exitMenu = MENU_ITEM_F;
 
+      /* Checking if the user input is equal to the exit menu. If it is equal to
+      the exit menu, it will display a message and exit the application. */
       if (currentMenuItem == exitMenu) {
 
         keyStroke = ESCAPE_KEY;
@@ -79,23 +86,23 @@ void mainMenuController() {
 
         menuComponent(currentMenuItem);
 
-        if (foundedElement == MENU_ITEM_A) {
+        if (foundElement == MENU_ITEM_A) {
           displaySystemInformation();
         }
 
-        if (foundedElement == MENU_ITEM_B) {
+        if (foundElement == MENU_ITEM_B) {
           secondSem(currentMenuItem, mainMenuController);
         }
 
-        // if (foundedElement == MENU_ITEM_C) {
+        // if (foundElement == MENU_ITEM_C) {
         //   midterm(currentSelectedMenu, mainMenuController);
         // }
 
-        // if (foundedElement == MENU_ITEM_D) {
+        // if (foundElement == MENU_ITEM_D) {
         //   displaySystemInformation();
         //   finalSem(currentSelectedMenu, mainMenuController);
         // }
-        // if (foundedElement == MENU_ITEM_E) {
+        // if (foundElement == MENU_ITEM_E) {
         //   supplementary(currentSelectedMenu, mainMenuController);
         // }
       }

@@ -2,33 +2,50 @@
 
 /**
  * @file /src/core/components/input.cpp
- * @brief A component that is used to create a complete input style with generic
- * datatype.
+ * @brief A component for handling user inputs
  *
  * */
 
 #ifndef CPP_INPUT_COMPONENT
 #define CPP_INPUT_COMPONENT
 
+/* Built-in library */
+#include <iomanip>
+#include <limits>
+
+/* Constants */
 #include "../../includes/constants/alignment.cpp"
+#include "../../includes/constants/dataType.cpp"
+
+/* Helpers Functions */
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/dataType.cpp"
 #include "../../includes/helpers/gotoxy.cpp"
 #include "../../includes/helpers/search.cpp"
 
-#include "../../includes/constants/dataType.cpp"
-
+/* Component */
 #include "./header.cpp"
 #include "./menu.cpp"
 #include "./text.cpp"
 
-#include <iomanip>
-#include <limits>
-
+/* A function prototype. */
 void inputBorder(int labelYCoordinate);
 
+/**
+ * It takes a label, a reference value, an array of values, the length of the
+ * array, a boolean value to determine if the input is restricted, the y
+ * coordinate of the label, and the y coordinate of the error message
+ *
+ * @param label The label of the input.
+ * @param referenceValue The variable that will be assigned the value of the
+ * input.
+ * @param arrayValues The array of values that the user can input.
+ * @param arrayLength The length of the array.
+ * @param isRestricted If true, the input will be restricted to 1 character.
+ * @param labelYCoordinate The y coordinate of the label.
+ * @param errorMsgYCoordinate The Y coordinate of the error message.
+ */
 template <typename T>
-
 void input(std::string &label, T &referenceValue, T arrayValues[],
            int arrayLength, bool isRestricted, int labelYCoordinate,
            int errorMsgYCoordinate) {
@@ -54,6 +71,7 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
         std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
         referenceValue;
 
+    /* Checking if the input is in the array. */
     while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
       /* Displaying error message */
       text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
@@ -69,7 +87,8 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
           referenceValue;
     }
   } else {
-    // without array
+    /* without array */
+    /* Checking if the input is valid. */
     while (!(std::cin >>
              std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
              referenceValue) &&
@@ -94,6 +113,12 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
+/**
+ * This function generates a string of 31 hyphens and then displays it twice,
+ * once above and once below the label.
+ *
+ * @param labelYCoordinate The y coordinate of the label.
+ */
 void inputBorder(int labelYCoordinate) {
   int symbolCount = 31;
   std::string generatedSymbol31 = generateSymbol("-", symbolCount);

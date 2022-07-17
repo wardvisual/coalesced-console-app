@@ -1,16 +1,17 @@
 /**
  * @file /src/core/components/menu.cpp
- * @brief A component that is used to create a menu component
+ * @brief A menu component
  * */
 
 #ifndef CPP_MENU_COMPONENT
 #define CPP_MENU_COMPONENT
 
-/* Including the files in the constants folder. */
+/* Contants */
 #include "../../includes/constants/menu.cpp"
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
 
+/* Component */
 #include "text.cpp"
 
 /**

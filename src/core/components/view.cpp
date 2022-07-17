@@ -1,18 +1,22 @@
 /**
  * @file /src/core/components/view.cpp
- * @brief
+ * @brief A view component
  * */
 
 #ifndef CPP_VIEW_COMPONENT
 #define CPP_VIEW_COMPONENT
 
+/* Core Applications */
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
+/* Helpers */
 #include "../../includes/helpers/cleanUp.cpp"
 
 /**
- * It prints the menu items on the screen
+ * It takes a string and a function as parameters, and then calls the function
  *
- * @param selectedMenuItem The menu item that is currently selected.
+ * @param currentMenu The current menu that the user is in.
+ * @param reView This is the function that will be called to re-display the
+ * menu.
  */
 void reViewMainScreen(std::string currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
@@ -21,6 +25,13 @@ void reViewMainScreen(std::string currentMenu, void (&reView)()) {
   reView();
 }
 
+/**
+ * It takes a string and a function as parameters, and then calls the function
+ *
+ * @param currentMenu The current menu that the user is in.
+ * @param reView This is the function that will be called to re-display the
+ * menu.
+ */
 void reViewMenuScreen(std::string currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   displaySecondSemMenu(currentMenu);
