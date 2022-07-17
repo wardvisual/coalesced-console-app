@@ -14,14 +14,14 @@
  *
  * @param selectedMenuItem The menu item that is currently selected.
  */
-void reViewMainScreen(int currentMenu, void (&reView)()) {
+void reViewMainScreen(std::string currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   displaySecondSemMenu(currentMenu);
 
   reView();
 }
 
-void reViewMenuScreen(int currentMenu, void (&reView)()) {
+void reViewMenuScreen(std::string currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   displaySecondSemMenu(currentMenu);
 
