@@ -7,26 +7,21 @@
 #ifndef CPP_ACTIVITY_THREE_INDEX_SECONDSEM
 #define CPP_ACTIVITY_THREE_INDEX_SECONDSEM
 
-#define DEFAULT_SELECTION '-'
-#define SQUARE_SELECTION 'a'
-#define RECTANGLE_SELECTION 'b'
-#define TRIANGLE_SELECTION 'c'
-#define CIRCLE_SELECTION 'd'
-
 #include "../../../components/input.cpp"
 #include "../../../components/text.cpp"
 #include "../../../components/view.cpp"
 
 #include "../../../../includes/constants/alignment.cpp"
 #include "../../../../includes/constants/color.cpp"
+#include "../../../../includes/constants/menu.cpp"
 #include "../../../../includes/constants/validation.cpp"
 
 #include "../../../../includes/helpers/cleanUp.cpp"
 
-#include "calculateCircle.cpp"
-#include "calculateRectangle.cpp"
-#include "calculateSquare.cpp"
-#include "calculateTriangle.cpp"
+#include "functions/calculateCircle.cpp"
+#include "functions/calculateRectangle.cpp"
+#include "functions/calculateSquare.cpp"
+#include "functions/calculateTriangle.cpp"
 
 void activityThreeHeading();
 
@@ -34,31 +29,33 @@ void activityThree(std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
-  char expectedArrayOfValue[] = {};
+  std::string expectedArrayOfValue[] = {};
   int arrayLength = 0; // none
 
   std::string label = "Select Shape Type";
-  char userChoice;
+  std::string userChoice;
 
   activityThreeHeading();
 
-  input<char>(label, userChoice, expectedArrayOfValue, arrayLength,
-              RESTRICTED_INPUT, reAlignLabelYCoordinate,
-              reAlignErrorMsgYCoordinate);
-
-  if (userChoice == SQUARE_SELECTION) {
+  input<std::string>(label, userChoice, expectedArrayOfValue, arrayLength,
+                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
+                     reAlignErrorMsgYCoordinate);
+  // SQUARE
+  if (userChoice == MENU_ITEM_A) {
     calculateSquare(currentMenu, activityThreeHeading);
   }
-
-  if (userChoice == RECTANGLE_SELECTION) {
+  // RECTANGLE
+  if (userChoice == MENU_ITEM_B) {
     calculateRectangle(currentMenu, activityThreeHeading);
   }
 
-  if (userChoice == TRIANGLE_SELECTION) {
+  // TRIANGLE
+  if (userChoice == MENU_ITEM_C) {
     calculateTriangle(currentMenu, activityThreeHeading);
   }
 
-  if (userChoice == CIRCLE_SELECTION) {
+  // CIRCLE
+  if (userChoice == MENU_ITEM_D) {
     calculateCircle(currentMenu, activityThreeHeading);
   }
 }

@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/secondsem/activityThree/calculateSquare.cpp
+ * @file /src/core/apps/secondsem/activityThree/functions/calculateSquare.cpp
  * @brief
  *
  * */
@@ -7,9 +7,9 @@
 #ifndef CPP_CALCULATE_SQUARE_ACTIVTY_THREE_SECONDSEM
 #define CPP_CALCULATE_SQUARE_ACTIVTY_THREE_SECONDSEM
 
-#include "../../../../includes/constants/alignment.cpp"
-#include "../../../../includes/constants/validation.cpp"
-#include "../../../components/text.cpp"
+#include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/validation.cpp"
+#include "../../../../components/text.cpp"
 
 void calculateSquare(std::string currentMenu, void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -31,7 +31,7 @@ void calculateSquare(std::string currentMenu, void (&activityThreeHeading)()) {
 
   result = userInput * userInput;
 
-  text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
+  text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
   text("Inputted number: " + std::to_string(userInput), TEXT_WHITE,
        ALIGNMENTX38, ALIGNMENTY22);
   text("Area of a square:" + std::to_string(result), TEXT_WHITE, ALIGNMENTX38,

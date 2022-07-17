@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/secondsem/activityThree/calculateCircle.cpp
+ * @file /src/core/apps/secondsem/activityThree/functions/calculateCircle.cpp
  * @brief
  *
  * */
@@ -8,11 +8,11 @@
 #define CPP_CALCULATE_CIRCLE_ACTIVTY_THREE_SECONDSEM
 #define PI 3.14
 
-#include "../../../../includes/constants/alignment.cpp"
-#include "../../../../includes/constants/validation.cpp"
-#include "../../../components/text.cpp"
+#include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/validation.cpp"
+#include "../../../../components/text.cpp"
 
-#include "../../../components/view.cpp"
+#include "../../../../components/view.cpp"
 
 void calculateCircle(std::string currentMenu, void (&activityThreeHeading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -34,11 +34,12 @@ void calculateCircle(std::string currentMenu, void (&activityThreeHeading)()) {
 
   result = (userInputtedRadius * userInputtedRadius) * PI;
 
-  text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
-  text("Inputted radius: " + std::to_string(userInputtedRadius), TEXT_WHITE,
-       ALIGNMENTX38, ALIGNMENTY22);
-  text("Area of a circle: " + std::to_string(result), TEXT_WHITE, ALIGNMENTX38,
-       ALIGNMENTY24);
+  text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
+  text("Inputted radius: ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY22);
+  setDecimalValue(userInputtedRadius, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTX48);
+
+  text("Area of a circle: ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY24);
+  setDecimalValue(result, TEXT_WHITE, ALIGNMENTX56, ALIGNMENTY24);
 }
 
 #endif

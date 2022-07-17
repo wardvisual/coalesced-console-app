@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/secondsem/activityThree/calculateTriangle.cpp
+ * @file /src/core/apps/secondsem/activityThree/functions/calculateTriangle.cpp
  * @brief
  *
  * */
@@ -8,9 +8,9 @@
 #define CPP_CALCULATE_TRIANGLE_ACTIVTY_THREE_SECONDSEM
 #define TWO_SIDES 2
 
-#include "../../../../includes/constants/alignment.cpp"
-#include "../../../../includes/constants/validation.cpp"
-#include "../../../components/text.cpp"
+#include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/validation.cpp"
+#include "../../../../components/text.cpp"
 
 void resultHandler(float userInputtedBase, float userInputtedLeftSide,
                    float userInputtedRightSide, float result);
@@ -47,7 +47,7 @@ void calculateTriangle(std::string currentMenu,
   /* A function that clears the screen and displays the main menu. */
   reViewMainScreen(currentMenu, activityThreeHeading);
 
-  text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
+  text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
   text("Inputted base: " + std::to_string(userInputtedBase), TEXT_WHITE,
        ALIGNMENTX38, ALIGNMENTY22);
   text("Inputted height [Left Side]: " + std::to_string(userInputtedLeftSide),

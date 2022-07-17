@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/secondsem/activityThree/calculateRectangle.cpp
+ * @file /src/core/apps/secondsem/activityThree/functions/calculateRectangle.cpp
  * @brief
  *
  * */
@@ -7,9 +7,9 @@
 #ifndef CPP_CALCULATE_RECTANGLE_ACTIVTY_THREE_SECONDSEM
 #define CPP_CALCULATE_RECTANGLE_ACTIVTY_THREE_SECONDSEM
 
-#include "../../../../includes/constants/alignment.cpp"
-#include "../../../../includes/constants/validation.cpp"
-#include "../../../components/text.cpp"
+#include "../../../../../includes/constants/alignment.cpp"
+#include "../../../../../includes/constants/validation.cpp"
+#include "../../../../components/text.cpp"
 
 void calculateRectangle(std::string currentMenu,
                         void (&activityThreeHeading)()) {
@@ -43,7 +43,7 @@ void calculateRectangle(std::string currentMenu,
 
   result = userInputtedHeight * userInputtedWidth;
 
-  text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
+  text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
   text("Inputted height: " + std::to_string(userInputtedHeight), TEXT_WHITE,
        ALIGNMENTX38, ALIGNMENTY22);
   text("Inputted width: " + std::to_string(userInputtedWidth), TEXT_WHITE,

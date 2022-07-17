@@ -4,8 +4,10 @@
  *
  * */
 
-#ifndef CPP_TITLE_COMPONENT
-#define CPP_TITLE_COMPONENT
+#ifndef CPP_TEXT_COMPONENT
+#define CPP_TEXT_COMPONENT
+
+#include <iomanip>
 
 /* Including the files in the helpers folder. */
 #include "../../includes/helpers/color.cpp"
@@ -15,6 +17,15 @@ void text(std::string content, int textColor, int alignmentX, int alignmentY) {
   applyTextColor(textColor);
   alignContent(alignmentX, alignmentY);
   std::cout << content;
+}
+
+void setDecimalValue(float value, int textColor, int alignmentX,
+                     int alignmentY) {
+  int twoDecimal = 2;
+
+  applyTextColor(textColor);
+  alignContent(alignmentX, alignmentY);
+  std::cout << std::fixed << std::setprecision(twoDecimal) << value;
 }
 
 #endif

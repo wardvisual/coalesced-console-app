@@ -29,8 +29,6 @@
 #include "../../includes/helpers/cleanUp.cpp"
 #include "../../includes/helpers/search.cpp"
 
-int keyStroke = _getch();
-
 void mainMenuController() {
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
@@ -38,6 +36,7 @@ void mainMenuController() {
 
   int maxMenuLength = 6;
   std::string userInput;
+  int keyStroke = _getch();
   std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_A, MENU_ITEM_B,
                                                      MENU_ITEM_C, MENU_ITEM_D,
                                                      MENU_ITEM_E, MENU_ITEM_F};
