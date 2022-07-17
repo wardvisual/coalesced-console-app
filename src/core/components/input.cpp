@@ -64,12 +64,15 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   // Char
   if (typeid(T).name() == CHAR_TYPE_ID) {
     /* If user input is char type then lowercase */
-
-    // std::tolower(referenceValue);
     if (arrayLength > nonValidArrayLength) {
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
+
+      std::tolower(referenceValue, std::localle());
+
+      // lowerCaseCharacter(referenceValue);
+
       while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
         /* Displaying error message */
         text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);

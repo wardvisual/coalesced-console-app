@@ -1,5 +1,5 @@
 /**
- * @file /src/core/apps/calculations.cpp
+ * @file /src/core/apps/secondsem/activityThree/calculateSquare.cpp
  * @brief
  *
  * */
@@ -25,8 +25,8 @@ void calculateSquare(int currentMenu, void (&activityThreeHeading)()) {
   input<int>(label, userInput, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
              reAlignErrorMsgYCoordinate);
-             
-               /* A function that clears the screen and displays the main menu. */
+
+  /* A function that clears the screen and displays the main menu. */
   reViewMainScreen(currentMenu, activityThreeHeading);
 
   result = userInput * userInput;

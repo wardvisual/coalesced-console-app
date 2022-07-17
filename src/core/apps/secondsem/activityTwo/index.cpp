@@ -38,6 +38,10 @@ void activityTwo(char currentMenu) {
 
   reViewMainScreen(currentMenu, activityTwoHeading);
 
+  text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
+  text("First number: " + std::to_string(firstNumber), TEXT_WHITE, ALIGNMENTX38,
+       ALIGNMENTY16);
+
   input<int>(secondNumberLabel, secondNumber, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
              reAlignErrorMsgYCoordinate);
@@ -46,12 +50,13 @@ void activityTwo(char currentMenu) {
 
   sumResult = firstNumber + secondNumber;
 
-  text("First Number: " + std::to_string(firstNumber), TEXT_WHITE, ALIGNMENTX38,
-       ALIGNMENTY14);
-  text("Second Number: " + std::to_string(secondNumber), TEXT_WHITE,
-       ALIGNMENTX38, ALIGNMENTY15);
-  text("Sum Result: " + std::to_string(sumResult), TEXT_WHITE, ALIGNMENTX38,
+  text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
+  text("First number: " + std::to_string(firstNumber), TEXT_WHITE, ALIGNMENTX38,
        ALIGNMENTY16);
+  text("Second number: " + std::to_string(secondNumber), TEXT_WHITE,
+       ALIGNMENTX38, ALIGNMENTY18);
+  text("Sum result: " + std::to_string(sumResult), TEXT_WHITE, ALIGNMENTX38,
+       ALIGNMENTY20);
 }
 
 void activityTwoHeading() {

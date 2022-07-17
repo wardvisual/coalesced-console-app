@@ -43,7 +43,9 @@ void lowerCaseString(std::string &_string) {
   }
 }
 
-void lowerCaseCharacter(char &_char) { _char = std::tolower(_char); }
+void lowerCaseCharacter(char &_char) {
+  _char = std::tolower(_char, std::locale());
+}
 
 bool validateString(std::string str) {
   bool isValidated = false;

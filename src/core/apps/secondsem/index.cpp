@@ -10,6 +10,7 @@
 #define MAX_MENU_ITEM_LENGTH 9
 
 #include "activityOne/index.cpp"
+#include "activityFour/index.cpp"
 #include "activityThree/index.cpp"
 #include "activityTwo/index.cpp"
 
@@ -29,7 +30,7 @@
 
 /* Function blueprint */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(char currentMenu) = {
-    activityOne, activityTwo, activityThree};
+    activityOne, activityTwo, activityThree, activityFour};
 
 void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
   char userInput;
@@ -63,7 +64,6 @@ void secondSem(char &currentSelectedMenu, void (&previousFunctionCaller)()) {
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundedElement == expectedArrayOfValue[i]) {
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
           displaySecondSemMenu(foundedElement);
 
           (*secondSemFunctions[i])(foundedElement);

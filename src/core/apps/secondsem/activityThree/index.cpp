@@ -1,11 +1,11 @@
 /**
- * @file /src/core/apps/secondsem/activityOne/index.cpp
+ * @file /src/core/apps/secondsem/activityThree/index.cpp
  * @brief
  *
  * */
 
-#ifndef CPP_ACTIVTY_THREE_SECONDSEM
-#define CPP_ACTIVTY_THREE_SECONDSEM
+#ifndef CPP_ACTIVITY_THREE_INDEX_SECONDSEM
+#define CPP_ACTIVITY_THREE_INDEX_SECONDSEM
 
 #define DEFAULT_SELECTION '-'
 #define SQUARE_SELECTION 'a'
@@ -28,14 +28,9 @@
 #include "calculateSquare.cpp"
 #include "calculateTriangle.cpp"
 
-typedef struct Selection {
-  char item;
-};
-
 void activityThreeHeading();
 
 void activityThree(char currentMenu) {
-  Selection selection;
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
@@ -52,47 +47,33 @@ void activityThree(char currentMenu) {
               reAlignErrorMsgYCoordinate);
 
   if (userChoice == SQUARE_SELECTION) {
-    selection = userChoice;
     calculateSquare(currentMenu, activityThreeHeading);
   }
 
   if (userChoice == RECTANGLE_SELECTION) {
-    selection = userChoice;
     calculateRectangle(currentMenu, activityThreeHeading);
   }
 
   if (userChoice == TRIANGLE_SELECTION) {
-    selection = userChoice;
     calculateTriangle(currentMenu, activityThreeHeading);
   }
 
   if (userChoice == CIRCLE_SELECTION) {
-    selection = userChoice;
     calculateCircle(currentMenu, activityThreeHeading);
   }
 }
 
 void activityThreeHeading() {
-  Selection selection;
-
   text("Instruction: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
   text("Using C++ create a program that will compute the area of Circle, "
        "Triangle, Square, Rectangle.",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
 
   text("Choices: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
-  text("[A]: Area of Square ",
-       selection == SQUARE_SELECTION ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX38,
-       ALIGNMENTY16);
-  text("[B]: Area of Rectangle ",
-       selection == RECTANGLE_SELECTION ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX38,
-       ALIGNMENTY18);
-  text("[C]: Area of Triangle ",
-       selection == TRIANGLE_SELECTION ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX65,
-       ALIGNMENTY16);
-  text("[D]: Area of Circle ",
-       selection == CIRCLE_SELECTION ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX65,
-       ALIGNMENTY18);
+  text("[A]: Area of Square ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY16);
+  text("[B]: Area of Rectangle ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY18);
+  text("[C]: Area of Triangle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY16);
+  text("[D]: Area of Circle ", TEXT_WHITE, ALIGNMENTX65, ALIGNMENTY18);
 }
 
 #endif

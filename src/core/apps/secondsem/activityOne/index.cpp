@@ -37,6 +37,8 @@ void activityOne(char currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   reViewMainScreen(currentMenu, activityOneHeading);
+  text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
+  text("Name: " + username, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY16);
 
   input<std::string>(courseLabel, course, expectedArrayOfValue, arrayLength,
                      !RESTRICTED_INPUT, reAlignLabelYCoordinate,
@@ -44,8 +46,9 @@ void activityOne(char currentMenu) {
 
   reViewMainScreen(currentMenu, activityOneHeading);
 
-  text("Name: " + username, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY14);
-  text("Course: " + course, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY15);
+  text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
+  text("Name: " + username, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY16);
+  text("Course: " + course, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY18);
 }
 
 void activityOneHeading() {
