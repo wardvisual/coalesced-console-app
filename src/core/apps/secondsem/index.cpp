@@ -10,9 +10,11 @@
 #define MAX_MENU_ITEM_LENGTH 9
 
 #include "activityOne/index.cpp"
+#include "activityFive/index.cpp"
 #include "activityFour/index.cpp"
 #include "activityThree/index.cpp"
 #include "activityTwo/index.cpp"
+
 
 #include "../../controllers/menu.cpp"
 
@@ -30,7 +32,7 @@
 
 /* Function blueprint */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
-    activityOne, activityTwo, activityThree, activityFour};
+    activityOne, activityTwo, activityThree, activityFour, activityFive};
 
 void secondSem(std::string &currentSelectedMenu,
                void (&previousFunctionCaller)()) {

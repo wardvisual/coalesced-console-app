@@ -50,100 +50,12 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
   text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
 
   /* Validating input */
+  if (arrayLength > nonValidArrayLength) {
+    std::cin >>
+        std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
+        referenceValue;
 
-  // String
-  if (typeid(T).name() == STRING_TYPE_ID) {
-    if (arrayLength > nonValidArrayLength) {
-      std::cin >>
-          std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-          referenceValue;
-
-      while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
-        /* Displaying error message */
-        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
-
-        /* Clean Up */
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
-
-        std::cin >>
-            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-            referenceValue;
-      }
-    } else {
-      // without array
-      while (!(std::cin >>
-               std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-               referenceValue) &&
-             std::cin.fail()) {
-
-        /* Displaying error message */
-        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
-
-        /* Clean Up */
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
-        std::cin >>
-            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-            referenceValue;
-      }
-    }
-  }
-
-  // Char
-  if (typeid(T).name() == CHAR_TYPE_ID) {
-    // with array
-    if (arrayLength > nonValidArrayLength) {
-      std::cin >>
-          std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-          referenceValue;
-
-      while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
-        /* Displaying error message */
-        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
-
-        /* Clean Up */
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
-        std::cin >>
-            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-            referenceValue;
-      }
-    } else {
-      // without array
-      while (!(std::cin >>
-               std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-               referenceValue) &&
-             std::cin.fail()) {
-
-        /* Displaying error message */
-        text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
-
-        /* Clean Up */
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-        text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
-        std::cin >>
-            std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-            referenceValue;
-      }
-    }
-  }
-
-  // Integer
-  if (typeid(referenceValue).name() == INTEGER_TYPE_ID) {
-    while (!(std::cin >>
-             std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
-             referenceValue) &&
-           std::cin.fail()) {
-
+    while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
       /* Displaying error message */
       text(errorMessage, TEXT_LIGHT_RED, ALIGNMENTX2, errorMsgYCoordinate);
 
@@ -152,14 +64,13 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
       text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
     }
-  }
-
-  // Float
-  if (typeid(referenceValue).name() == FLOAT_TYPE_ID) {
+  } else {
+    // without array
     while (!(std::cin >>
              std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
              referenceValue) &&
