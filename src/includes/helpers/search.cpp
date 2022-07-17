@@ -24,27 +24,25 @@ template <typename T> bool isInArray(T array[], int size, T value) {
 
 // todo lowercase character value
 template <typename T> T findElement(T array[], int size, T value) {
-  int singleValue = 1;
-  int first = 0,                 // First array element
-      last = size - singleValue, // Last array element
-      middle,                    // Mid point of search
-      foundedValue = 0;          // Position of search value
-  bool found = false;            // Flag
-  int itSelf = 2;
+  T foundValue;
 
-  while (!found && first <= last) {
-    middle = (first + last) / itSelf; // Calculate mid point
-                                      // If value is found at mid
-    if (array[middle] == value) {
-      found = true;
-      foundedValue = array[middle];
-    } else if (array[middle] > value) // If value is in lower half
-      last = middle - singleValue;
-    else
-      first = middle + singleValue; // If value is in upper half
+  int count = 0;
+
+  if (array[count] == value) {
+    foundValue = value;
+  } else {
+    while (array[count] != value) {
+      for (int i = 0; i < size; i++) {
+        if (array[i] == value) {
+          foundValue = value;
+        }
+      }
+
+      count++;
+    }
   }
 
-  return foundedValue;
+  return foundValue;
 }
 
 #endif
