@@ -22,6 +22,13 @@
 /* Helpers */
 #include "../../../../../includes/helpers/cleanUp.cpp"
 
+/**
+ * It handles user input and prints an error if there is an error.
+ *
+ * @param currentMenu The current menu.
+ * @param type The type of number.
+ * @param reViewHeading A function that review the current screen.
+ */
 template <typename T>
 void calculate(std::string currentMenu, std::string type,
                void (&reViewHeading)()) {
