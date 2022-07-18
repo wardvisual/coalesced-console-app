@@ -82,8 +82,10 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+      /* Label */
       text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
 
+      /* Asking the user to reinput a value */
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
@@ -103,7 +105,10 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+      /* Label */
       text(label + ": ", TEXT_WHITE, ALIGNMENTX2, labelYCoordinate);
+
+      /* Asking the user to reinput a value */
       std::cin >>
           std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
           referenceValue;
