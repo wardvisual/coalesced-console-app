@@ -75,9 +75,3 @@ void finalSem(std::string &currentSelectedMenu,
 }
 
 #endif
-
-// return array of functions
-// TODO import all acttivies
-// TODO ccreate a function and return the imported activities functions
-// TODO helper
-// https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/language-compilers/declare-pointers-to-functions
