@@ -33,7 +33,7 @@ void displaySecondSemMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[2]. Get Integers Sum",
+  text("[2]. Sum Calculator",
        selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
@@ -45,7 +45,7 @@ void displaySecondSemMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[5]. Identify Even & Odd Numbers",
+  text("[5]. Even & Odd Number Identifier",
        selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY20);
 
@@ -57,7 +57,7 @@ void displaySecondSemMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_7 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY24);
 
-  text("[8]. Days & Time Converter",
+  text("[8]. Day & Time Converter",
        selectedMenuItem == MENU_ITEM_8 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY26);
 
