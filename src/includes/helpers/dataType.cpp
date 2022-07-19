@@ -37,16 +37,18 @@ bool compareTypeId(std::string variableType, std::string dataTypeID) {
  *
  * @param _string The string to be converted to lowercase.
  */
-void lowerCaseString(std::string &_string) {
+std::string lowerCaseString(std::string _string) {
   int counter = 0;
 
   while (counter < _string.length()) {
-    if (isupper(_string[counter])) {
-      _string[counter] = tolower(_string[counter]);
+    if (std::isupper(_string[counter])) {
+      _string[counter] = std::tolower(_string[counter]);
     }
 
     counter++;
   }
+
+  return _string;
 }
 
 /**
@@ -60,18 +62,25 @@ void lowerCaseCharacter(char &_char) {
 
 /**
  * It checks if the string contains only digits
- * 
+ *
  * @param str The string to be validated.
  */
-bool validateString(std::string str) {
-  bool isValidated = false;
+bool validateString(std::string str, bool isSymbolAccepted) {
+  bool isValidated = true;
 
-  for (int i = 0; i < str.length(); i++) {
-    if (std::isdigit(str[i]) == false)
-      isValidated = false;
+  if (isSymbolAccepted) {
+    for (int i = 0; i < str.length(); i++) {
+      if (std::isdigit(str[i]) == false && str[i] == '.')
+        isValidated = false;
+    }
+  } else {
+    for (int i = 0; i < str.length(); i++) {
+      if (std::isdigit(str[i]) == false)
+        isValidated = false;
+    }
   }
 
-  isValidated = true;
+  return isValidated;
 }
 
 #endif
