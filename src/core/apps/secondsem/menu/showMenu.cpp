@@ -29,35 +29,35 @@
 void displaySecondSemMenu(std::string selectedMenuItem) {
   text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
-  text("[1]. Activity One",
+  text("[1]. Display Name & Course",
        selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[2]. Activity Two",
+  text("[2]. Get Integers Sum",
        selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
-  text("[3]. Activity Three",
+  text("[3]. Shapes Area Calculator",
        selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[4]. Activity Four",
+  text("[4]. Tuition Fee Calculator",
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[5]. Activity Five",
+  text("[5]. Identify Even & Odd Numbers",
        selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY20);
 
-  text("[6]. Group Activty",
+  text("[6]. Four Operations Calculator",
        selectedMenuItem == MENU_ITEM_6 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY22);
 
-  text("[7]. Quiz One",
+  text("[7]. Unit Converter",
        selectedMenuItem == MENU_ITEM_7 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY24);
 
-  text("[8]. Quiz Two",
+  text("[8]. Days & Time Converter",
        selectedMenuItem == MENU_ITEM_8 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY26);
 
