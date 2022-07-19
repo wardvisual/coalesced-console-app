@@ -13,14 +13,14 @@
 #define MAX_MENU_ITEM_LENGTH 9
 
 /* Second sem activitities*/
-#include "activityOne/index.cpp"
-#include "activityFive/index.cpp"
-#include "activityFour/index.cpp"
-#include "activityThree/index.cpp"
-#include "activityTwo/index.cpp"
-#include "groupActivity/index.cpp"
-#include "quizOne/index.cpp"
-#include "quizTwo/index.cpp"
+#include "getNameCourse/index.cpp"
+#include "dayTimeConverter/index.cpp"
+#include "evenOddIdentifier/index.cpp"
+#include "fourOperationsCalculator/index.cpp"
+#include "getIntegerSum/index.cpp"
+#include "shapeAreaCalculator/index.cpp"
+#include "tuitionFeeCalculator/index.cpp"
+#include "unitConverter/index.cpp"
 
 /* Second sem menu */
 #include "./menu/showMenu.cpp"
@@ -41,10 +41,22 @@
 #include "../../components/input.cpp"
 #include "../../components/menu.cpp"
 
-/* Function prototype */
+/**
+ * It should be in order. Like this.
+ *
+ * 01. getNameCourse()
+ * 02. getIntegerSum()
+ * 03. shapeAreaCalculator()
+ * 04. tuitionFeeCalculator()
+ * 05. evenOddIdentifier()
+ * 06. fourOperationsCalculator()
+ * 07. unitConverter()
+ * 08. dayTimeConverter()
+ */
 void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
-    activityOne,  activityTwo,   activityThree, activityFour,
-    activityFive, groupActivity, quizOne,       quizTwo};
+    getNameCourse,        getIntegerSum,     shapeAreaCalculator,
+    tuitionFeeCalculator, evenOddIdentifier, fourOperationsCalculator,
+    unitConverter,        dayTimeConverter};
 
 /**
  * It handles second sem menu
