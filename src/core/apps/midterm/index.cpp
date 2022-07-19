@@ -1,83 +1,42 @@
 /**
- * @file /src/apps/secondsem/index.cpp
- * @brief
+ * @file /src/core/apps/midterm/index.cpp
+ * @brief Midterm app
  *
  * */
 
-#ifndef CPP_INDEX_MIDTERM
-#define CPP_INDEX_MIDTERM
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
+#ifndef CPP_MIDTERM
+#define CPP_MIDTERM
 
-#define MAX_MENU_ITEM_LENGTH 9
+/* Core Application */
+#include "calculateGPA/index.cpp"
 
-#include "activityOne/index.cpp"
+/**
+ * Midterm :: displayMidterm()
+ *
+ * Instruction:
+ *     Write a program that will compute the general point average of a BSCS
+    student to determine if he/she is qualified to be an honor student.
+ *
+  Requirement:
+  A BSCS student must complete all of the subject given for a semester. The
+  subjects are GEMATHW,GELIFEWR,GEARTAPP,GEKOMFIL, NTROCOMP,FP
+  ROGLEC,FPROGLAB,GEPEMOVE,NSTPROG1. All subjects is a 3-unit course except
+  GEPEMOVE(2 units). A student must have a grade not lower than 2.25 to be
+  consider as academic honor candidate. A grade must be ranging from 1.0
+ to 2.25. No dropped or inc grade.
 
-#include "../../controllers/menu.cpp"
-
-#include "../../../includes/constants/alignment.cpp"
-#include "../../../includes/constants/menu.cpp"
-#include "../../../includes/constants/validation.cpp"
-
-#include "../../../includes/helpers/cleanUp.cpp"
-
-#include "../../components/header.cpp"
-#include "../../components/input.cpp"
-#include "../../components/menu.cpp"
-
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])() = {activityOne};
-
-void midterm(std::string &currentSelectedMenu,
-             void (&previousFunctionCaller)()) {
-  int reAlignLabelYCoordinate = ALIGNMENTY31;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY33;
-
-  std::string inputLabel = "Select Application";
-  int firstIndex = 0;
-  int maxMenuLength = 9;
-  std::string expectedArrayOfValue[maxMenuLength] = {
-      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
-      MENU_ITEM_6, MENU_ITEM_7, MENU_ITEM_8, MENU_ITEM_9};
-
-  displaySecondSemMenu(MENU_ITEM_NONE);
-
-  input<std::string>(inputLabel, userInput, expectedArrayOfValue,
-                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
-
-  std::string foundedElement =
-      findElement(expectedArrayOfValue, maxMenuLength, userInput);
-
-  if (userInput == foundedElement) {
-    std::string currentMenuItem = userInput;
-    int exitMenu = MENU_ITEM_9;
-
-    while (foundedElement != exitMenu) {
-      cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      displaySecondSemMenu(foundedElement);
-
-      for (int i = 0; i < sizeof(expectedArrayOfValue) /
-                              sizeof(expectedArrayOfValue[firstIndex]);
-           i++) {
-        if (selecteMenu == expectedArrayOfValue[i]) {
-          (*secondSemFunctions[i])();
-        }
-      }
-    }
-
-    displaySecondSemMenu(MENU_ITEM_NONE);
-    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-    /* Rerendering previous function caller*/
-    previousFunctionCaller();
-
-    // exit
-    currentSelectedMenu = MENU_ITEM_NONE;
-  }
-}
+  Specifications:
+  There must be your own exception handling to perform when a user enters a
+ grade that is out of range. It signifies that the student will not be allowed
+ to be a candidate. If the inputs are accepted based on the given requirements,
+ compute the student average grade , and an “ACCEPTED” remark. If not, the
+ remark will be “DENIED”. To compute for the GPA, get the sum of the products of
+ the grade and the corresponding number of units per course. The sum must be
+ divided to the total number of units earned
+ *
+ */
+void displayMidterm() { calculateGPA(); }
 
 #endif
-
-// return array of functions
-// TODO import all acttivies
-// TODO ccreate a function and return the imported activities functions
-// TODO helper
-// https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/language-compilers/declare-pointers-to-functions
