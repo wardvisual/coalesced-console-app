@@ -20,6 +20,7 @@
 
 /* Core Applications */
 #include "../../core/apps/information/index.cpp"
+#include "../../core/apps/midterm/index.cpp"
 #include "../../core/apps/secondsem/index.cpp"
 
 /* Constants */
@@ -96,16 +97,16 @@ void mainMenuController() {
           displaySecondSemMenu(currentMenuItem, mainMenuController);
         }
 
-        // if (foundElement == MENU_ITEM_3) {
-        //   midterm(currentSelectedMenu, mainMenuController);
-        // }
+        if (foundElement == MENU_ITEM_3) {
+          displayMidterm();
+        }
 
         // if (foundElement == MENU_ITEM_4) {
         //   displaySystemInformation();
-        //   finalSem(currentSelectedMenu, mainMenuController);
+        //   finalSem(currentMenuItem, mainMenuController);
         // }
         // if (foundElement == MENU_ITEM_5) {
-        //   supplementary(currentSelectedMenu, mainMenuController);
+        //   supplementary(currentMenuItem, mainMenuController);
         // }
       }
     }
