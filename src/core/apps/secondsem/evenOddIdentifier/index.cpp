@@ -42,9 +42,10 @@ void evenOddIdentifierHeading();
  * N. The program will stop if the user type N/n and continue if the user type
  * Y/y.
  *
+ *  @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void evenOddIdentifier(std::string currentMenu) {
+void evenOddIdentifier(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -63,7 +64,7 @@ void evenOddIdentifier(std::string currentMenu) {
 
   do {
     /* A function that review the current screen. */
-    reViewMainScreen(currentMenu, evenOddIdentifierHeading);
+    reViewMainScreen(type, currentMenu, evenOddIdentifierHeading);
 
     /* It handles user input and prints an error if there is an error. */
     input<int>(calculationLabel, userEnteredInteger, expectedArrayOfValueForInt,
@@ -85,7 +86,7 @@ void evenOddIdentifier(std::string currentMenu) {
   } while (std::tolower(isUserWantsToContinue) == DEFAULT_YES);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, evenOddIdentifierHeading);
+  reViewMainScreen(type, currentMenu, evenOddIdentifierHeading);
 }
 
 /**
