@@ -10,8 +10,14 @@
 
 /* Core Applications */
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
+
 /* Helpers */
 #include "../../includes/helpers/cleanUp.cpp"
+
+/* Constants */
+#include "../../includes/constants/appType.cpp"
+
+#include "menu.cpp"
 
 /**
  * It takes a string and a function as parameters, and then calls the function
@@ -20,9 +26,17 @@
  * @param reView This is the function that will be called to re-display the
  * menu.
  */
-void reViewMainScreen(std::string currentMenu, void (&reView)()) {
+void reViewMainScreen(std::string type, std::string currentMenu,
+                      void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-  displaySecondSemMenu(currentMenu);
+
+  if (type == SECOND_SEM_APP) {
+    displaySecondSemMenu(currentMenu);
+  }
+
+  if (type == MIDTERM_APP) {
+    menuComponent(currentMenu);
+  }
 
   reView();
 }
