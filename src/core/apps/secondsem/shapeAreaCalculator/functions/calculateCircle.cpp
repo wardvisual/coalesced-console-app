@@ -21,11 +21,13 @@
 /**
  * It's a function that calculates the area of a circle
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  * @param activityThreeHeading A function that displays the heading of the
  * activity.
  */
-void calculateCircle(std::string currentMenu, void (&activityThreeHeading)()) {
+void calculateCircle(std::string type, std::string currentMenu,
+                     void (&activityThreeHeading)()) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -43,7 +45,7 @@ void calculateCircle(std::string currentMenu, void (&activityThreeHeading)()) {
                reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's calculating the area of a circle. */
   result = (userInputtedRadius * userInputtedRadius) * PI;
