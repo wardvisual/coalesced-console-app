@@ -13,6 +13,7 @@
 #include "calculateGPA/index.cpp"
 
 /**
+ * @brief  @param currentMenuItem The current menu item that the user is on.
  * Midterm :: displayMidterm()
  *
  * Instruction:
@@ -36,6 +37,7 @@
  the grade and the corresponding number of units per course. The sum must be
  divided to the total number of units earned
  *
+ *  @param currentMenuItem The current menu item that the user is on.
  */
 void displayMidterm(std::string currentMenuItem) {
   calculateGPA(currentMenuItem);
