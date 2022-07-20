@@ -37,9 +37,10 @@ void fourOperationsCalculatorHeading();
  *    Using integer data type
  *    Using float data type
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void fourOperationsCalculator(std::string currentMenu) {
+void fourOperationsCalculator(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -59,15 +60,17 @@ void fourOperationsCalculator(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, fourOperationsCalculatorHeading);
+  reViewMainScreen(type, currentMenu, fourOperationsCalculatorHeading);
 
   /* It's checking if the user choice is equal to 1 or 2. If it is, it will call
      the calculate function. */
   if (userChoice == MENU_ITEM_1) {
-    calculate<int>(currentMenu, "Integer", fourOperationsCalculatorHeading);
+    calculate<int>(type, currentMenu, "Integer",
+                   fourOperationsCalculatorHeading);
   }
   if (userChoice == MENU_ITEM_2) {
-    calculate<float>(currentMenu, "Float", fourOperationsCalculatorHeading);
+    calculate<float>(type, currentMenu, "Float",
+                     fourOperationsCalculatorHeading);
   }
 }
 
