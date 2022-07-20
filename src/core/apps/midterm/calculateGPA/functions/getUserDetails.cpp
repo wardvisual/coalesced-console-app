@@ -17,8 +17,9 @@
 #include "../../../../components/text.cpp"
 #include "../../../../components/view.cpp"
 
-void getUserDetails(std::string &userName, std::string &userCourse,
-                    void (&activityThreeHeading)()) {
+void getUserDetails(std::string type, std::string currentMenuItem,
+                    std::string &userName, std::string &userCourse,
+                    void (&displayCalculateGPAHeading)()) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
@@ -33,6 +34,10 @@ void getUserDetails(std::string &userName, std::string &userCourse,
   input<std::string>(labelForName, userName, expectedArrayOfValue, arrayLength,
                      !RESTRICTED_INPUT, reAlignLabelYCoordinate,
                      reAlignErrorMsgYCoordinate);
+
+  /* A function that clears the newly updated text on a screen and displays
+    the previous screen state. */
+  reViewMainScreen(type, currentMenuItem, displayCalculateGPAHeading);
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(labelForCourse, userCourse, expectedArrayOfValue,
