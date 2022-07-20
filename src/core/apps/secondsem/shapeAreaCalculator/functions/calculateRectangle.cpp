@@ -20,11 +20,12 @@
 /**
  * It's a function that calculates the area of a rectangle
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  * @param activityThreeHeading A function that displays the heading of the
  * activity.
  */
-void calculateRectangle(std::string currentMenu,
+void calculateRectangle(std::string type, std::string currentMenu,
                         void (&activityThreeHeading)()) {
   /* variable declarations */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -44,7 +45,7 @@ void calculateRectangle(std::string currentMenu,
              reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the result of the calculation. */
   text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
@@ -57,7 +58,7 @@ void calculateRectangle(std::string currentMenu,
              reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* Calculations */
   result = userInputtedHeight * userInputtedWidth;
