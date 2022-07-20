@@ -39,9 +39,10 @@ void shapeAreaCalculatorHeading();
  *    Using C++ create a program that will compute the area of Circle, Triangle,
  * Square, Rectangle
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void shapeAreaCalculator(std::string currentMenu) {
+void shapeAreaCalculator(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -61,21 +62,21 @@ void shapeAreaCalculator(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
   /* Square */
   if (userChoice == MENU_ITEM_1) {
-    calculateSquare(currentMenu, shapeAreaCalculatorHeading);
+    calculateSquare(type, currentMenu, shapeAreaCalculatorHeading);
   }
   /* Rectangle */
   if (userChoice == MENU_ITEM_2) {
-    calculateRectangle(currentMenu, shapeAreaCalculatorHeading);
+    calculateRectangle(type, currentMenu, shapeAreaCalculatorHeading);
   }
 
   /* Triangle */
   if (userChoice == MENU_ITEM_3) {
-    calculateTriangle(currentMenu, shapeAreaCalculatorHeading);
+    calculateTriangle(type, currentMenu, shapeAreaCalculatorHeading);
   }
 
   /* Circle */
   if (userChoice == MENU_ITEM_4) {
-    calculateCircle(currentMenu, shapeAreaCalculatorHeading);
+    calculateCircle(type, currentMenu, shapeAreaCalculatorHeading);
   }
 }
 
