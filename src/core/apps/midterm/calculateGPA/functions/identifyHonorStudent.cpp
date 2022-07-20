@@ -18,24 +18,27 @@
 
 float identifyHonorStudent(float totalGPA, float maxGrade, std::string username,
                            std::string course) {
-  int ACCEPTED_REMARK = 1, DENIED_REMARK = 0, maxRemarksOption = 2;
+  int maxRemarksOption = 2;
 
-  std::string remarks[maxRemarksOption] = {
-      "Remarks : DENIED - Sorry! But, you are not qualified to be an honor "
-      "student",
-      "Remarks : ACCEPTED - Congrats! You are qualified to be an honor "
-      "student"};
+  text("Result: ", TEXT_BLUE, ALIGNMENTX80, ALIGNMENTY23);
+  text("Student Name: " + username, TEXT_WHITE, ALIGNMENTX80, ALIGNMENTY25);
+  text("Student Course: " + course, TEXT_WHITE, ALIGNMENTX80, ALIGNMENTY26);
+  text("Total GPA: ", TEXT_WHITE, ALIGNMENTX80, ALIGNMENTY27);
+  setDecimalValue(totalGPA, TEXT_WHITE, ALIGNMENTX91, ALIGNMENTY27);
 
-  text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
-  text("Student Name: " + username, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
-  text("Student Course: " + course, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
-  text("Total GPA: ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
-  setDecimalValue(totalGPA, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
-
-  if (totalGPA > maxGrade)
-    text(remarks[DENIED_REMARK], TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
-  else
-    text(remarks[ACCEPTED_REMARK], TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
+  if (totalGPA > maxGrade) {
+    text("Remarks: DENIED", TEXT_WHITE, ALIGNMENTX80, ALIGNMENTY29);
+    text("Message: Sorry, " + username + "!", TEXT_WHITE, ALIGNMENTX80,
+         ALIGNMENTY30);
+    text("But, you are qualified to be an honor student", TEXT_WHITE,
+         ALIGNMENTX80, ALIGNMENTY31);
+  } else {
+    text("Remarks: ACCEPTED", TEXT_WHITE, ALIGNMENTX80, ALIGNMENTY29);
+    text("Message: Congrats, " + username + "!", TEXT_WHITE, ALIGNMENTX80,
+         ALIGNMENTY30);
+    text("You are qualified to be an honor student", TEXT_WHITE, ALIGNMENTX80,
+         ALIGNMENTY31);
+  }
 }
 
 #endif
