@@ -35,9 +35,10 @@ void unitConverterHeading();
  * Instruction:
  *     Using C++ create a program that will convert mm to cm and meter.
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
- */
-void unitConverter(std::string currentMenu) {
+ */ 
+void unitConverter(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -57,7 +58,7 @@ void unitConverter(std::string currentMenu) {
                reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, unitConverterHeading);
+  reViewMainScreen(type, currentMenu, unitConverterHeading);
 
   /* millimeter to meter */
   meter = (millimeter * POINT_ZERO_ZERO_ONE);
