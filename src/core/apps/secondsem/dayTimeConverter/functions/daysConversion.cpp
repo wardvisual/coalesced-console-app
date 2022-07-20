@@ -24,12 +24,13 @@
 /**
  * It converts the number of days to years, months and days.
  *
+ *  @param type It's the type of the current menu.
  * @param currentMenu It's the current menu that the user is in.
  * @param activityThreeHeading It's a function that displays the heading of the
  * activity.
  */
 
-void renderDaysConversion(std::string currentMenu,
+void renderDaysConversion(std::string type, std::string currentMenu,
                           void (&activityThreeHeading)()) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -51,7 +52,7 @@ void renderDaysConversion(std::string currentMenu,
              reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the type of conversion. */
   text("Type of Conversion: Days Conversion", TEXT_BLUE, ALIGNMENTX38,
