@@ -31,9 +31,10 @@ void getIntegerSumHeading();
  * Instruction:
  *    Using C++ create a program that add two integers then display the result.
  *
+ *  @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void getIntegerSum(std::string currentMenu) {
+void getIntegerSum(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -55,7 +56,7 @@ void getIntegerSum(std::string currentMenu) {
              reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, getIntegerSumHeading);
+  reViewMainScreen(type, currentMenu, getIntegerSumHeading);
 
   /* It's displaying the result of the user input. */
   text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
@@ -68,7 +69,7 @@ void getIntegerSum(std::string currentMenu) {
              reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, getIntegerSumHeading);
+  reViewMainScreen(type, currentMenu, getIntegerSumHeading);
 
   /* Calculations. */
   sumResult = firstNumber + secondNumber;
