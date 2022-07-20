@@ -25,12 +25,13 @@
  * It's a function that converts the number of seconds to hours, minutes and
  * remaining seconds
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu It's the current menu that the user is in.
  * @param activityThreeHeading It's a function that displays the heading of the
  * activity.
  */
 
-void renderTimeConversion(std::string currentMenu,
+void renderTimeConversion(std::string type, std::string currentMenu,
                           void (&activityThreeHeading)()) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -52,7 +53,7 @@ void renderTimeConversion(std::string currentMenu,
              reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the type of conversion. */
   text("Type of Conversion: Time Conversion", TEXT_BLUE, ALIGNMENTX38,
