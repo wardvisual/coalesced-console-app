@@ -29,8 +29,10 @@
 
 /* Calculate GPA helper function */
 #include "functions/askToContinue.cpp"
+#include "functions/computeGradePointAverage.cpp"
 #include "functions/getUserDetails.cpp"
 #include "functions/heading.cpp"
+#include "functions/identifyHonorStudent.cpp"
 
 void calculateGPA(std::string currentMenuItem) {
   /* variable declaration */
@@ -45,9 +47,10 @@ void calculateGPA(std::string currentMenuItem) {
       "GEMATHW",  "GELIFEWR", "GEARTAPP", "GEKOMFIL", "NTROCOMP",
       "FPROGLEC", "FPROGLAB", "GEPEMOVE", "NSTPROG1"};
   std::string userGrade;
-  bool isContinues = false;
+  bool isContinues = false, isGradeDoneInserting = false;
   float acceptedGrade;
 
+  float acceptedGrades[MAX_SUBJECT_LENGTH] = {};
   std::string expectedArrayOfValueForString[] = {};
   char expectedArrayOfValueForChar[] = {};
   int arrayLength = 0; // none
@@ -74,12 +77,12 @@ void calculateGPA(std::string currentMenuItem) {
                          expectedArrayOfValueForString, arrayLength,
                          !RESTRICTED_INPUT, reAlignLabelYCoordinate,
                          reAlignErrorMsgYCoordinate);
+
       /* A function that clears the newly updated text on a screen and
 displays the previous screen state. */
       reViewMainScreen(MIDTERM_APP, currentMenuItem,
                        displayCalculateGPAHeading);
 
-      /* Checking for good grades */
       if (!validateString(userGrade, true)) {
         acceptedGrade = std::stof(userGrade);
 
@@ -88,6 +91,13 @@ displays the previous screen state. */
   displays the previous screen state. */
           reViewMainScreen(MIDTERM_APP, currentMenuItem,
                            displayCalculateGPAHeading);
+          int singleValue = 1;
+
+          if (i == MAX_SUBJECT_LENGTH - singleValue)
+            isGradeDoneInserting = true;
+
+          acceptedGrades[i] = acceptedGrade;
+
         } else {
           /* A function that clears the newly updated text on a screen and
   displays the previous screen state. */
@@ -161,6 +171,13 @@ displays the previous screen state. */
           }
         }
       }
+    }
+
+    if (isGradeDoneInserting) {
+      float totalGPA = computeGradePointAverage(
+          availableSubjects, acceptedGrades, MAX_SUBJECT_LENGTH);
+
+      identifyHonorStudent(totalGPA, MAX_GRADE, userName, userCourse);
     }
 
   } while (isContinues);
