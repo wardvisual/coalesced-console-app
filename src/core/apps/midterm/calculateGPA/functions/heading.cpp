@@ -41,7 +41,7 @@ void displayCalculateGPAHeading() {
        "not lower than 2.25",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY19);
   text("to be consider as academic honor candidate. A grade must be ranging "
-       "from 1.0 to 2.25.",
+       "from 1.00 to 2.25.",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
   text("No dropped or inc grade. ", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY21);
 }
