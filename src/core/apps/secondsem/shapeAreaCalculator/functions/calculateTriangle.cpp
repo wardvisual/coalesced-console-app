@@ -22,7 +22,15 @@
 void resultHandler(float userInputtedBase, float userInputtedLeftSide,
                    float userInputtedRightSide, float result);
 
-void calculateTriangle(std::string currentMenu,
+/**
+ * It calculates the area of a triangle
+ *
+ * @param type It's the type of the current menu.
+ * @param currentMenu It's the current menu that the user is in.
+ * @param activityThreeHeading It's a function that displays the heading of the
+ * activity.
+ */
+void calculateTriangle(std::string type, std::string currentMenu,
                        void (&activityThreeHeading)()) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -43,7 +51,7 @@ void calculateTriangle(std::string currentMenu,
                reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the result of the user input. */
   text("Result", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
@@ -56,7 +64,7 @@ void calculateTriangle(std::string currentMenu,
                reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the result of the user input. */
   text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
@@ -79,7 +87,7 @@ void calculateTriangle(std::string currentMenu,
                 result);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's displaying the result of the calculation. */
   resultHandler(userInputtedBase, userInputtedLeftSide, userInputtedRightSide,
