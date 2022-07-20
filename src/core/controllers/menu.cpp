@@ -53,6 +53,7 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
+    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
     /* renders default menu */
     displaySystemInformation();
     menuComponent(MENU_ITEM_1);
@@ -98,7 +99,7 @@ void mainMenuController() {
         }
 
         if (foundElement == MENU_ITEM_3) {
-          displayMidterm();
+          displayMidterm(currentMenuItem);
         }
 
         // if (foundElement == MENU_ITEM_4) {
