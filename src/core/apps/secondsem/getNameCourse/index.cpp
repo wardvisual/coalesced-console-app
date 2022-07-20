@@ -31,9 +31,10 @@ void getNameCourseHeading();
  * Instruction:
  *    Using C++ write a program that display your name and your course.
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void getNameCourse(std::string currentMenu) {
+void getNameCourse(std::string type, std::string currentMenu) {
 
   /* It's a variable declaration. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -55,7 +56,7 @@ void getNameCourse(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, getNameCourseHeading);
+  reViewMainScreen(type, currentMenu, getNameCourseHeading);
 
   /* It's displaying the result of the user input. */
   text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
@@ -66,7 +67,7 @@ void getNameCourse(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, getNameCourseHeading);
+  reViewMainScreen(type, currentMenu, getNameCourseHeading);
 
   /* It's displaying the result of the user input. */
   text("Result: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY14);
