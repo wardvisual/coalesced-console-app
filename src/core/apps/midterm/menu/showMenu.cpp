@@ -1,20 +1,16 @@
+/**
+ * @file /src/core/apps/midterm/menu/showMenu.cpp/
+ * @brief A helper function
+ *
+ * */
+
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
 #ifndef CPP_MIDTERM_MENU
 #define CPP_MIDTERM_MENU
 
-#include "../../../../includes/constants/color.cpp"
+#include "../calculateGPA/index.cpp"
 
-#include "../../../../includes/helpers/color.cpp"
-
-#include "../../../../includes/helpers/gotoxy.cpp"
-
-#include "../../../../includes/helpers/symbol.cpp"
-
-void displayMidtermMenu() {
-  std::string generatedSymbol87 = generateSymbol("-", 20);
-
-  applyTextColor(TEXT_WHITE);
-  alignContent(40, 10);
-  std::cout << " <<  " << generatedSymbol87 << " >> ";
-}
+void displayMidtermMenu() { calculateGPA(); }
 
 #endif
