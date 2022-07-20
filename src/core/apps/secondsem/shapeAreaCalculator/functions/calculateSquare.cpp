@@ -20,11 +20,13 @@
 /**
  * It takes in a string and a function as parameters and then calls the function
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  * @param activityThreeHeading A function that displays the heading of the
  * activity.
  */
-void calculateSquare(std::string currentMenu, void (&activityThreeHeading)()) {
+void calculateSquare(std::string type, std::string currentMenu,
+                     void (&activityThreeHeading)()) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -42,7 +44,7 @@ void calculateSquare(std::string currentMenu, void (&activityThreeHeading)()) {
              reAlignErrorMsgYCoordinate);
 
   /* A function that clears the screen and displays the main menu. */
-  reViewMainScreen(currentMenu, activityThreeHeading);
+  reViewMainScreen(type, currentMenu, activityThreeHeading);
 
   /* It's calculating the area of a square. */
   result = userInput * userInput;
