@@ -46,9 +46,10 @@ void tuitionFeeCalculatorHeading();
    C. Three-installment 10% interest
    D. Four-installment 12% interest
  *
+ * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void tuitionFeeCalculator(std::string currentMenu) {
+void tuitionFeeCalculator(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -71,7 +72,7 @@ void tuitionFeeCalculator(std::string currentMenu) {
                reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, tuitionFeeCalculatorHeading);
+  reViewMainScreen(type, currentMenu, tuitionFeeCalculatorHeading);
 
   /* It's displaying the result of the user input. */
   text("Tuition Fee: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY15);
@@ -84,7 +85,7 @@ void tuitionFeeCalculator(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, tuitionFeeCalculatorHeading);
+  reViewMainScreen(type, currentMenu, tuitionFeeCalculatorHeading);
 
   /* It's displaying the result of the user input. */
   text("Tuition Fee: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY15);
