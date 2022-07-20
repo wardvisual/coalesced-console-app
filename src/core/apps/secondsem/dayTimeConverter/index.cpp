@@ -39,10 +39,11 @@ void dayTimeConverterHeading();
  * Instruction:
  *     Program that converts days to years, months and remaining days
  *     Program that converts seconds to hours , minutes and remaining seconds
- *
+ *1
+  @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
  */
-void dayTimeConverter(std::string currentMenu) {
+void dayTimeConverter(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
@@ -62,17 +63,17 @@ void dayTimeConverter(std::string currentMenu) {
                      reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, dayTimeConverterHeading);
+  reViewMainScreen(type, currentMenu, dayTimeConverterHeading);
 
   /* It's checking if the user choice is equal to 1 or 2. If it is equal to 1,
   it will call the renderDaysConversion function. If it is equal to 2, it will
   call the renderTimeConversion function. */
   if (userChoice == MENU_ITEM_1) {
-    renderDaysConversion(currentMenu, dayTimeConverterHeading);
+    renderDaysConversion(type, currentMenu, dayTimeConverterHeading);
   }
 
   if (userChoice == MENU_ITEM_2) {
-    renderTimeConversion(currentMenu, dayTimeConverterHeading);
+    renderTimeConversion(type, currentMenu, dayTimeConverterHeading);
   }
 }
 
