@@ -25,12 +25,14 @@
 /**
  * It handles user input and prints an error if there is an error.
  *
+ *
+ * @param appType It's the type of the current menu.
  * @param currentMenu The current menu.
  * @param type The type of number.
  * @param reViewHeading A function that review the current screen.
  */
 template <typename T>
-void calculate(std::string currentMenu, std::string type,
+void calculate(std::string appType, std::string currentMenu, std::string type,
                void (&reViewHeading)()) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -45,7 +47,7 @@ void calculate(std::string currentMenu, std::string type,
   std::string secondNumberLabel = "Enter second number";
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, reViewHeading);
+  reViewMainScreen(appType, currentMenu, reViewHeading);
 
   /* displays type of number */
   text("Number type: " + type, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY21);
@@ -56,7 +58,7 @@ void calculate(std::string currentMenu, std::string type,
            reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, reViewHeading);
+  reViewMainScreen(appType, currentMenu, reViewHeading);
 
   /* displays type of number */
   text("Number type: " + type, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY21);
@@ -71,7 +73,7 @@ void calculate(std::string currentMenu, std::string type,
            reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
-  reViewMainScreen(currentMenu, reViewHeading);
+  reViewMainScreen(appType, currentMenu, reViewHeading);
 
   /* Calculations. */
   sumResult = (firstNumber + secondNumber);
