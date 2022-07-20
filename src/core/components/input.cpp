@@ -73,9 +73,6 @@ void input(std::string &label, T &referenceValue, T arrayValues[],
         std::setw(isRestricted ? restrictedInput : maximumInputLength) >>
         referenceValue;
 
-    // if(typeid(T).name() == STRING_TYPE_ID) {
-    //   validateString(referenceValue)
-    // }
     /* Checking if the input is in the array. */
     while (!isInArray<T>(arrayValues, arrayLength, referenceValue)) {
       /* Displaying error message */
