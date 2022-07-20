@@ -35,18 +35,32 @@ void getUserDetails(std::string type, std::string currentMenuItem,
                      !RESTRICTED_INPUT, reAlignLabelYCoordinate,
                      reAlignErrorMsgYCoordinate);
 
-  /* A function that clears the newly updated text on a screen and displays
-    the previous screen state. */
   reViewMainScreen(type, currentMenuItem, displayCalculateGPAHeading);
+
+  /* It's displaying the user entered details */
+  text("User Details:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY23);
+  text("Name: " + userName, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY25);
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(labelForCourse, userCourse, expectedArrayOfValue,
                      arrayLength, !RESTRICTED_INPUT, reAlignLabelYCoordinate,
                      reAlignErrorMsgYCoordinate);
 
+  /* A function that clears the newly updated text on a screen and displays
+the previous screen state. */
+  reViewMainScreen(type, currentMenuItem, displayCalculateGPAHeading);
+
   /* It's displaying the user entered details */
-  text("Name:" + userName, TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY20);
-  text("Course: " + userCourse, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY22);
+  text("User Details:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY23);
+  text("Name: " + userName, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY25);
+  text("Course: " + userCourse, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY26);
+}
+
+void displayUserDetails(std::string userName, std::string userCourse) {
+  /* It's displaying the user entered details */
+  text("User Details:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY23);
+  text("Name: " + userName, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY25);
+  text("Course: " + userCourse, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY26);
 }
 
 #endif
