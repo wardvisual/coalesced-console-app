@@ -6,8 +6,8 @@
 
 /* A preprocessor directive that prevents the file from being included more than
   once. */
-#ifndef CPP_MIDTERM
-#define CPP_MIDTERM
+#ifndef CPP_MIDTERM_INDEX
+#define CPP_MIDTERM_INDEX
 
 /* Core Application */
 #include "calculateGPA/index.cpp"
@@ -37,6 +37,8 @@
  divided to the total number of units earned
  *
  */
-void displayMidterm() { calculateGPA(); }
+void displayMidterm(std::string currentMenuItem) {
+  calculateGPA(currentMenuItem);
+}
 
 #endif
