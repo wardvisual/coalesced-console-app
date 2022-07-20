@@ -30,6 +30,7 @@
 
 /* Constants */
 #include "../../../includes/constants/alignment.cpp"
+#include "../../../includes/constants/appType.cpp"
 #include "../../../includes/constants/menu.cpp"
 #include "../../../includes/constants/validation.cpp"
 
@@ -53,7 +54,8 @@
  * 07. unitConverter()
  * 08. dayTimeConverter()
  */
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string currentMenu) = {
+void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string type,
+                                                 std::string currentMenu) = {
     getNameCourse,        getIntegerSum,     shapeAreaCalculator,
     tuitionFeeCalculator, evenOddIdentifier, fourOperationsCalculator,
     unitConverter,        dayTimeConverter};
@@ -108,7 +110,7 @@ void displaySecondSemMenu(std::string &currentSelectedMenu,
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
           displaySecondSemMenu(foundElement);
 
-          (*secondSemFunctions[i])(foundElement);
+          (*secondSemFunctions[i])(SECOND_SEM_APP, foundElement);
         }
       }
 
