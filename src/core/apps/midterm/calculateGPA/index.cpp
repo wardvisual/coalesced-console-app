@@ -67,8 +67,10 @@ void calculateGPA(std::string currentMenuItem) {
       the previous screen state. */
     reViewMainScreen(MIDTERM_APP, currentMenuItem, displayCalculateGPAHeading);
 
-    /* User input label for grades */
-    text(labelForUserGrade, TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY20);
+    displayUserDetails(userName, userCourse);
+
+    /* User input label */
+    text(labelForUserGrade, TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY22);
 
     /* Getting the user grades */
     for (int i = 0; i < MAX_SUBJECT_LENGTH; i++) {
@@ -83,20 +85,39 @@ displays the previous screen state. */
       reViewMainScreen(MIDTERM_APP, currentMenuItem,
                        displayCalculateGPAHeading);
 
+      /* It's displaying the user details such as name and course. */
+      displayUserDetails(userName, userCourse);
+
+      /* User input label */
+      text("Grades:", TEXT_BLUE, ALIGNMENTX59, ALIGNMENTY23);
+      text(labelForUserGrade, TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY22);
+
+      for (int i = 0; i < MAX_SUBJECT_LENGTH; i++) {
+        /* It's displaying the user entered grades */
+        text(availableSubjects[i] + ":", TEXT_WHITE, ALIGNMENTX59,
+             ALIGNMENTY25 + i);
+        setDecimalValue(acceptedGrades[i], TEXT_WHITE, ALIGNMENTX69,
+                        ALIGNMENTY25 + i);
+      }
+
       if (!validateString(userGrade, true)) {
         acceptedGrade = std::stof(userGrade);
 
         if (acceptedGrade >= MIN_GRADE && acceptedGrade <= MAX_GRADE) {
-          /* A function that clears the newly updated text on a screen and
-  displays the previous screen state. */
-          reViewMainScreen(MIDTERM_APP, currentMenuItem,
-                           displayCalculateGPAHeading);
           int singleValue = 1;
 
           if (i == MAX_SUBJECT_LENGTH - singleValue)
             isGradeDoneInserting = true;
 
           acceptedGrades[i] = acceptedGrade;
+
+          for (int i = 0; i < MAX_SUBJECT_LENGTH; i++) {
+            /* It's displaying the user entered grades */
+            text(availableSubjects[i] + ":", TEXT_WHITE, ALIGNMENTX59,
+                 ALIGNMENTY25 + i);
+            setDecimalValue(acceptedGrades[i], TEXT_WHITE, ALIGNMENTX69,
+                            ALIGNMENTY25 + i);
+          }
 
         } else {
           /* A function that clears the newly updated text on a screen and
@@ -107,19 +128,10 @@ displays the previous screen state. */
           std::string errorMessage = "Grade must be ranging from 1.00 to 2.25";
           newError(errorMessage, ALIGNMENTX2, ALIGNMENTY26);
 
-          if (askToContinue()) {
-            /* A function that clears the newly updated text on a screen and
-displays the previous screen state. */
-            reViewMainScreen(MIDTERM_APP, currentMenuItem,
-                             displayCalculateGPAHeading);
-            /* Continues the loop*/
-            isContinues = true;
-            i = 0;
-          } else {
-            /* stops the for loop */
-            isContinues = false;
-            i = MAX_SUBJECT_LENGTH + i;
-          }
+          askToContinue(i, MAX_SUBJECT_LENGTH, isContinues, acceptedGrades);
+
+          reViewMainScreen(MIDTERM_APP, currentMenuItem,
+                           displayCalculateGPAHeading);
         }
       } else {
         /* Checking for GPA and INC grade*/
@@ -133,21 +145,11 @@ displays the previous screen state. */
           errorMessage = "Remarks: DENIED";
           newError(errorMessage, ALIGNMENTX2, ALIGNMENTY26);
 
-          if (askToContinue()) {
-            /* A function that clears the newly updated text on a screen and
-displays the previous screen state. */
-            reViewMainScreen(MIDTERM_APP, currentMenuItem,
-                             displayCalculateGPAHeading);
-            /* Continues the loop*/
-            isContinues = true;
-            i = 0;
-          } else {
-            /* stops the for loop */
-            isContinues = false;
-            i = MAX_SUBJECT_LENGTH + i;
-          }
-        } else {
+          askToContinue(i, MAX_SUBJECT_LENGTH, isContinues, acceptedGrades);
 
+          reViewMainScreen(MIDTERM_APP, currentMenuItem,
+                           displayCalculateGPAHeading);
+        } else {
           /* A function that clears the newly updated text on a screen and
             displays the previous screen state. */
           reViewMainScreen(MIDTERM_APP, currentMenuItem,
@@ -156,28 +158,29 @@ displays the previous screen state. */
           errorMessage = "Invalid Input. Please try again!";
           newError(errorMessage, ALIGNMENTX2, ALIGNMENTY26);
 
-          if (askToContinue()) {
-            /* A function that clears the newly updated text on a screen and
-displays the previous screen state. */
-            reViewMainScreen(MIDTERM_APP, currentMenuItem,
-                             displayCalculateGPAHeading);
-            /* Continues the loop*/
-            isContinues = true;
-            i = 0;
-          } else {
-            /* stops the for loop */
-            isContinues = false;
-            i = MAX_SUBJECT_LENGTH + i;
-          }
+          askToContinue(i, MAX_SUBJECT_LENGTH, isContinues, acceptedGrades);
+
+          reViewMainScreen(MIDTERM_APP, currentMenuItem,
+                           displayCalculateGPAHeading);
         }
       }
     }
 
     if (isGradeDoneInserting) {
+      int withoutLoop = 1; // true
       float totalGPA = computeGradePointAverage(
           availableSubjects, acceptedGrades, MAX_SUBJECT_LENGTH);
 
       identifyHonorStudent(totalGPA, MAX_GRADE, userName, userCourse);
+
+      askToContinue(withoutLoop, MAX_SUBJECT_LENGTH, isContinues,
+                    acceptedGrades);
+
+      reViewMainScreen(MIDTERM_APP, currentMenuItem,
+                       displayCalculateGPAHeading);
+
+      /* Resetting to false */
+      isGradeDoneInserting = false;
     }
 
   } while (isContinues);
