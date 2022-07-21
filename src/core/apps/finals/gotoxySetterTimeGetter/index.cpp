@@ -41,7 +41,7 @@ void gotoxySetterTimeGetterHeading();
 void gotoxySetterTimeGetter(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY23;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY29;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY25;
 
   std::string expectedArrayOfValue[] = {};
   int arrayLength = 0; // none
@@ -72,7 +72,7 @@ void gotoxySetterTimeGetter(std::string type, std::string currentMenu) {
  * It's displaying the
  * instruction for the user.
  */
-void gotoxySetterTimeGetterHeading() { 
+void gotoxySetterTimeGetterHeading() {
   text("Instruction: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
   text("Using gotoxy function, display your full name and course at the center "
        "of the screen",
