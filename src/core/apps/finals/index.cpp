@@ -14,6 +14,7 @@
 
 /* Final term activitities*/
 #include "gotoxySetterTimeGetter/index.cpp"
+#include "evenOddIdentifierArray/index.cpp"
 #include "functionOrientedFactorial/index.cpp"
 #include "squareRootCalculator/index.cpp"
 
@@ -43,15 +44,12 @@
  * 01. squareRootCalculator()
  * 02. gotoxySetterTimeGetter()
  * 03. functionOrientedFactorial()
- * 04. tuitionFeeCalculator()
- * 05. evenOddIdentifier()
- * 06. fourOperationsCalculator()
- * 07. unitConverter()
- * 08. dayTimeConverter()
+ * 04. evenOddIdentifierArray()
  */
 void (*finalTermFunctions[MAX_FINAL_TERM_MENU_ITEM_LENGTH])(
     std::string type, std::string currentMenu) = {
-    squareRootCalculator, gotoxySetterTimeGetter, functionOrientedFactorial};
+    squareRootCalculator, gotoxySetterTimeGetter, functionOrientedFactorial,
+    evenOddIdentifierArray};
 
 /**
  * It handles Final term menu
@@ -94,7 +92,6 @@ void displayFinalTerm(std::string &currentSelectedMenu,
     /* Checking if the user input is equal to the found element. If it is, it
     will call the function that is in the array. */
     if (userInput == foundElement) {
-
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundElement == expectedArrayOfValue[i]) {
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
