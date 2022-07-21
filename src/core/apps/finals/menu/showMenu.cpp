@@ -26,14 +26,14 @@
  *
  * @param selectedMenuItem The menu item that is currently selected.
  */
-void displayFinalsMenu(std::string selectedMenuItem) {
+void displayFinalTermMenu(std::string selectedMenuItem) {
   text("Final Term Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
   text("[1]. Square Root Calculator",
        selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[2]. Gotoxy & Ctime Feature",
+  text("[2]. Gotoxy Setter & Time Getter",
        selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
@@ -41,7 +41,7 @@ void displayFinalsMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[4]. 1D Array Even & Odd Calculator",
+  text("[4]. Array Even/Odd Identifer",
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
