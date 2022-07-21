@@ -27,7 +27,6 @@
 /* Constants */
 #include "../../includes/constants/alignment.cpp"
 #include "../../includes/constants/color.cpp"
-#include "../../includes/constants/keyStroke.cpp"
 #include "../../includes/constants/menu.cpp"
 #include "../../includes/constants/validation.cpp"
 
@@ -39,13 +38,12 @@
  * It handles the main menu of the application
  */
 void mainMenuController() {
+  std::string userInput;
+  int maxMenuLength = 6;
+  bool isContinues = true;
+  std::string inputLabel = "Select Menu";
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
-  std::string inputLabel = "Select Menu";
-
-  int maxMenuLength = 6;
-  std::string userInput;
-  int keyStroke = _getch();
   std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2,
                                                      MENU_ITEM_3, MENU_ITEM_4,
                                                      MENU_ITEM_5, MENU_ITEM_6};
@@ -54,7 +52,9 @@ void mainMenuController() {
   menuComponent(MENU_ITEM_NONE);
 
   do {
+    std::string exitMenu = MENU_ITEM_6;
     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+
     /* renders default menu */
     displaySystemInformation();
     menuComponent(MENU_ITEM_1);
@@ -64,54 +64,40 @@ void mainMenuController() {
                        maxMenuLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
                        reAlignErrorMsgYCoordinate);
 
-    /* Finding the element in the array of string. */
-    std::string foundElement = findElement<std::string>(
-        expectedArrayOfValue, maxMenuLength, userInput);
+    /* Cleaning up the screen and displaying the menu. */
+    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
+    menuComponent(userInput);
 
-    /* Checking if the user input is equal to the found element. */
-    if (userInput == foundElement) {
-      std::string currentMenuItem = userInput;
-      std::string exitMenu = MENU_ITEM_6;
+    /* Checking if the user input is equal to the exit menu. If it is equal to
+          the exit menu, it will display a message and exit the application. */
+    if (userInput == exitMenu) {
+      isContinues = false;
 
-      /* Checking if the user input is equal to the exit menu. If it is equal to
-      the exit menu, it will display a message and exit the application. */
-      if (currentMenuItem == exitMenu) {
+      text("Thank you for using this application!", TEXT_BLUE, ALIGNMENTX2,
+           ALIGNMENTY24);
 
-        keyStroke = ESCAPE_KEY;
-
-        menuComponent(currentMenuItem);
-
-        text("Thank you for using this application!", TEXT_BLUE, ALIGNMENTX2,
-             ALIGNMENTY24);
-
-        std::cout << "\n\n";
-      } else {
-
-        cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-        menuComponent(currentMenuItem);
-
-        if (foundElement == MENU_ITEM_1) {
-          displaySystemInformation();
-        }
-
-        if (foundElement == MENU_ITEM_2) {
-          displaySecondSem(currentMenuItem, mainMenuController);
-        }
-
-        if (foundElement == MENU_ITEM_3) {
-          displayMidterm(currentMenuItem);
-        }
-
-        if (foundElement == MENU_ITEM_4) {
-          displayFinalTerm(currentMenuItem, mainMenuController);
-        }
-        // if (foundElement == MENU_ITEM_5) {
-        //   supplementary(currentMenuItem, mainMenuController);
-        // }
-      }
+      std::cout << "\n\n\n";
     }
-  } while (keyStroke != ESCAPE_KEY);
+
+    /* Checking if the user input is equal to the found element. If it is
+    equal to the found element, it will display the menu item. */
+    if (userInput == MENU_ITEM_1) {
+      displaySystemInformation();
+    }
+
+    if (userInput == MENU_ITEM_2) {
+      displaySecondSem(userInput, mainMenuController);
+    }
+
+    if (userInput == MENU_ITEM_3) {
+      displayMidterm(userInput);
+    }
+
+    if (userInput == MENU_ITEM_4) {
+      displayFinalTerm(userInput, mainMenuController);
+    }
+
+  } while (isContinues);
 }
 
 #endif
