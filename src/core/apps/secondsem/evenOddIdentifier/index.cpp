@@ -27,8 +27,8 @@
 #include "constants.cpp"
 
 /* Activity four helpers */
-#include "functions/calculateFactorial.cpp"
 #include "functions/calculateSum.cpp"
+#include "functions/getFactorial.cpp"
 
 /* It's a function declaration. */
 void evenOddIdentifierHeading();
@@ -73,8 +73,7 @@ void evenOddIdentifier(std::string type, std::string currentMenu) {
 
     /* It's checking if the user entered number is even or odd. */
     if (userEnteredInteger % TWO_EVEN_NUMBER == STARTING_EVEN_NUMBER) {
-      calculateFactorial(currentMenu, userEnteredInteger,
-                         evenOddIdentifierHeading);
+      getFactorial(userEnteredInteger);
     } else {
       calculateSum(currentMenu, userEnteredInteger, evenOddIdentifierHeading);
     }
