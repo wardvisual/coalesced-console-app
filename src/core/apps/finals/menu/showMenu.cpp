@@ -45,9 +45,8 @@ void displayFinalTermMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[5]. Jump Statements",
-       selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
-       ALIGNMENTY20);
+  text("[5]. Back", selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE,
+       ALIGNMENTX2, ALIGNMENTY20);
 }
 
 #endif

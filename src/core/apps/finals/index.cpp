@@ -64,9 +64,9 @@ void displayFinalTerm(std::string &currentSelectedMenu,
   /* Declaring variables. */
   int maxMenuLength = MAX_FINAL_TERM_MENU_ITEM_LENGTH;
   std::string userInput;
-  std::string exitMenu = MENU_ITEM_9;
+  std::string exitMenu = MENU_ITEM_5;
   int reAlignLabelYCoordinate = ALIGNMENTY23;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY29;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY25;
   std::string inputLabel = "Select Application";
   std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5};
