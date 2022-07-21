@@ -19,6 +19,7 @@
 #include "../components/text.cpp"
 
 /* Core Applications */
+#include "../../core/apps/finals/index.cpp"
 #include "../../core/apps/information/index.cpp"
 #include "../../core/apps/midterm/index.cpp"
 #include "../../core/apps/secondsem/index.cpp"
@@ -95,17 +96,16 @@ void mainMenuController() {
         }
 
         if (foundElement == MENU_ITEM_2) {
-          displaySecondSemMenu(currentMenuItem, mainMenuController);
+          displaySecondSem(currentMenuItem, mainMenuController);
         }
 
         if (foundElement == MENU_ITEM_3) {
           displayMidterm(currentMenuItem);
         }
 
-        // if (foundElement == MENU_ITEM_4) {
-        //   displaySystemInformation();
-        //   finalSem(currentMenuItem, mainMenuController);
-        // }
+        if (foundElement == MENU_ITEM_4) {
+          displayFinalTerm(currentMenuItem, mainMenuController);
+        }
         // if (foundElement == MENU_ITEM_5) {
         //   supplementary(currentMenuItem, mainMenuController);
         // }
