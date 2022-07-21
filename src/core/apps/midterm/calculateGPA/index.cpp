@@ -34,6 +34,12 @@
 #include "functions/heading.cpp"
 #include "functions/identifyHonorStudent.cpp"
 
+/**
+ * It's a function that calculates the GPA of a student
+ *
+ * @param currentMenuItem It's the current menu item that the user is currently
+ * in.
+ */
 void calculateGPA(std::string currentMenuItem) {
   /* variable declaration */
   int reAlignLabelYCoordinate = ALIGNMENTY24,
@@ -92,6 +98,7 @@ displays the previous screen state. */
       text("Grades:", TEXT_BLUE, ALIGNMENTX59, ALIGNMENTY23);
       text(labelForUserGrade, TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY22);
 
+      /* It's displaying the user entered grades. */
       for (int i = 0; i < MAX_SUBJECT_LENGTH; i++) {
         /* It's displaying the user entered grades */
         text(availableSubjects[i] + ":", TEXT_WHITE, ALIGNMENTX59,
@@ -100,9 +107,12 @@ displays the previous screen state. */
                         ALIGNMENTY25 + i);
       }
 
+      /* It's a function that validates the user input. */
       if (!validateString(userGrade, true)) {
         acceptedGrade = std::stof(userGrade);
 
+        /* It's checking if the user entered grade is within the range of 1.00
+        to 2.25. If it is, it will display the user entered grades. */
         if (acceptedGrade >= MIN_GRADE && acceptedGrade <= MAX_GRADE) {
           int singleValue = 1;
 
@@ -166,16 +176,23 @@ displays the previous screen state. */
       }
     }
 
+    /* It's a function that calculates the GPA of a student. */
     if (isGradeDoneInserting) {
       int withoutLoop = 1; // true
       float totalGPA = computeGradePointAverage(
           availableSubjects, acceptedGrades, MAX_SUBJECT_LENGTH);
 
+      /* It's a function that identifies if the student is an honor student or
+         not. */
       identifyHonorStudent(totalGPA, MAX_GRADE, userName, userCourse);
 
+      /* It's a function that asks the user if he/she wants to continue or not.
+       */
       askToContinue(withoutLoop, MAX_SUBJECT_LENGTH, isContinues,
                     acceptedGrades);
 
+      /* It's a function that clears the newly updated text on a screen and
+      displays the previous screen state. */
       reViewMainScreen(MIDTERM_APP, currentMenuItem,
                        displayCalculateGPAHeading);
 
