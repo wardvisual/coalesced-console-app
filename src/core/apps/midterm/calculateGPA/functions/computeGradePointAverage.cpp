@@ -38,6 +38,8 @@ float computeGradePointAverage(std::string subjects[], float grades[],
   float sumOfGrades = 0, gradePointAverage = 0;
   int totalUnits;
 
+  /* Looping through the array of subjects and grades and adding the grades to
+   the sumOfGrades variable. */
   for (int i = 0; i < maxGradeLength; i++) {
     if (subjects[i] == twoUnitSubject) {
       sumOfGrades += (grades[i] * TWO_UNIT);
@@ -48,6 +50,7 @@ float computeGradePointAverage(std::string subjects[], float grades[],
     }
   }
 
+  /* Calcuting the total GPA */
   gradePointAverage = sumOfGrades / totalUnits;
 
   return gradePointAverage;
