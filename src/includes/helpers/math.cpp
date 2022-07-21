@@ -8,6 +8,10 @@
 #ifndef CPP_MATH_CALCULATIONS_HELPER
 #define CPP_MATH_CALCULATIONS_HELPER
 
+/* Defining constants. */
+#define TWO_EVEN_NUMBER 2
+#define STARTING_EVEN_NUMBER 0
+
 /**
  * The function takes an integer as an argument and returns the factorial of
  * that integer
@@ -27,6 +31,22 @@ int calculateFactorial(int nToFactorial) {
   }
 
   return calculationResult;
+}
+
+/**
+ * It determines if an integer is even or not.
+ *
+ * @param integer The integer to be checked if it's even or not.
+ *
+ * @return The function isEven is returning a boolean value.
+ */
+bool isEven(int integer) {
+  bool isEvenInteger = false;
+
+  if (integer % TWO_EVEN_NUMBER == STARTING_EVEN_NUMBER)
+    isEvenInteger = true;
+
+  return isEvenInteger;
 }
 
 #endif
