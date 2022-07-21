@@ -33,9 +33,8 @@ void supplementary(std::string &currentSelectedMenu,
   std::string inputLabel = "Select Application";
   int firstIndex = 0;
   int maxMenuLength = 9;
-  std::string expectedArrayOfValue[maxMenuLength] = {
-      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
-      MENU_ITEM_6, MENU_ITEM_7, MENU_ITEM_8, MENU_ITEM_9};
+  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2,
+                                                     MENU_ITEM_3};
 
   displaySecondSemMenu(MENU_ITEM_NONE);
 
@@ -75,9 +74,3 @@ void supplementary(std::string &currentSelectedMenu,
 }
 
 #endif
-
-// return array of functions
-// TODO import all acttivies
-// TODO ccreate a function and return the imported activities functions
-// TODO helper
-// https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/language-compilers/declare-pointers-to-functions

@@ -11,7 +11,6 @@
 
 /* Built-in libraries */
 #include <iostream>
-#include <windows.h>
 
 /* Components */
 #include "./core/components/header.cpp"
@@ -24,12 +23,14 @@
  * It renders the console application
  */
 void renderConsoleApplication() {
-  /* =============== || COMPONENTS || ============== */
+  /* =============== || <COMPONENTS> || ============== */
   headerComponent();
   mainMenuHeaderComponent();
+  /* =============== || </COMPONENTS> || ============== */
 
-  /* =============== || CONTROLLERS || ============== */
+  /* =============== || <CONTROLLERS> || ============== */
   mainMenuController();
+  /* =============== || </CONTROLLERS> || ============== */
 }
 
 #endif
