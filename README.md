@@ -17,7 +17,7 @@
   </a>
 
   <h3 align="center">Interactive Console Application</h3>
-  <h3 align="center">School Project</h3>
+  <p align="center">School Project</p>
 
   <p align="center">
   An application that integrates various school laboratory activities from the second to the final semester. This project aims to produce an interactive console-based application. 
