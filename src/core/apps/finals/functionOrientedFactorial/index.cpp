@@ -39,7 +39,7 @@ void functionOrientedFactorialHeading();
 void functionOrientedFactorial(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY23;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY29;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY25;
 
   int expectedArrayOfValue[] = {};
   int arrayLength = 0; // none
