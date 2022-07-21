@@ -22,6 +22,7 @@
 
 /* Helpers */
 #include "../../../../includes/helpers/cleanUp.cpp"
+#include "../../../../includes/helpers/math.cpp"
 
 /* Activity four constants */
 #include "constants.cpp"
@@ -72,7 +73,7 @@ void evenOddIdentifier(std::string type, std::string currentMenu) {
                reAlignErrorMsgYCoordinate);
 
     /* It's checking if the user entered number is even or odd. */
-    if (userEnteredInteger % TWO_EVEN_NUMBER == STARTING_EVEN_NUMBER) {
+    if (isEven(userEnteredInteger)) {
       getFactorial(userEnteredInteger);
     } else {
       calculateSum(currentMenu, userEnteredInteger, evenOddIdentifierHeading);
