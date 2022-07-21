@@ -1,83 +1,53 @@
 /**
- * @file /src/apps/secondsem/index.cpp
- * @brief
+ * @file /src/core/apps/finals/menu/showMenu.cpp
+ * @brief Finals menu
  *
  * */
 
-#ifndef CPP_INDEX_FINALS
-#define CPP_INDEX_FINALS
+/* A preprocessor directive that prevents the file from being included more than
+  once. */
+#ifndef CPP_FINALS_SEM_MENU
+#define CPP_FINALS_SEM_MENU
 
-#define MAX_MENU_ITEM_LENGTH 9
+/* Constants */
+#include "../../../../includes/constants/alignment.cpp"
+#include "../../../../includes/constants/color.cpp"
+#include "../../../../includes/constants/menu.cpp"
 
-#include "activityOne/index.cpp"
+/* Helpers */
+#include "../../../../includes/helpers/color.cpp"
+#include "../../../../includes/helpers/gotoxy.cpp"
 
-#include "../../controllers/menu.cpp"
+/* Components */
+#include "../../../components/text.cpp"
 
-#include "../../../includes/constants/alignment.cpp"
-#include "../../../includes/constants/menu.cpp"
-#include "../../../includes/constants/validation.cpp"
+/**
+ * It displays the finals menu
+ *
+ * @param selectedMenuItem The menu item that is currently selected.
+ */
+void displayFinalsMenu(std::string selectedMenuItem) {
+  text("Final Term Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
-#include "../../../includes/helpers/cleanUp.cpp"
+  text("[1]. Square Root Calculator",
+       selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY12);
 
-#include "../../components/header.cpp"
-#include "../../components/input.cpp"
-#include "../../components/menu.cpp"
+  text("[2]. Gotoxy & Ctime Feature",
+       selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY14);
 
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])() = {activityOne};
+  text("[3]. Function Oriented Factorial",
+       selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY16);
 
-void finalSem(std::string &currentSelectedMenu,
-              void (&previousFunctionCaller)()) {
-  int reAlignLabelYCoordinate = ALIGNMENTY31;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY33;
+  text("[4]. 1D Array Even & Odd Calculator",
+       selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY18);
 
-  std::string inputLabel = "Select Application";
-  int firstIndex = 0;
-  int maxMenuLength = 9;
-  std::string expectedArrayOfValue[maxMenuLength] = {
-      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
-      MENU_ITEM_6, MENU_ITEM_7, MENU_ITEM_8, MENU_ITEM_9};
-
-  displaySecondSemMenu(MENU_ITEM_NONE);
-
-  input<std::string>(inputLabel, userInput, expectedArrayOfValue,
-                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
-
-  std::string foundedElement =
-      findElement(expectedArrayOfValue, maxMenuLength, userInput);
-
-  if (userInput == foundedElement) {
-    std::string currentMenuItem = userInput;
-    int exitMenu = MENU_ITEM_9;
-
-    while (foundedElement != exitMenu) {
-      cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-      displaySecondSemMenu(foundedElement);
-
-      for (int i = 0; i < sizeof(expectedArrayOfValue) /
-                              sizeof(expectedArrayOfValue[firstIndex]);
-           i++) {
-        if (selecteMenu == expectedArrayOfValue[i]) {
-          (*secondSemFunctions[i])();
-        }
-      }
-    }
-
-    displaySecondSemMenu(MENU_ITEM_NONE);
-    cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-
-    /* Rerendering previous function caller*/
-    previousFunctionCaller();
-
-    // exit
-    currentSelectedMenu = MENU_ITEM_NONE;
-  }
+  text("[5]. Jump Statements",
+       selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
+       ALIGNMENTY20);
 }
 
 #endif
-
-// return array of functions
-// TODO import all acttivies
-// TODO ccreate a function and return the imported activities functions
-// TODO helper
-// https://docs.microsoft.com/en-us/troubleshoot/developer/visualstudio/cpp/language-compilers/declare-pointers-to-functions
