@@ -67,8 +67,8 @@ void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string type,
  * @param previousFunctionCaller This is the function that will be called when
  * the user exits the menu.
  */
-void displaySecondSemMenu(std::string &currentSelectedMenu,
-                          void (&previousFunctionCaller)()) {
+void displaySecondSem(std::string &currentSelectedMenu,
+                      void (&previousFunctionCaller)()) {
 
   /* Declaring variables. */
   int firstIndex = 0;
