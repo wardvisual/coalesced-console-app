@@ -9,8 +9,6 @@
 #define CPP_ACITIVTY_FIVE_CONSTANT_SECOND_SEM
 
 /* Defining constants. */
-#define TWO_EVEN_NUMBER 2
-#define STARTING_EVEN_NUMBER 0
 #define DEFAULT_YES 'y'
 
 #endif
