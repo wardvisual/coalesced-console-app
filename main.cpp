@@ -8,12 +8,12 @@
 #include "src/application.cpp"
 
 /**
- * It creates a console window, sets the title, sets the size, sets the
- * background color, and then waits for the user to press a key
+ * `renderConsoleApplication()` is a function that renders a console application
  *
  * @return The return value of the function renderConsoleApplication()
  */
 int main() {
+
   renderConsoleApplication();
 
   return 0;

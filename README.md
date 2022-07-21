@@ -1,6 +1,6 @@
 # CSGSix - Final Project
 
-An application that integrates various school laboratory activities from the second to the final semester. This project aims to produce an interactive console-based application.
+An application that integrates various school laboratory activities from the second to the final semester. This project aims to produce an interactive console-based application..
 
 ## Members
 
