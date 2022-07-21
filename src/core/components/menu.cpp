@@ -30,7 +30,7 @@ void menuComponent(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[3]. Midterm Applications",
+  text("[3]. Midterm Application(s)",
        selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY14);
 
