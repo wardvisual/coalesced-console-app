@@ -18,6 +18,17 @@
 #include "../../../../components/text.cpp"
 #include "../../../../components/view.cpp"
 
+/**
+ * It asks the user if they want to continue
+ *
+ * @param count This is the number of times the user has entered a grade.
+ * @param maxArrayLength The maximum length of the array.
+ * @param isWhileLoopContinues This is a boolean variable that is used to
+ * determine whether the while loop should continue or not.
+ * @param acceptedGrades This is the array that stores the grades.
+ *
+ * @return A boolean value.
+ */
 bool askToContinue(int &count, int maxArrayLength, bool &isWhileLoopContinues,
                    float *acceptedGrades) {
   bool isUserContinued = false;
@@ -34,35 +45,24 @@ bool askToContinue(int &count, int maxArrayLength, bool &isWhileLoopContinues,
               expectedArrayOfValueForChar, arrayLength, RESTRICTED_INPUT,
               reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
-  if (count == iterationStarting) {
-    if (std::tolower(isContinues) == 'y') {
-      /* rerun the loop*/
-      isWhileLoopContinues = true;
-      isUserContinued = true;
-      count = maxArrayLength + count;
+  /* Checking if the user wants to continue. */
+  if (std::tolower(isContinues) == 'y') {
+    /* rerun the loop*/
+    isWhileLoopContinues = true;
+    isUserContinued = true;
+    count = maxArrayLength + count;
 
+    /* It validates if the array length is equal to 0. If so, then it clears the
+      array. */
+    if (count == iterationStarting) {
       /* Resetting the array to 0. */
       for (int i = 0; i < maxArrayLength; i++) {
         *(&acceptedGrades[i]) = 0;
       }
-    } else {
-      isWhileLoopContinues = false;
-      isUserContinued = false;
     }
   } else {
-    if (std::tolower(isContinues) == 'y') {
-      count = maxArrayLength + count;
-
-      /* Resetting the array to 0. */
-      for (int i = 0; i < maxArrayLength; i++) {
-        *(&acceptedGrades[i]) = 0;
-      }
-
-      isWhileLoopContinues = true;
-
-    } else {
-      isWhileLoopContinues = false;
-    }
+    isWhileLoopContinues = false;
+    count = maxArrayLength + count;
   }
 
   return isUserContinued;
