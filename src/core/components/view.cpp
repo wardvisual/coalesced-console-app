@@ -9,7 +9,9 @@
 #define CPP_VIEW_COMPONENT
 
 /* Core Applications */
+#include "../../core/apps/finals/menu/showMenu.cpp"
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
+
 
 /* Helpers */
 #include "../../includes/helpers/cleanUp.cpp"
@@ -36,6 +38,10 @@ void reViewMainScreen(std::string type, std::string currentMenu,
 
   if (type == MIDTERM_APP) {
     menuComponent(currentMenu);
+  }
+
+  if (type == FINAL_TERM_APP) {
+    displayFinalTermMenu(currentMenu);
   }
 
   reView();
