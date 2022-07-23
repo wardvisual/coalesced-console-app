@@ -9,7 +9,12 @@
 
 #include "../../components/text.cpp"
 
-void displaySystemInformation() {
+void renderSystemInformation(std::string &currentSelectedMenu,
+                             void (&previousFunctionCaller)()) {
+
+  /* A function that clears the screen. */
+  menuComponent(currentSelectedMenu);
+
   int maxArraySize = 6;
   std::string developers[maxArraySize] = {
       "Manlangit, Eduardo Jr.\n", "Galindo, Mark Lim.\n",
