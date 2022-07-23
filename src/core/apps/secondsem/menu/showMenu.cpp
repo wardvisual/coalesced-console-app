@@ -26,7 +26,7 @@
  *
  * @param selectedMenuItem The menu item that is currently selected.
  */
-void displaySecondSemMenu(std::string selectedMenuItem) {
+void renderSecondSemAppMenu(std::string selectedMenuItem) {
   text("Second Sem Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
   text("[1]. Display Name & Course",
