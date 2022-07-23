@@ -11,6 +11,6 @@
 
 #include "../calculateGPA/index.cpp"
 
-void displayMidtermMenu() { calculateGPA(); }
+void renderMidtermAppMenu() { calculateGPA(); }
 
 #endif
