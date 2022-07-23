@@ -14,7 +14,7 @@
 
 /**
  * @brief  @param currentMenuItem The current menu item that the user is on.
- * Midterm :: displayMidterm()
+ * Midterm :: renderMidtermApp()
  *
  * Instruction:
  *     Write a program that will compute the general point average of a BSCS
@@ -39,8 +39,9 @@
  *
  *  @param currentMenuItem The current menu item that the user is on.
  */
-void displayMidterm(std::string currentMenuItem) {
-  calculateGPA(currentMenuItem);
+void renderMidtermApp(std::string &currentSelectedMenu,
+                      void (&previousFunctionCaller)()) {
+  calculateGPA(currentSelectedMenu);
 }
 
 #endif
