@@ -58,8 +58,8 @@ void (*finalTermFunctions[MAX_FINAL_TERM_MENU_ITEM_LENGTH])(
  * @param previousFunctionCaller This is the function that will be called when
  * the user exits the menu.
  */
-void displayFinalTerm(std::string &currentSelectedMenu,
-                      void (&previousFunctionCaller)()) {
+void renderFinalTermApp(std::string &currentSelectedMenu,
+                        void (&previousFunctionCaller)()) {
 
   /* Declaring variables. */
   int maxMenuLength = MAX_FINAL_TERM_MENU_ITEM_LENGTH;
@@ -74,9 +74,9 @@ void displayFinalTerm(std::string &currentSelectedMenu,
   /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
-  /* Calling the function `displayFinalTermMenu` and passing the value
+  /* Calling the function `renderFinalTermAppMenu` and passing the value
     `MENU_ITEM_NONE` to it. */
-  displayFinalTermMenu(MENU_ITEM_NONE);
+  renderFinalTermAppMenu(MENU_ITEM_NONE);
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
@@ -95,7 +95,7 @@ void displayFinalTerm(std::string &currentSelectedMenu,
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundElement == expectedArrayOfValue[i]) {
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-          displayFinalTermMenu(foundElement);
+          renderFinalTermAppMenu(foundElement);
 
           (*finalTermFunctions[i])(FINAL_TERM_APP, foundElement);
         }
@@ -108,9 +108,9 @@ void displayFinalTerm(std::string &currentSelectedMenu,
     }
   }
 
-  /* Calling the function `displayFinalTermMenu` and passing the value
+  /* Calling the function `renderFinalTermAppMenu` and passing the value
      `MENU_ITEM_NONE` to it. */
-  displayFinalTermMenu(MENU_ITEM_NONE);
+  renderFinalTermAppMenu(MENU_ITEM_NONE);
   /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   /* renders previous function caller*/
