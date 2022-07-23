@@ -12,7 +12,6 @@
 #include "../../core/apps/finals/menu/showMenu.cpp"
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
 
-
 /* Helpers */
 #include "../../includes/helpers/cleanUp.cpp"
 
@@ -33,7 +32,7 @@ void reViewMainScreen(std::string type, std::string currentMenu,
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
   if (type == SECOND_SEM_APP) {
-    displaySecondSemMenu(currentMenu);
+    renderSecondSemAppMenu(currentMenu);
   }
 
   if (type == MIDTERM_APP) {
@@ -41,7 +40,7 @@ void reViewMainScreen(std::string type, std::string currentMenu,
   }
 
   if (type == FINAL_TERM_APP) {
-    displayFinalTermMenu(currentMenu);
+    renderFinalTermAppMenu(currentMenu);
   }
 
   reView();
@@ -56,7 +55,7 @@ void reViewMainScreen(std::string type, std::string currentMenu,
  */
 void reViewMenuScreen(std::string currentMenu, void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-  displaySecondSemMenu(currentMenu);
+  renderSecondSemAppMenu(currentMenu);
 
   reView();
 }
