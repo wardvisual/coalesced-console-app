@@ -26,7 +26,7 @@
  *
  * @param selectedMenuItem The menu item that is currently selected.
  */
-void displayFinalTermMenu(std::string selectedMenuItem) {
+void renderFinalTermAppMenu(std::string selectedMenuItem) {
   text("Final Term Applications", TEXT_BLUE, ALIGNMENTX2, ALIGNMENTY10);
 
   text("[1]. Square Root Calculator",
@@ -41,7 +41,7 @@ void displayFinalTermMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[4]. Array Even/Odd Identifer",
+  text("[4]. Array Even/Odd Identifier",
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
