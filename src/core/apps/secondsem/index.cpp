@@ -54,8 +54,8 @@
  * 07. unitConverter()
  * 08. dayTimeConverter()
  */
-void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string type,
-                                                 std::string currentMenu) = {
+void (*secondSemMethods[MAX_MENU_ITEM_LENGTH])(std::string type,
+                                               std::string currentMenu) = {
     getNameCourse,        getIntegerSum,     shapeAreaCalculator,
     tuitionFeeCalculator, evenOddIdentifier, fourOperationsCalculator,
     unitConverter,        dayTimeConverter};
@@ -67,8 +67,8 @@ void (*secondSemFunctions[MAX_MENU_ITEM_LENGTH])(std::string type,
  * @param previousFunctionCaller This is the function that will be called when
  * the user exits the menu.
  */
-void displaySecondSem(std::string &currentSelectedMenu,
-                      void (&previousFunctionCaller)()) {
+void renderSecondSemApp(std::string &currentSelectedMenu,
+                        void (&previousFunctionCaller)()) {
 
   /* Declaring variables. */
   int firstIndex = 0;
@@ -85,9 +85,9 @@ void displaySecondSem(std::string &currentSelectedMenu,
   /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
-  /* Calling the function `displaySecondSemMenu` and passing the value
+  /* Calling the function `renderSecondSemAppMenu` and passing the value
     `MENU_ITEM_NONE` to it. */
-  displaySecondSemMenu(MENU_ITEM_NONE);
+  renderSecondSemAppMenu(MENU_ITEM_NONE);
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
@@ -108,9 +108,9 @@ void displaySecondSem(std::string &currentSelectedMenu,
       for (int i = 0; i < maxMenuLength; i++) {
         if (foundElement == expectedArrayOfValue[i]) {
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
-          displaySecondSemMenu(foundElement);
+          renderSecondSemAppMenu(foundElement);
 
-          (*secondSemFunctions[i])(SECOND_SEM_APP, foundElement);
+          (*secondSemMethods[i])(SECOND_SEM_APP, foundElement);
         }
       }
 
@@ -121,9 +121,9 @@ void displaySecondSem(std::string &currentSelectedMenu,
     }
   }
 
-  /* Calling the function `displaySecondSemMenu` and passing the value
+  /* Calling the function `renderSecondSemAppMenu` and passing the value
      `MENU_ITEM_NONE` to it. */
-  displaySecondSemMenu(MENU_ITEM_NONE);
+  renderSecondSemAppMenu(MENU_ITEM_NONE);
   /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   /* renders previous function caller*/
