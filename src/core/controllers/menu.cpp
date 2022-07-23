@@ -23,6 +23,7 @@
 #include "../../core/apps/information/index.cpp"
 #include "../../core/apps/midterm/index.cpp"
 #include "../../core/apps/secondsem/index.cpp"
+#include "../../core/apps/supplementary/index.cpp"
 
 /* Constants */
 #include "../../includes/constants/alignment.cpp"
@@ -44,6 +45,7 @@ void mainMenuController() {
   std::string inputLabel = "Select Menu";
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
+  std::string exitMenu = MENU_ITEM_6;
   std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2,
                                                      MENU_ITEM_3, MENU_ITEM_4,
                                                      MENU_ITEM_5, MENU_ITEM_6};
@@ -51,12 +53,11 @@ void mainMenuController() {
   /* It displays the menu items without the selected item.*/
   menuComponent(MENU_ITEM_NONE);
 
-  do {
-    std::string exitMenu = MENU_ITEM_6;
+  while (isContinues) {
     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
     /* renders default menu */
-    displaySystemInformation();
+    renderSystemInformation(userInput, mainMenuController);
     menuComponent(MENU_ITEM_1);
 
     /* It handles user input and prints an error if there is an error. */
@@ -68,36 +69,38 @@ void mainMenuController() {
     cleanUpScreen(mainMenuHeaderComponent, headerComponent);
     menuComponent(userInput);
 
-    /* Checking if the user input is equal to the exit menu. If it is equal to
-          the exit menu, it will display a message and exit the application. */
-    if (userInput == exitMenu) {
-      isContinues = false;
-
-      text("Thank you for using this application!", TEXT_BLUE, ALIGNMENTX2,
-           ALIGNMENTY24);
-
-      std::cout << "\n\n\n";
-    }
-
     /* Checking if the user input is equal to the found element. If it is
     equal to the found element, it will display the menu item. */
     if (userInput == MENU_ITEM_1) {
-      displaySystemInformation();
+      renderSystemInformation(userInput, mainMenuController);
     }
 
     if (userInput == MENU_ITEM_2) {
-      displaySecondSem(userInput, mainMenuController);
+      renderSecondSemApp(userInput, mainMenuController);
     }
 
     if (userInput == MENU_ITEM_3) {
-      displayMidterm(userInput);
+      renderMidtermApp(userInput, mainMenuController);
     }
 
     if (userInput == MENU_ITEM_4) {
-      displayFinalTerm(userInput, mainMenuController);
+      renderFinalTermApp(userInput, mainMenuController);
     }
 
-  } while (isContinues);
+    if (userInput == MENU_ITEM_5) {
+      renderSupplementaryApp(userInput, mainMenuController);
+    }
+
+    /* Checking if the user input is equal to the exit menu. If it is equal to
+          the exit menu, it will display a message and exit the application. */
+    if (userInput == exitMenu) {
+      text("Thank you for using this application!", TEXT_BLUE, ALIGNMENTX2,
+           ALIGNMENTY24);
+      isContinues = false;
+
+      std::cout << "\n\n\n";
+    }
+  }
 }
 
 #endif
