@@ -17,7 +17,8 @@
 #include "../../../../components/text.cpp"
 
 /**
- * It displays the heading for the midterm.
+ * It's displaying the
+ * instruction for the user.
  */
 void displayStudentManagementHeading() {
   /* It's displaying the instruction for the user. */

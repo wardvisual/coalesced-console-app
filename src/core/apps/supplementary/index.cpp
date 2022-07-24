@@ -38,6 +38,7 @@
 /* It's a function declaration. */
 void studentManagementHeading();
 
+/* It's a function pointer. */
 void (*supplementaryMethods[MAX_SUPPLEMENTARY_MENU_ITEM_LENGTH])(
     void (&previousMenu)(std::string menuType)) = {studentManagement};
 
@@ -110,10 +111,10 @@ void renderSupplementaryApp(std::string &currentSelectedMenu,
 }
 
 /**
- * It displays the heading
+ * It's displaying the instruction for the user.
+ * </code>
  */
 void studentManagementHeading() {
-  /* It's displaying the instruction for the user. */
   text("Message: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
   text("This application is supplementary. That means this application is not "
        "part of the school",

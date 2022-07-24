@@ -25,6 +25,14 @@
 #include "../../../../../../includes/helpers/cleanUp.cpp"
 #include "../../../../../../includes/mockData/students.cpp"
 
+/**
+ * It's a function that takes in a string, a string, and a function as
+ * parameters and returns nothing
+ *
+ * @param type The type of the menu.
+ * @param currentMenu The current menu that the user is on.
+ * @param heading A function that displays the heading of the screen.
+ */
 void create(std::string type, std::string currentMenu, void (&heading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY25,
       reAlignErrorMsgYCoordinate = ALIGNMENTY29;

@@ -25,6 +25,13 @@
 #include "../../../../../../includes/helpers/cleanUp.cpp"
 #include "../../../../../../includes/mockData/students.cpp"
 
+/**
+ * It deletes a student from a vector of students
+ *
+ * @param type The type of the menu.
+ * @param currentMenu The current menu that the user is on.
+ * @param heading A function that displays the heading of the menu.
+ */
 void deleteStudent(std::string type, std::string currentMenu,
                    void (&heading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY25,

@@ -27,6 +27,14 @@
 
 #include "../view/index.cpp"
 
+/**
+ * It takes a student ID and a new student name as input and updates the student
+ * name in the mock data
+ *
+ * @param type The type of the menu.
+ * @param currentMenu The current menu that the user is in.
+ * @param heading A function that displays the heading of the program.
+ */
 void edit(std::string type, std::string currentMenu, void (&heading)()) {
   int reAlignLabelYCoordinate = ALIGNMENTY25,
       reAlignErrorMsgYCoordinate = ALIGNMENTY29;

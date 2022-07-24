@@ -35,10 +35,16 @@
 /* Helpers */
 #include "../../../../includes/helpers/cleanUp.cpp"
 
+/* An array of function pointers. */
 void (*studentManagementMethods[MAX_STUDENT_MENU_METHODS_LENGTH])(
     std::string type, std::string currentMenu,
     void (&heading)()) = {view, create, edit, deleteStudent};
 
+/**
+ * It handles user input and prints an error if there is an error.
+ *
+ * @param previousMenu A function pointer that points to the previous menu.
+ */
 void studentManagement(void (&previousMenu)(std::string menuType)) {
   /* Declaring variables. */
   int maxMenuLength = 5;

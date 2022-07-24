@@ -25,6 +25,13 @@
 #include "../../../../../../includes/helpers/cleanUp.cpp"
 #include "../../../../../../includes/mockData/students.cpp"
 
+/**
+ * It displays the students' names and IDs on the screen
+ * 
+ * @param type The type of the screen.
+ * @param currentMenu The current menu that the user is on.
+ * @param heading A function that displays the heading of the screen.
+ */
 void view(std::string type, std::string currentMenu, void (&heading)()) {
   int singleCount = 1;
   /* A function that clears the newly updated text on a screen and displays
