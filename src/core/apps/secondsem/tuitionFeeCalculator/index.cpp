@@ -55,8 +55,10 @@ void tuitionFeeCalculator(std::string type, std::string currentMenu) {
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
   float expectedArrayOfValueFloat[] = {};
-  std::string expectedArrayOfValuePaymentMode[] = {};
   int arrayLength = 0; // none
+  int arrayLengthForPaymentMethod = 4;
+  std::string expectedArrayOfValuePaymentMode[arrayLengthForPaymentMethod] = {
+      MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4};
 
   float tuitionFee;
   std::string modeOfPayment;
@@ -80,9 +82,9 @@ void tuitionFeeCalculator(std::string type, std::string currentMenu) {
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(labelForModeOfPayment, modeOfPayment,
-                     expectedArrayOfValuePaymentMode, arrayLength,
-                     RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     expectedArrayOfValuePaymentMode,
+                     arrayLengthForPaymentMethod, RESTRICTED_INPUT,
+                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, tuitionFeeCalculatorHeading);

@@ -47,8 +47,9 @@ void shapeAreaCalculator(std::string type, std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
-  std::string expectedArrayOfValue[] = {};
-  int arrayLength = 0; // none
+  int arrayLength = 4; // none
+  std::string expectedArrayOfValue[arrayLength] = {MENU_ITEM_1, MENU_ITEM_2,
+                                                   MENU_ITEM_3, MENU_ITEM_4};
 
   std::string label = "Select Shape Type";
   std::string userChoice;
@@ -64,6 +65,7 @@ void shapeAreaCalculator(std::string type, std::string currentMenu) {
   if (userChoice == MENU_ITEM_1) {
     calculateSquare(type, currentMenu, shapeAreaCalculatorHeading);
   }
+
   /* Rectangle */
   if (userChoice == MENU_ITEM_2) {
     calculateRectangle(type, currentMenu, shapeAreaCalculatorHeading);
