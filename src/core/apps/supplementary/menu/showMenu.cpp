@@ -33,36 +33,8 @@ void renderSupplementaryAppMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_1 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY12);
 
-  text("[2]. Quiz App",
-       selectedMenuItem == MENU_ITEM_2 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
-       ALIGNMENTY14);
-
-  text("[3]. Learning Management Sys.",
-       selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
-       ALIGNMENTY16);
-
-  text("[4]. Back", selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE,
-       ALIGNMENTX2, ALIGNMENTY18);
-
-  //     text("[5]. Even & Odd Number Identifier",
-  //          selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE,
-  //          ALIGNMENTX2, ALIGNMENTY20);
-
-  //     text("[6]. Four Operations Calculator",
-  //          selectedMenuItem == MENU_ITEM_6 ? TEXT_BLUE : TEXT_WHITE,
-  //          ALIGNMENTX2, ALIGNMENTY22);
-
-  //     text("[7]. Unit Converter",
-  //          selectedMenuItem == MENU_ITEM_7 ? TEXT_BLUE : TEXT_WHITE,
-  //          ALIGNMENTX2, ALIGNMENTY24);
-
-  //     text("[8]. Day & Time Converter",
-  //          selectedMenuItem == MENU_ITEM_8 ? TEXT_BLUE : TEXT_WHITE,
-  //          ALIGNMENTX2, ALIGNMENTY26);
-
-  //     text("[9]. Back", selectedMenuItem == MENU_ITEM_9 ? TEXT_BLUE :
-  //     TEXT_WHITE,
-  //          ALIGNMENTX2, ALIGNMENTY28);
+  text("[2]. Back", selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE,
+       ALIGNMENTX2, ALIGNMENTY14);
 }
 
 #endif
