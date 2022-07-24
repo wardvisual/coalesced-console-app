@@ -12,6 +12,7 @@
 /* Student Management operations */
 #include "./functions/create/index.cpp"
 #include "./functions/delete/index.cpp"
+#include "./functions/edit/index.cpp"
 #include "./functions/heading.cpp"
 #include "./functions/view/index.cpp"
 
@@ -33,7 +34,7 @@
 #include "../../../../includes/helpers/cleanUp.cpp"
 
 void (*studentManagementMethods[4])(std::string type, std::string currentMenu,
-                                    void (&heading)()) = {view, create,
+                                    void (&heading)()) = {view, create, edit,
                                                           deleteStudent};
 
 void studentManagement(void (&previousMenu)(std::string menuType)) {
