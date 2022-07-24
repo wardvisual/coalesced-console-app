@@ -41,11 +41,11 @@ void studentManagementMenu(std::string selectedMenuItem) {
        selectedMenuItem == MENU_ITEM_3 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY16);
 
-  text("[3]. Delete Student",
+  text("[4]. Delete Student",
        selectedMenuItem == MENU_ITEM_4 ? TEXT_BLUE : TEXT_WHITE, ALIGNMENTX2,
        ALIGNMENTY18);
 
-  text("[4]. Back", selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE,
+  text("[5]. Back", selectedMenuItem == MENU_ITEM_5 ? TEXT_BLUE : TEXT_WHITE,
        ALIGNMENTX2, ALIGNMENTY20);
 }
 
