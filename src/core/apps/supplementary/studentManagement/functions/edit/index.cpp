@@ -99,7 +99,7 @@ void edit(std::string type, std::string currentMenu, void (&heading)()) {
     /* Displaying the result of the update. */
     text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY15);
     text("Message: The student with an ID of " + std::to_string(studentID) +
-             " was succcessfully updated!",
+             " was successfully updated!",
          TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY17);
     text("Previous Student Name: " + previousStudentName, TEXT_WHITE,
          ALIGNMENTX38, ALIGNMENTY19);

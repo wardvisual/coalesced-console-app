@@ -43,6 +43,7 @@ void mainMenuController() {
   int maxMenuLength = 6;
   bool isContinues = true;
   std::string inputLabel = "Select Menu";
+  std::string errorMessage = "Please enter a number from \n  1 to 6 only.";
   int reAlignLabelYCoordinate = ALIGNMENTY24,
       reAlignErrorMsgYCoordinate = ALIGNMENTY26;
   std::string exitMenu = MENU_ITEM_6;
@@ -63,7 +64,7 @@ void mainMenuController() {
     /* It handles user input and prints an error if there is an error. */
     input<std::string>(inputLabel, userInput, expectedArrayOfValue,
                        maxMenuLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                       reAlignErrorMsgYCoordinate);
+                       reAlignErrorMsgYCoordinate, errorMessage);
 
     /* Cleaning up the screen and displaying the menu. */
     cleanUpScreen(mainMenuHeaderComponent, headerComponent);

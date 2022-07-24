@@ -63,6 +63,9 @@ void tuitionFeeCalculator(std::string type, std::string currentMenu) {
   float tuitionFee;
   std::string modeOfPayment;
   std::string labelForTuitionFee = "Enter tuition fee";
+  std::string errorMessageForModeOfPayment =
+      "\n  Please enter a number from \n  1 to 4 only.";
+  std::string errorMessageForTuitionFee = "\n  Input must be a valid number.";
   std::string labelForModeOfPayment = "Choose mode of payment";
 
   /* It display the heading */
@@ -71,7 +74,7 @@ void tuitionFeeCalculator(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<float>(labelForTuitionFee, tuitionFee, expectedArrayOfValueFloat,
                arrayLength, !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-               reAlignErrorMsgYCoordinate);
+               reAlignErrorMsgYCoordinate, errorMessageForTuitionFee);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, tuitionFeeCalculatorHeading);
@@ -81,10 +84,10 @@ void tuitionFeeCalculator(std::string type, std::string currentMenu) {
   setDecimalValue(tuitionFee, TEXT_WHITE, ALIGNMENTX51, ALIGNMENTY15);
 
   /* It handles user input and prints an error if there is an error. */
-  input<std::string>(labelForModeOfPayment, modeOfPayment,
-                     expectedArrayOfValuePaymentMode,
-                     arrayLengthForPaymentMethod, RESTRICTED_INPUT,
-                     reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+  input<std::string>(
+      labelForModeOfPayment, modeOfPayment, expectedArrayOfValuePaymentMode,
+      arrayLengthForPaymentMethod, RESTRICTED_INPUT, reAlignLabelYCoordinate,
+      reAlignErrorMsgYCoordinate, errorMessageForModeOfPayment);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, tuitionFeeCalculatorHeading);

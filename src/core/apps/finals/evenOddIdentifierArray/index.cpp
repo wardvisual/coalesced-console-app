@@ -46,6 +46,7 @@ void evenOddIdentifierArray(std::string type, std::string currentMenu) {
 
   int userInput, singleCount = 1;
   std::string label = "Enter max array length";
+  std::string errorMessage = "Input must be a valid number.";
 
   /* It display the heading */
   evenOddIdentifierArrayHeading();
@@ -53,7 +54,7 @@ void evenOddIdentifierArray(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<int>(label, userInput, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, evenOddIdentifierArrayHeading);

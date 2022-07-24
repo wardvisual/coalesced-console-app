@@ -48,11 +48,13 @@ void dayTimeConverter(std::string type, std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
-  std::string expectedArrayOfValue[] = {};
-  int arrayLength = 0; // none
+  int arrayLength = 2;
+  std::string expectedArrayOfValue[arrayLength] = {MENU_ITEM_1, MENU_ITEM_2};
 
   std::string userChoice;
   std::string label = "Type of conversion";
+  std::string errorMessageChoices =
+      "\n  Please enter a number from \n  1 to 2 only.";
 
   /* It display the heading */
   dayTimeConverterHeading();
@@ -60,7 +62,7 @@ void dayTimeConverter(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(label, userChoice, expectedArrayOfValue, arrayLength,
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessageChoices);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, dayTimeConverterHeading);

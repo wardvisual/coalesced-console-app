@@ -48,6 +48,7 @@ void squareRootCalculator(std::string type, std::string currentMenu) {
 
   int userInput, squareRootResult = 0;
   std::string label = "Enter a number";
+  std::string errorMessage = "Input must be a valid integer.";
 
   /* It display the heading */
   squareRootCalculatorHeading();
@@ -55,7 +56,7 @@ void squareRootCalculator(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<int>(label, userInput, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, squareRootCalculatorHeading);

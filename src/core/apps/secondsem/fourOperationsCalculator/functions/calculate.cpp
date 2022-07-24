@@ -45,6 +45,7 @@ void calculate(std::string appType, std::string currentMenu, std::string type,
                                productResult = 0, differenceResult = 0;
   std::string firstNumberLabel = "Enter first number";
   std::string secondNumberLabel = "Enter second number";
+  std::string errorMessage = "\n  Input must be a valid number.";
 
   /* A function that review the current screen. */
   reViewMainScreen(appType, currentMenu, reViewHeading);
@@ -55,7 +56,7 @@ void calculate(std::string appType, std::string currentMenu, std::string type,
   /* It handles user input and prints an error if there is an error. */
   input<T>(firstNumberLabel, firstNumber, expectedArrayOfValue, arrayLength,
            !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-           reAlignErrorMsgYCoordinate);
+           reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(appType, currentMenu, reViewHeading);
@@ -70,7 +71,7 @@ void calculate(std::string appType, std::string currentMenu, std::string type,
   /* It handles user input and prints an error if there is an error. */
   input<T>(secondNumberLabel, secondNumber, expectedArrayOfValue, arrayLength,
            !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-           reAlignErrorMsgYCoordinate);
+           reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(appType, currentMenu, reViewHeading);

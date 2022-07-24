@@ -68,6 +68,7 @@ void renderFinalTermApp(std::string &currentSelectedMenu,
   int reAlignLabelYCoordinate = ALIGNMENTY23;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY25;
   std::string inputLabel = "Select Application";
+  std::string errorMessage = "Please enter a number from \n  1 to 5 only.";
   std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5};
 
@@ -81,7 +82,7 @@ void renderFinalTermApp(std::string &currentSelectedMenu,
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A loop that handles user input and prints an error if there is an error. */
   while (userInput != exitMenu) {

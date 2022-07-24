@@ -50,14 +50,14 @@ void inputBorder(int labelYCoordinate);
 template <typename T>
 void input(std::string &label, T &referenceValue, T arrayValues[],
            int arrayLength, bool isRestricted, int labelYCoordinate,
-           int errorMsgYCoordinate) {
+           int errorMsgYCoordinate,
+           std::string errorMessage = "Invalid Input. Please try again!") {
 
   /* Variables */
   int restrictedInput = 1;
   int maximumInputLength = 20;
   int nonValidArrayLength = 0;
   int firstIndex = 0;
-  std::string errorMessage = "Invalid Input. Please try again!";
   std::string stringHasSpecialCharacterErrorMessage =
       "Input shouldn't have any special characters.";
 

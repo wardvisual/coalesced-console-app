@@ -46,6 +46,7 @@ void shapeAreaCalculator(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
+  std::string errorMessage = "\n  Please enter a number from \n  1 to 4 only.";
 
   int arrayLength = 4; // none
   std::string expectedArrayOfValue[arrayLength] = {MENU_ITEM_1, MENU_ITEM_2,
@@ -60,7 +61,7 @@ void shapeAreaCalculator(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(label, userChoice, expectedArrayOfValue, arrayLength,
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessage);
   /* Square */
   if (userChoice == MENU_ITEM_1) {
     calculateSquare(type, currentMenu, shapeAreaCalculatorHeading);

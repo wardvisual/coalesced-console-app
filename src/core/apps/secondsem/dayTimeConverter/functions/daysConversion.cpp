@@ -38,6 +38,7 @@ void renderDaysConversion(std::string type, std::string currentMenu,
 
   std::string label = "Enter number of days";
   int userNumberOfDays, toYears, toMonths, toRemainingDays;
+  std::string errorMessage = "\n  Input must be a valid number.";
 
   int expectedArrayOfValue[] = {};
   int arrayLength = 0; // none
@@ -49,7 +50,7 @@ void renderDaysConversion(std::string type, std::string currentMenu,
   /* It handles user input and prints an error if there is an error. */
   input<int>(label, userNumberOfDays, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that clears the screen and displays the main menu. */
   reViewMainScreen(type, currentMenu, activityThreeHeading);

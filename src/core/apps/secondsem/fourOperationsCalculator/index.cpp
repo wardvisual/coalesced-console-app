@@ -45,11 +45,12 @@ void fourOperationsCalculator(std::string type, std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
-  std::string expectedArrayOfValue[] = {};
-  int arrayLength = 0; // none
+  int arrayLength = 2;
+  std::string expectedArrayOfValue[arrayLength] = {MENU_ITEM_1, MENU_ITEM_2};
 
   std::string defaultLabel = "Type of number";
   std::string userChoice;
+  std::string errorMessage = "\n  Please enter a number from \n  1 to 2 only.";
 
   /* It display the heading */
   fourOperationsCalculatorHeading();
@@ -57,7 +58,7 @@ void fourOperationsCalculator(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(defaultLabel, userChoice, expectedArrayOfValue,
                      arrayLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, fourOperationsCalculatorHeading);

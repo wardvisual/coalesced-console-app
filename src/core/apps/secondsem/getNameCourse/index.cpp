@@ -21,6 +21,7 @@
 
 /* Helpers */
 #include "../../../../includes/helpers/cleanUp.cpp"
+#include "../../../../includes/helpers/dataType.cpp"
 
 /* It's a function declaration. */
 void getNameCourseHeading();
@@ -40,8 +41,8 @@ void getNameCourse(std::string type, std::string currentMenu) {
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
 
-  std::string expectedArrayOfValue[] = {};
-  int arrayLength = 0; // none
+  int arrayLength = 2; // none
+  std::string expectedArrayOfValue[2] = {"Edward"};
 
   std::string username, course;
   std::string nameLabel = "Enter your name";

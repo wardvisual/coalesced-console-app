@@ -25,6 +25,8 @@
 #include "../../../../../../includes/helpers/cleanUp.cpp"
 #include "../../../../../../includes/mockData/students.cpp"
 
+#include "../view/index.cpp"
+
 /**
  * It deletes a student from a vector of students
  *
@@ -47,6 +49,9 @@ void deleteStudent(std::string type, std::string currentMenu,
   /* A function that clears the newly updated text on a screen and displays
       the previous screen state. */
   reViewMainScreen(type, currentMenu, heading);
+
+  /* View current mock data */
+  view(type, currentMenu, heading);
 
   input<int>(inputLabelForDeleteStudent, studentID, expectedArrayOfValue,
              maxMenuLength, RESTRICTED_INPUT, reAlignLabelYCoordinate,
@@ -73,7 +78,7 @@ void deleteStudent(std::string type, std::string currentMenu,
   if (isStudentDeleted) {
     text("Result:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY15);
     text("Message: The student with an ID of " + std::to_string(studentID) +
-             " was succcessfully deleted!",
+             " was successfully deleted!",
          TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY17);
     text("Deleted Student: " + deletedStudent, TEXT_WHITE, ALIGNMENTX38,
          ALIGNMENTY19);

@@ -77,6 +77,7 @@ void renderSecondSemApp(std::string &currentSelectedMenu,
   std::string exitMenu = MENU_ITEM_9;
   int reAlignLabelYCoordinate = ALIGNMENTY31;
   std::string inputLabel = "Select Application";
+  std::string errorMessage = "\n  Please enter a number from \n  1 to 9 only.";
   int reAlignErrorMsgYCoordinate = ALIGNMENTY35;
   std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5,
@@ -92,7 +93,7 @@ void renderSecondSemApp(std::string &currentSelectedMenu,
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A loop that handles user input and prints an error if there is an error. */
   while (userInput != exitMenu) {

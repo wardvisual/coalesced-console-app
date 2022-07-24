@@ -37,7 +37,7 @@ void unitConverterHeading();
  *
  * @param type It's the type of the current menu.
  * @param currentMenu The current menu that the user is in.
- */ 
+ */
 void unitConverter(std::string type, std::string currentMenu) {
   /* Declaring variables. */
   int reAlignLabelYCoordinate = ALIGNMENTY31;
@@ -48,6 +48,7 @@ void unitConverter(std::string type, std::string currentMenu) {
 
   float millimeter, meter, centimeter;
   std::string label = "Enter a Millimeter Value";
+  std::string errorMessage = "\n  Input must be a valid millimeter value.";
 
   /* It display the heading */
   unitConverterHeading();
@@ -55,7 +56,7 @@ void unitConverter(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<float>(label, millimeter, expectedArrayOfValue, arrayLength,
                !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-               reAlignErrorMsgYCoordinate);
+               reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, unitConverterHeading);

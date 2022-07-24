@@ -58,6 +58,7 @@ void evenOddIdentifier(std::string type, std::string currentMenu) {
   int userEnteredInteger;
   char isUserWantsToContinue;
   std::string calculationLabel = "Enter a number";
+  std::string errorMessage = "\n  Input must be a valid number.";
   std::string defaultLabel = "Do you want to continue?";
 
   /* It display the heading */
@@ -70,7 +71,7 @@ void evenOddIdentifier(std::string type, std::string currentMenu) {
     /* It handles user input and prints an error if there is an error. */
     input<int>(calculationLabel, userEnteredInteger, expectedArrayOfValueForInt,
                arrayLength, !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-               reAlignErrorMsgYCoordinate);
+               reAlignErrorMsgYCoordinate, errorMessage);
 
     /* It's checking if the user entered number is even or odd. */
     if (isEven(userEnteredInteger)) {

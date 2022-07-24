@@ -51,7 +51,8 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
   std::string userInput;
   std::string backMenu = MENU_ITEM_5;
   int reAlignLabelYCoordinate = ALIGNMENTY25;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY29;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY27;
+  std::string errorMessage = "Please enter a number from \n  1 to 5 only.";
   std::string inputLabel = "Select Operation";
   std::string expectedArrayOfValue[maxMenuLength] = {
       MENU_ITEM_1, MENU_ITEM_2, MENU_ITEM_3, MENU_ITEM_4, MENU_ITEM_5};
@@ -69,7 +70,7 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
                      RESTRICTED_INPUT, reAlignLabelYCoordinate,
-                     reAlignErrorMsgYCoordinate);
+                     reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A loop that handles user input and prints an error if there is an error. */
   while (userInput != backMenu) {
@@ -93,7 +94,8 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
       /* It handles user input and prints an error if there is an error. */
       input<std::string>(inputLabel, userInput, expectedArrayOfValue,
                          maxMenuLength, RESTRICTED_INPUT,
-                         reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate);
+                         reAlignLabelYCoordinate, reAlignErrorMsgYCoordinate,
+                         errorMessage);
     }
   }
 

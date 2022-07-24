@@ -45,7 +45,7 @@ void getIntegerSum(std::string type, std::string currentMenu) {
   int firstNumber, secondNumber, sumResult = 0;
   std::string firstNumberLabel = "Enter first number";
   std::string secondNumberLabel = "Enter second number";
-  /* It's calculating the area of a circle. */
+  std::string errorMessage = "\n  Input must be an integer.";
 
   /* It display the heading */
   getIntegerSumHeading();
@@ -53,7 +53,7 @@ void getIntegerSum(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<int>(firstNumberLabel, firstNumber, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, getIntegerSumHeading);
@@ -66,7 +66,7 @@ void getIntegerSum(std::string type, std::string currentMenu) {
   /* It handles user input and prints an error if there is an error. */
   input<int>(secondNumberLabel, secondNumber, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that review the current screen. */
   reViewMainScreen(type, currentMenu, getIntegerSumHeading);

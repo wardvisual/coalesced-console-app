@@ -39,6 +39,7 @@ void renderTimeConversion(std::string type, std::string currentMenu,
 
   std::string label = "Enter number of seconds";
   int userNumberOfSeconds, toHours, toMinutes, toRemainingSeconds;
+  std::string errorMessage = "\n  Input must be a valid number.";
 
   int expectedArrayOfValue[] = {};
   int arrayLength = 0; // none
@@ -50,7 +51,7 @@ void renderTimeConversion(std::string type, std::string currentMenu,
   /* It handles user input and prints an error if there is an error. */
   input<int>(label, userNumberOfSeconds, expectedArrayOfValue, arrayLength,
              !RESTRICTED_INPUT, reAlignLabelYCoordinate,
-             reAlignErrorMsgYCoordinate);
+             reAlignErrorMsgYCoordinate, errorMessage);
 
   /* A function that clears the screen and displays the main menu. */
   reViewMainScreen(type, currentMenu, activityThreeHeading);
