@@ -35,6 +35,9 @@
 #include "../../components/input.cpp"
 #include "../../components/menu.cpp"
 
+/* It's a function declaration. */
+void studentManagementHeading();
+
 void (*supplementaryMethods[MAX_SUPPLEMENTARY_MENU_ITEM_LENGTH])(
     void (&previousMenu)(std::string menuType)) = {studentManagement};
 
@@ -61,6 +64,8 @@ void renderSupplementaryApp(std::string &currentSelectedMenu,
   // /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
+  /* Application Heading */
+  studentManagementHeading();
   /* Calling the function `renderSupplementaryAppMenu` and passing the value
     `MENU_ITEM_NONE` to it. */
   renderSupplementaryAppMenu(MENU_ITEM_NONE);
@@ -103,6 +108,26 @@ void renderSupplementaryApp(std::string &currentSelectedMenu,
   previousFunctionCaller();
   /* exit */
   currentSelectedMenu = MENU_ITEM_NONE;
+}
+
+/**
+ * It displays the heading for the quiz two.
+ */
+void studentManagementHeading() {
+  /* It's displaying the instruction for the user. */
+  text("Message: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
+  text("This application is supplementary. That means this application is not "
+       "part of the school",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
+  text("laboratory activities. The supplementary applications were created "
+       "with the personal ",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY13);
+  text("knowledge and experience of the programmer of the entire console "
+       "application.",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY14);
+  text("And it was added to have more functionality and "
+       "interactivity.",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY15);
 }
 
 #endif
