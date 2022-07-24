@@ -95,7 +95,7 @@ void edit(std::string type, std::string currentMenu, void (&heading)()) {
          TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY17);
     text("Previous Student Name: " + previousStudentName, TEXT_WHITE,
          ALIGNMENTX38, ALIGNMENTY19);
-    text("Updated Student: " + newStudentName, TEXT_WHITE, ALIGNMENTX38,
+    text("Updated Student Name: " + newStudentName, TEXT_WHITE, ALIGNMENTX38,
          ALIGNMENTY21);
   } else {
     /* Displaying the error message result. */
