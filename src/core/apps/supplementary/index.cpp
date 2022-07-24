@@ -10,7 +10,7 @@
 #define CPP_INDEX_SUPPLEMENTARY_
 
 /* A constant that is used to determine the length of the array. */
-#define MAX_SUPPLEMENTARY_MENU_ITEM_LENGTH 4
+#define MAX_SUPPLEMENTARY_MENU_ITEM_LENGTH 2
 
 /* Supplementary activitities*/
 #include "studentManagement/index.cpp"
@@ -52,14 +52,13 @@ void renderSupplementaryApp(std::string &currentSelectedMenu,
                             void (&previousFunctionCaller)()) {
 
   /* Declaring variables. */
-  int maxMenuLength = 4;
+  int maxMenuLength = 2;
   std::string userInput;
-  std::string backMenu = MENU_ITEM_4;
-  int reAlignLabelYCoordinate = ALIGNMENTY21;
-  int reAlignErrorMsgYCoordinate = ALIGNMENTY25;
+  std::string backMenu = MENU_ITEM_2;
+  int reAlignLabelYCoordinate = ALIGNMENTY18;
+  int reAlignErrorMsgYCoordinate = ALIGNMENTY20;
   std::string inputLabel = "Select Supplementary App";
-  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2,
-                                                     MENU_ITEM_3, MENU_ITEM_4};
+  std::string expectedArrayOfValue[maxMenuLength] = {MENU_ITEM_1, MENU_ITEM_2};
 
   // /* A function that clears the screen. */
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
@@ -111,7 +110,7 @@ void renderSupplementaryApp(std::string &currentSelectedMenu,
 }
 
 /**
- * It displays the heading for the quiz two.
+ * It displays the heading
  */
 void studentManagementHeading() {
   /* It's displaying the instruction for the user. */
@@ -119,15 +118,11 @@ void studentManagementHeading() {
   text("This application is supplementary. That means this application is not "
        "part of the school",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
-  text("laboratory activities. The supplementary applications were created "
-       "with the personal ",
+  text("laboratory activities. The supplementary application was created "
+       "to have more functionality ",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY13);
-  text("knowledge and experience of the programmer of the entire console "
-       "application.",
-       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY14);
-  text("And it was added to have more functionality and "
-       "interactivity.",
-       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY15);
+  text("and interactivity in this application.", TEXT_WHITE, ALIGNMENTX38,
+       ALIGNMENTY14);
 }
 
 #endif
