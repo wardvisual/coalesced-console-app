@@ -11,6 +11,9 @@
 
 /* Student Management operations */
 #include "./functions/create/index.cpp"
+#include "./functions/delete/index.cpp"
+#include "./functions/heading.cpp"
+#include "./functions/view/index.cpp"
 
 /* Student Management menu */
 #include "./menu/showMenu.cpp"
@@ -29,8 +32,9 @@
 /* Helpers */
 #include "../../../../includes/helpers/cleanUp.cpp"
 
-void (*studentManagementMethods[4])(std::string type,
-                                    std::string currentMenu) = {create};
+void (*studentManagementMethods[4])(std::string type, std::string currentMenu,
+                                    void (&heading)()) = {view, create,
+                                                          deleteStudent};
 
 void studentManagement(void (&previousMenu)(std::string menuType)) {
   /* Declaring variables. */
@@ -49,6 +53,9 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
   /* Calling the function `studentManagementMenu` and passing the value
     `MENU_ITEM_NONE` to it. */
   studentManagementMenu(MENU_ITEM_NONE);
+
+  /* Heading */
+  displayStudentManagementHeading();
 
   /* It handles user input and prints an error if there is an error. */
   input<std::string>(inputLabel, userInput, expectedArrayOfValue, maxMenuLength,
@@ -69,7 +76,8 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
           cleanUpScreen(mainMenuHeaderComponent, headerComponent);
           studentManagementMenu(foundElement);
           (*studentManagementMethods[i])(STUDENT_MANAGEMENT_SYSTEM_APP,
-                                         foundElement);
+                                         foundElement,
+                                         displayStudentManagementHeading);
         }
       }
 
