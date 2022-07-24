@@ -22,10 +22,14 @@
 void displayStudentManagementHeading() {
   /* It's displaying the instruction for the user. */
   text("Information:", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
-  text("This student management system has four basic things to do. It can "
-       "create, view, update, ",
+  text("This student management system has four basic things you can do."
+       " You can create, view, ",
        TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
-  text("and delete student records.", TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY13);
+  text("update, and delete student records. To be specific, only the student's "
+       "name as a record can",
+       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY13);
+  text("apply the four basic operations.", TEXT_WHITE, ALIGNMENTX38,
+       ALIGNMENTY14);
 }
 
 #endif
