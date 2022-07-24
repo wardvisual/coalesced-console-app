@@ -8,9 +8,12 @@
 #ifndef CPP_VIEW_COMPONENT
 #define CPP_VIEW_COMPONENT
 
-/* Core Applications */
+/* Core Applications Menu */
 #include "../../core/apps/finals/menu/showMenu.cpp"
 #include "../../core/apps/secondsem/menu/showMenu.cpp"
+
+/* Sub Core Applications Menu */
+#include "../../core/apps/supplementary/studentManagement/menu/showMenu.cpp"
 
 /* Helpers */
 #include "../../includes/helpers/cleanUp.cpp"
@@ -31,6 +34,7 @@ void reViewMainScreen(std::string type, std::string currentMenu,
                       void (&reView)()) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
 
+  /* CORE */
   if (type == SECOND_SEM_APP) {
     renderSecondSemAppMenu(currentMenu);
   }
@@ -41,6 +45,11 @@ void reViewMainScreen(std::string type, std::string currentMenu,
 
   if (type == FINAL_TERM_APP) {
     renderFinalTermAppMenu(currentMenu);
+  }
+
+  /* SUB CORE */
+  if (type == STUDENT_MANAGEMENT_SYSTEM_APP) {
+    studentManagementMenu(currentMenu);
   }
 
   reView();
