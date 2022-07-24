@@ -29,27 +29,9 @@
 /* Helpers */
 #include "../../../../includes/helpers/cleanUp.cpp"
 
-/* It's a function declaration. */
-void studentManagementHeading();
-
-/**
- * It should be in order. Like this.
- *
- * 01. getNameCourse()
- */
 void (*studentManagementMethods[4])(std::string type,
                                     std::string currentMenu) = {create};
 
-/**
- * Supplementary One :: studentManagement()
- *
- * Instruction:
- *     Program that converts days to years, months and remaining days
- *     Program that converts seconds to hours , minutes and remaining seconds
- *1
-  @param type It's the type of the current menu.
- * @param currentMenu The current menu that the user is in.
- */
 void studentManagement(void (&previousMenu)(std::string menuType)) {
   /* Declaring variables. */
   int maxMenuLength = 4;
@@ -105,22 +87,6 @@ void studentManagement(void (&previousMenu)(std::string menuType)) {
   cleanUpScreen(mainMenuHeaderComponent, headerComponent);
   /* renders previous function caller */
   previousMenu(MENU_ITEM_NONE);
-}
-
-/**
- * It displays the heading for the quiz two.
- */
-void studentManagementHeading() {
-  /* It's displaying the instruction for the user. */
-  text("Message: ", TEXT_BLUE, ALIGNMENTX38, ALIGNMENTY10);
-  text("This application is supplementary. That means this application is not "
-       "part of the laboratory",
-       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY12);
-  text("activities. But rather it is an application built with the personal "
-       "knowledge and ",
-       TEXT_WHITE, ALIGNMENTX38, ALIGNMENTY13);
-  text("experiences of a programmer of this application.", TEXT_WHITE,
-       ALIGNMENTX38, ALIGNMENTY14);
 }
 
 #endif
