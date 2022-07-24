@@ -2,7 +2,6 @@
   "C_Cpp.errorSquiggles": "Disabled",
   "files.associations": {
     ".env": "bat",
-    ".js": "javascriptreact",
     "array": "cpp",
     "atomic": "cpp",
     "bit": "cpp",
