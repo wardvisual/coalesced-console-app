@@ -12,7 +12,6 @@
 void renderSystemInformation(std::string &currentSelectedMenu,
                              void (&previousFunctionCaller)()) {
 
-  /* A function that clears the screen. */
   menuComponent(currentSelectedMenu);
 
   int maxArraySize = 6;
