@@ -12,11 +12,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/wardvisual/interactive-console-app/">
+  <a href="https://github.com/wardvisual/coalesced-console-app/">
     <img src="./assets/header.png" alt="banner">
   </a>
 
-  <h3 align="center">Interactive Console Application</h3>
+  <h3 align="center">Coalesced Console App</h3>
   <p align="center">School Project</p>
 
   <p align="center">
@@ -28,9 +28,9 @@
     <br />
     <a href="https://github.com/wardvisual/interactive-console-app">View Demo</a>
     ·
-    <a href="https://github.com/wardvisual/interactive-console-app/issues">Report Bug</a>
+    <a href="https://github.com/wardvisual/coalesced-console-app/issues">Report Bug</a>
     ·
-    <a href="https://github.com/wardvisual/interactive-console-app/issues">Request Feature</a>
+    <a href="https://github.com/wardvisual/coalesced-console-app/issues">Request Feature</a>
   </p>
 </div>
 
@@ -47,7 +47,7 @@ Technologies and Tools that this project used.
 
 ### Project Screenshot
 
- <a href="https://github.com/wardvisual/interactive-console-app/">
+ <a href="https://github.com/wardvisual/coalesced-console-app/">
     <img src="./assets/screenshot1.png" alt="banner">
     <img src="./assets/screenshot2.png" alt="banner">
     <img src="./assets/screenshot3.png" alt="banner">
